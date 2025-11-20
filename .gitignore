@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Node / tooling
+node_modules/
+
+# Build output
+/dist/
+/build/
+
+# Local tools and large binaries (not tracked in Git)
+tools/ffmpeg/
+ffmpeg.zip
+assets/hero-bg.mov

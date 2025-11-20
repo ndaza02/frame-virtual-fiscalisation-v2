@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>FRAME Virtual Fiscalisation | ZIMRA Compliance Platform</title>
+  <meta name="description" content="FRAME Virtual Fiscalisation is a virtual fiscalisation platform that helps you achieve real-time ZIMRA compliance with secure APIs, device orchestration, and compliant e-receipts." />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FRAME Virtual Fiscalisation | ZIMRA Compliance Platform" />
+  <meta property="og:description" content="Virtual fiscalisation for high-growth merchants and integrators. Secure, compliant, and developer-friendly." />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=FRAME+Virtual+Fiscalisation" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- GSAP core and ScrollTrigger (v3) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" id="top">
+    <div class="inner-frame container">
+      <div class="site-header__row">
+        <div class="site-header__col -left">
+          <a href="index.html#hero" class="site-header__brand" aria-label="FRAME Virtual Fiscalisation home">
+            <span class="site-header__logo" aria-hidden="true"><img src="assets/frame-logo.png" alt="" class="site-header__logo-img" loading="lazy" decoding="async" /></span>
+          </a>
+        </div>
+
+        <div class="site-header__col -center">
+          <nav id="primary-nav" class="site-header__nav" aria-label="Primary navigation">
+            <ul class="site-header__nav-list">
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="how-it-works.html">How it works</a></li>
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="pricing.html">Pricing</a></li>
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="developer-hub.html">Developer hub</a></li>
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="partners.html">Partners</a></li>
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="blog.html">Blog</a></li>
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="about.html">About</a></li>
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="support.html">Support</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="site-header__col -right">
+          <a href="#contact" class="button button--ghost button--small site-header__cta">Book a demo</a>
+
+          <button class="site-header__nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+            <span class="site-header__nav-toggle-bar"></span>
+            <span class="site-header__nav-toggle-bar"></span>
+            <span class="site-header__nav-toggle-bar"></span>
+            <span class="site-header__nav-toggle-label">Menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="hero__background" aria-hidden="true">
+        <video class="hero__background-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/hero-bg.jpg" loading="lazy">
+          <source src="assets/hero-bg.mp4" type="video/mp4" />
+          <source src="assets/hero-bg.webm" type="video/webm" />
+          <source src="assets/hero-bg.mov" />
+        </video>
+      </div>
+
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="hero__kicker">Virtual fiscalisation built for ZIMRA compliance</p>
+          <h1 id="hero-title" class="hero__title">Stay compliant in real time, without slowing down your growth.</h1>
+          <p class="hero__subtitle">FRAME Virtual Fiscalisation connects your POS, ERP, and online payments into a single compliant fiscalisation layer. Secure device orchestration, auditable e-receipts, and ZIMRA-ready reporting from day one.</p>
+
+          <div class="hero__actions">
+            <a href="#contact" class="button button--primary">
+              <span>Book a demo</span>
+              <i data-lucide="calendar-clock" aria-hidden="true" class="w-4 h-4"></i>
+            </a>
+            <a href="#developer" class="button button--secondary">
+              <span>Get API key</span>
+              <i data-lucide="key-round" aria-hidden="true" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <dl class="hero__stats" aria-label="FRAME Virtual Fiscalisation platform highlights">
+            <div class="hero__stat">
+              <dt class="hero__stat-value">99.99%</dt>
+              <dd class="hero__stat-label">API uptime</dd>
+            </div>
+            <div class="hero__stat">
+              <dt class="hero__stat-value">&lt; 350ms</dt>
+              <dd class="hero__stat-label">Median receipt latency</dd>
+            </div>
+            <div class="hero__stat">
+              <dt class="hero__stat-value">Level 1</dt>
+              <dd class="hero__stat-label">PCI DSS aligned</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div class="hero-logos" aria-label="Merchants using FRAME Virtual Fiscalisation" role="region">
+        <p class="hero-logos__label">Trusted by merchants and integrators across Zimbabwe</p>
+        <div class="hero-logos__marquee">
+          <div class="hero-logos__track">
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/apatron-mining-logo-removebg-preview.png" alt="Apatron Mining logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/best-supermarket-logo-removebg-preview.png" alt="Best Supermarket logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/builders-choice-logo-removebg-preview.png" alt="Builders Choice logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/buynbuild-logo-removebg-preview.png" alt="Buynbuild logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/eightmotors-logo-removebg-preview.png" alt="Eight Motors logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/erksales-logo-removebg-preview.png" alt="Erksales logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/kbtiles-logo-removebg-preview.png" alt="KB Tiles logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/lindcandy-logo-removebg-preview.png" alt="Lindcandy logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/luciedie-marketing-logo-removebg-preview.png" alt="Luciedie Marketing logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/minemachines-logo-removebg-preview.png" alt="Minemachines logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/np2solutions-logo-removebg-preview.png" alt="NP2 Solutions logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/reditech-logo-removebg-preview.png" alt="Reditech logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/tigermark-logo-removebg-preview.png" alt="Tigermark logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/topdeck-bricks-logo-removebg-preview.png" alt="Topdeck Bricks logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/apatron-mining-logo-removebg-preview.png" alt="Apatron Mining logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/best-supermarket-logo-removebg-preview.png" alt="Best Supermarket logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/builders-choice-logo-removebg-preview.png" alt="Builders Choice logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/buynbuild-logo-removebg-preview.png" alt="Buynbuild logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/eightmotors-logo-removebg-preview.png" alt="Eight Motors logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/erksales-logo-removebg-preview.png" alt="Erksales logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/kbtiles-logo-removebg-preview.png" alt="KB Tiles logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/lindcandy-logo-removebg-preview.png" alt="Lindcandy logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/luciedie-marketing-logo-removebg-preview.png" alt="Luciedie Marketing logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/minemachines-logo-removebg-preview.png" alt="Minemachines logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/np2solutions-logo-removebg-preview.png" alt="NP2 Solutions logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/reditech-logo-removebg-preview.png" alt="Reditech logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/tigermark-logo-removebg-preview.png" alt="Tigermark logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-logos__item">
+              <img src="assets/hero-section-logo-carousel/topdeck-bricks-logo-removebg-preview.png" alt="Topdeck Bricks logo" class="hero-logos__image" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features / How it works -->
+    <section id="features" class="section section--alt features" aria-labelledby="features-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="features-title" class="section__title">How FRAME Virtual Fiscalisation works</h2>
+          <p class="section__subtitle">From device registration to compliant e-receipts, FRAME Virtual Fiscalisation handles the full fiscalisation lifecycle.</p>
+        </header>
+
+        <div class="features__grid">
+          <article class="feature-card">
+            <h3 class="feature-card__title">1. Register devices in minutes</h3>
+            <p class="feature-card__body">Connect fiscal devices, virtual devices, and channels (POS, ERP, e‑commerce) via secure APIs. ZimraFlow normalises device capabilities and abstracts away vendor quirks.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3 class="feature-card__title">2. Issue compliant receipts</h3>
+            <p class="feature-card__body">Every transaction is enriched with ZIMRA-required metadata, signed, and stored against your fiscal devices. Generate compliant PDFs, QR codes, and audit trails automatically.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3 class="feature-card__title">3. Automate ZIMRA reporting</h3>
+            <p class="feature-card__body">Stream fiscal data to your reporting stack or download ready-made exports. Alerts, reconciliation dashboards, and exception handling keep your team ahead of audits.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="pricing-title" class="section__title">Pricing that scales with you</h2>
+          <p class="section__subtitle">Simple, transparent plans for startups, growing merchants, and enterprise retailers.</p>
+        </header>
+
+        <div class="pricing__grid">
+          <article class="pricing-card" aria-label="Starter plan">
+            <h3 class="pricing-card__name">Starter</h3>
+            <p class="pricing-card__price">US$49<span class="pricing-card__price-meta">/month</span></p>
+            <p class="pricing-card__note">For pilots and single-location merchants.</p>
+            <ul class="pricing-card__features">
+              <li>Up to 3 fiscal devices</li>
+              <li>10k receipts / month</li>
+              <li>Email support</li>
+            </ul>
+            <button class="button button--secondary pricing-card__cta" type="button">Get API key</button>
+          </article>
+
+          <article class="pricing-card pricing-card--highlight" aria-label="Growth plan">
+            <h3 class="pricing-card__name">Growth</h3>
+            <p class="pricing-card__price">US$149<span class="pricing-card__price-meta">/month</span></p>
+            <p class="pricing-card__note">For multi-branch teams and omni-channel setups.</p>
+            <ul class="pricing-card__features">
+              <li>Up to 20 fiscal devices</li>
+              <li>100k receipts / month</li>
+              <li>Priority support &amp; sandbox</li>
+            </ul>
+            <button class="button button--primary pricing-card__cta" type="button">Talk to sales</button>
+          </article>
+
+          <article class="pricing-card" aria-label="Enterprise plan">
+            <h3 class="pricing-card__name">Enterprise</h3>
+            <p class="pricing-card__price">Let's talk</p>
+            <p class="pricing-card__note">For high-volume and regulated environments.</p>
+            <ul class="pricing-card__features">
+              <li>Unlimited devices</li>
+              <li>Custom SLAs &amp; on-prem options</li>
+              <li>Dedicated compliance advisor</li>
+            </ul>
+            <button class="button button--outline pricing-card__cta" type="button">Book a demo</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Developer / API Hub -->
+    <section id="developer" class="section developer" aria-labelledby="developer-title">
+      <div class="container developer__grid">
+        <div class="developer__content">
+          <h2 id="developer-title" class="section__title">Developer &amp; API hub</h2>
+          <p class="section__subtitle">Modern, well-documented APIs that make fiscalisation just another service call.</p>
+          <ul class="developer__bullets">
+            <li>Language-agnostic REST APIs with JSON payloads</li>
+            <li>Test keys, sandbox mode, and predictable versioning</li>
+            <li>Webhook callbacks for device and receipt lifecycle events</li>
+          </ul>
+          <p class="developer__hint">Use the sample below to register a device and send a fiscal receipt. Then trigger the mock API demo to see a JSON response.</p>
+        </div>
+
+        <div class="developer__code">
+          <pre class="code-block" aria-label="Sample fiscal API usage"><code class="code-block__code">// 1. Register a fiscal device
+fetch("https://api.zimraflow.io/v1/devices", {
+  method: "POST",
+  headers: {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    deviceId: "ZIMRA-HQ-001",
+    channel: "POS",
+    branch: "Harare HQ"
+  })
+});
+
+// 2. Issue a fiscal receipt
+fetch("https://api.zimraflow.io/v1/receipts", {
+  method: "POST",
+  headers: {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    deviceId: "ZIMRA-HQ-001",
+    receiptNumber: "INV-24801",
+    currency: "ZWL",
+    totalAmount: 1250.00,
+    taxAmount: 187.50,
+    items: [{ sku: "SKU-001", description: "Smart POS", qty: 1, unitPrice: 1250.00 }]
+  })
+});
+</code></pre>
+
+          <button type="button" class="button button--full developer__try-button">Try API demo</button>
+          <div class="developer__response" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner program -->
+    <section id="partners" class="section partners" aria-labelledby="partners-title">
+      <div class="container partners__grid">
+        <div class="partners__content">
+          <h2 id="partners-title" class="section__title">Partner with FRAME Virtual Fiscalisation</h2>
+          <p class="section__subtitle">Integrators, ISVs, and resellers use FRAME Virtual Fiscalisation to make compliance an embedded value, not a blocker.</p>
+          <ul class="partners__bullets">
+            <li>Revenue share for referred merchants</li>
+            <li>Co-branded onboarding and marketing support</li>
+            <li>Technical enablement for your implementation teams</li>
+          </ul>
+          <p id="partner-form-help" class="partners__hint">Share a few details and our partner team will respond within one business day.</p>
+        </div>
+
+        <div class="partners__form-wrapper">
+          <form class="form partner-form" novalidate aria-describedby="partner-form-help">
+            <div class="form__field">
+              <label class="form__label" for="partner-name">Full name</label>
+              <input class="form__input" type="text" id="partner-name" name="name" autocomplete="name" required />
+              <p class="form__error" id="partner-name-error" data-error-for="name" aria-live="polite"></p>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="partner-company">Company</label>
+              <input class="form__input" type="text" id="partner-company" name="company" autocomplete="organization" required />
+              <p class="form__error" id="partner-company-error" data-error-for="company" aria-live="polite"></p>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="partner-email">Work email</label>
+              <input class="form__input" type="email" id="partner-email" name="email" autocomplete="email" inputmode="email" required />
+              <p class="form__error" id="partner-email-error" data-error-for="email" aria-live="polite"></p>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="partner-country">Country</label>
+              <input class="form__input" type="text" id="partner-country" name="country" autocomplete="country" required />
+              <p class="form__error" id="partner-country-error" data-error-for="country" aria-live="polite"></p>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="partner-volume">Estimated monthly receipts</label>
+              <select class="form__input form__input--select" id="partner-volume" name="volume" required>
+                <option value="">Select a range</option>
+                <option value="&lt;10k">Under 10,000</option>
+                <option value="10k-100k">10,000 – 100,000</option>
+                <option value=">100k">More than 100,000</option>
+              </select>
+              <p class="form__error" id="partner-volume-error" data-error-for="volume" aria-live="polite"></p>
+            </div>
+
+            <div class="form__field form__field--checkbox">
+              <label class="form__checkbox-label">
+                <input class="form__checkbox" type="checkbox" name="terms" id="partner-terms" required />
+                <span>I agree to be contacted about ZimraFlow's partner program.</span>
+              </label>
+              <p class="form__error" id="partner-terms-error" data-error-for="terms" aria-live="polite"></p>
+            </div>
+
+            <button class="button button--primary form__submit" type="submit">Become a partner</button>
+            <p class="form__success" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog previews -->
+    <section id="blog" class="section blog" aria-labelledby="blog-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="blog-title" class="section__title">From the compliance desk</h2>
+          <p class="section__subtitle">Insights from fiscalisation experts, ZIMRA updates, and implementation stories.</p>
+        </header>
+
+        <div class="blog__grid">
+          <article class="blog-card">
+            <img class="blog-card__image" src="https://via.placeholder.com/480x280.png?text=ZIMRA+Guidelines" alt="Dashboard visualisation of fiscal receipts" loading="lazy" width="480" height="280" />
+            <div class="blog-card__body">
+              <p class="blog-card__meta">Compliance • 7 min read</p>
+              <h3 class="blog-card__title">A practical guide to virtual fiscalisation for ZIMRA</h3>
+              <p class="blog-card__excerpt">Understand how virtual fiscal devices fit into ZIMRA's regulatory landscape, and how to de-risk your rollout.</p>
+              <a class="blog-card__link" href="#" aria-label="Read article: A practical guide to virtual fiscalisation for ZIMRA">Read article</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <img class="blog-card__image" src="https://via.placeholder.com/480x280.png?text=API+Playbook" alt="Abstract illustration of secure API connections" loading="lazy" width="480" height="280" />
+            <div class="blog-card__body">
+              <p class="blog-card__meta">Developers • 5 min read</p>
+              <h3 class="blog-card__title">Designing a fiscalisation-ready payments stack</h3>
+              <p class="blog-card__excerpt">Architect a modern payments flow that routes transactions through FRAME Virtual Fiscalisation without adding friction to your checkout.</p>
+              <a class="blog-card__link" href="#" aria-label="Read article: Designing a fiscalisation-ready payments stack">Read article</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Team -->
+    <section id="about" class="section about" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <div class="about__content">
+          <h2 id="about-title" class="section__title">About FRAME Virtual Fiscalisation</h2>
+          <p class="section__subtitle">We're a fiscal-tech team focused on making compliance invisible, reliable, and audit‑ready.</p>
+          <p>FRAME Virtual Fiscalisation is built by engineers, tax specialists, and ex‑fintech operators who have implemented fiscalisation for high-volume merchants across the region. We obsess over reliability, security, and clear documentation so you don't have to.</p>
+          <ul class="about__values">
+            <li><strong>Compliance-first.</strong> Every release is reviewed with tax and regulatory experts.</li>
+            <li><strong>Developer-friendly.</strong> Opinionated APIs, consistent error codes, and rich examples.</li>
+            <li><strong>Secure by design.</strong> Encryption in transit and at rest, with detailed audit trails.</li>
+          </ul>
+        </div>
+
+        <div class="about__team">
+          <h3 class="about__team-title">Leadership team</h3>
+          <ul class="about__team-list">
+            <li class="about__team-member">
+              <p class="about__team-name">Tariro M.</p>
+              <p class="about__team-role">Co‑founder &amp; CEO • Ex‑payments regulator</p>
+            </li>
+            <li class="about__team-member">
+              <p class="about__team-name">Leroy K.</p>
+              <p class="about__team-role">Co‑founder &amp; CTO • Ex‑fintech architect</p>
+            </li>
+            <li class="about__team-member">
+              <p class="about__team-name">Rudo N.</p>
+              <p class="about__team-role">Head of Compliance • Tax &amp; ZIMRA specialist</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Support -->
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+        <div class="contact__content">
+          <h2 id="contact-title" class="section__title">Contact &amp; support</h2>
+          <p class="section__subtitle">Whether you're designing a new architecture or preparing for an audit, we're here to help.</p>
+          <ul class="contact__channels">
+            <li>
+              <h3 class="contact__channel-title">Book a demo</h3>
+              <p>Walk through your current stack with our solutions team and get a tailored compliance plan.</p>
+              <a class="contact__link" href="mailto:sales@frame.co.zw">sales@frame.co.zw</a>
+            </li>
+            <li>
+              <h3 class="contact__channel-title">Technical support</h3>
+              <p>Priority support for production incidents and go‑live launches.</p>
+              <a class="contact__link" href="mailto:support@frame.co.zw">support@frame.co.zw</a>
+            </li>
+            <li>
+              <h3 class="contact__channel-title">Documentation</h3>
+              <p>Explore guides, API references, and implementation playbooks.</p>
+              <a class="contact__link" href="#developer">View developer hub</a>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="contact__aside" aria-label="Operational status">
+          <h3 class="contact__status-title">Platform status</h3>
+          <p class="contact__status-indicator">All systems operational</p>
+          <p class="contact__status-copy">We publish uptime history and incident reports so your risk and compliance teams stay informed.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <span class="site-footer__logo" aria-hidden="true"><img src="assets/frame-logo.png" alt="" class="site-footer__logo-img" loading="lazy" decoding="async" /></span>
+        <span class="site-footer__name">FRAME Virtual Fiscalisation</span>
+        <p class="site-footer__tagline">Virtual fiscalisation &amp; ZIMRA compliance for modern teams.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <div class="site-footer__nav-group">
+          <h3 class="site-footer__nav-title">Product</h3>
+          <a href="how-it-works.html" class="site-footer__nav-link">How it works</a>
+          <a href="pricing.html" class="site-footer__nav-link">Pricing</a>
+          <a href="partners.html" class="site-footer__nav-link">Partners</a>
+        </div>
+        <div class="site-footer__nav-group">
+          <h3 class="site-footer__nav-title">Developers</h3>
+          <a href="developer-hub.html" class="site-footer__nav-link">API hub</a>
+          <a href="blog.html" class="site-footer__nav-link">Guides</a>
+        </div>
+        <div class="site-footer__nav-group">
+          <h3 class="site-footer__nav-title">Company</h3>
+          <a href="about.html" class="site-footer__nav-link">About</a>
+          <a href="support.html" class="site-footer__nav-link">Contact</a>
+        </div>
+      </nav>
+
+      <div class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; <span id="footer-year"></span> FRAME Virtual Fiscalisation. All rights reserved.</p>
+        <div class="site-footer__legal">
+          <a href="#" class="site-footer__nav-link">Privacy</a>
+          <a href="#" class="site-footer__nav-link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

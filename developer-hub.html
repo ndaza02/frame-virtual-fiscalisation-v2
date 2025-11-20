@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="page page--devhub">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Developer hub | FRAME Virtual Fiscalisation</title>
+  <meta name="description" content="API guides, references, and implementation playbooks for FRAME Virtual Fiscalisation." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- GSAP core and ScrollTrigger (v3) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body class="page page--devhub">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" id="top">
+    <div class="inner-frame container">
+      <div class="site-header__row">
+        <div class="site-header__col -left">
+          <a href="index.html#hero" class="site-header__brand" aria-label="FRAME Virtual Fiscalisation home">
+            <span class="site-header__logo" aria-hidden="true"><img src="assets/frame-logo.png" alt="" class="site-header__logo-img" loading="lazy" decoding="async" /></span>
+          </a>
+        </div>
+
+        <div class="site-header__col -center">
+          <nav id="primary-nav" class="site-header__nav" aria-label="Primary navigation">
+            <ul class="site-header__nav-list">
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="how-it-works.html">How it works</a></li>
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="pricing.html">Pricing</a></li>
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="developer-hub.html">Developer hub</a></li>
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="partners.html">Partners</a></li>
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="blog.html">Blog</a></li>
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="about.html">About</a></li>
+              <li class="site-header__nav-item"><a class="site-header__nav-link" href="support.html">Support</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="site-header__col -right">
+          <a href="index.html#contact" class="button button--ghost button--small site-header__cta">Book a demo</a>
+          <button class="site-header__nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+            <span class="site-header__nav-toggle-bar"></span>
+            <span class="site-header__nav-toggle-bar"></span>
+            <span class="site-header__nav-toggle-bar"></span>
+            <span class="site-header__nav-toggle-label">Menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="dev-hero" aria-labelledby="dev-hero-title">
+      <div class="container">
+        <div class="dev-hero__inner">
+          <div class="dev-hero__content">
+            <p class="dev-hero__kicker">FRAME DEVELOPER HUB</p>
+            <h1 id="dev-hero-title" class="dev-hero__title">Ship ZIMRA-compliant fiscalisation like any other API integration.</h1>
+            <p class="dev-hero__subtitle">Connect your POS, ERP, or custom apps to FRAME's Virtual Fiscalisation APIs with battle-tested law workflows, Maven setup, and clear examples mapped directly to your production flows.</p>
+            <div class="dev-hero__tags">
+              <span class="dev-hero__tag">Java &amp; REST APIs</span>
+              <span class="dev-hero__tag">Maven library 1.1.4</span>
+              <span class="dev-hero__tag">EDMS-compliant workflows</span>
+            </div>
+            <div class="dev-hero__actions">
+              <a href="#java-examples" class="button button--primary">Browse Java examples</a>
+              <a href="#getting-started" class="button button--secondary">Follow setup guide</a>
+            </div>
+          </div>
+
+          <aside class="dev-hero__code" aria-label="Java FDMS request example">
+            <div class="dev-hero__code-card">
+              <div class="dev-hero__code-meta">
+                <span class="dev-hero__code-label">FDMS request</span>
+                <span class="dev-hero__code-badge">Live env compliant</span>
+              </div>
+              <pre class="dev-hero__code-block"><code>FrameClient client = new FrameClient.Builder()
+    .setApiKey("YOUR_API_KEY")
+    .setEnvironment(FrameEnvironment.SANDBOX)
+    .build();
+
+FiscalReceiptRequest req = FiscalReceiptRequest.builder()
+    .deviceId("ZIMRA-HQ-001")
+    .receiptNumber("INV-24801")
+    .currency("ZWL")
+    .totalAmount(1250_00)
+    .taxAmount(187_50)
+    .build();
+
+FiscalReceiptResponse res = client.processReceipt(req);
+logger.info("FDMS receipt {} -> {}", res.getId(), res.getStatus());</code></pre>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Developer hub</h2>
+          <p class="section__subtitle">API references, guides, and implementation playbooks for FRAME Virtual Fiscalisation.</p>
+        </header>
+
+        <div class="page__body">
+          <h2>API overview</h2>
+          <p>FRAME Virtual Fiscalisation provides REST APIs to manage devices, issue fiscal receipts, and query compliance status. Use the API hub to explore endpoints, authentication, and sample requests.</p>
+
+          <h3>Guides</h3>
+          <ul>
+            <li><a href="#getting-started">Getting started with the API</a></li>
+            <li><a href="#devices">Managing fiscal devices</a></li>
+            <li><a href="#receipts">Issuing fiscal receipts</a></li>
+            <li><a href="#webhooks">Configuring webhooks</a></li>
+          </ul>
+
+          <h3 id="getting-started">Getting started with the API</h3>
+          <p>Sign in to the FRAME Virtual Fiscalisation console to generate API keys. Use your key in the <code>Authorization</code> header when calling the REST endpoints.</p>
+
+          <h3 id="devices">Managing fiscal devices</h3>
+          <p>Register each physical or virtual device that will issue fiscal receipts. Devices can be associated with branches, channels, and merchants.</p>
+
+          <h3 id="receipts">Issuing fiscal receipts</h3>
+          <p>Send receipts to the <code>/v1/receipts</code> endpoint with line items, tax amounts, and payment details. FRAME Virtual Fiscalisation will sign, store, and make them available for reporting.</p>
+
+          <h3 id="webhooks">Configuring webhooks</h3>
+          <p>Use webhooks to receive real-time notifications when receipts are accepted, rejected, or when device status changes.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <span class="site-footer__logo" aria-hidden="true"><img src="assets/frame-logo.png" alt="" class="site-footer__logo-img" loading="lazy" decoding="async" /></span>
+        <span class="site-footer__name">FRAME Virtual Fiscalisation</span>
+        <p class="site-footer__tagline">Virtual fiscalisation &amp; ZIMRA compliance for modern teams.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <div class="site-footer__nav-group">
+          <h3 class="site-footer__nav-title">Product</h3>
+          <a href="how-it-works.html" class="site-footer__nav-link">How it works</a>
+          <a href="pricing.html" class="site-footer__nav-link">Pricing</a>
+          <a href="partners.html" class="site-footer__nav-link">Partners</a>
+        </div>
+        <div class="site-footer__nav-group">
+          <h3 class="site-footer__nav-title">Developers</h3>
+          <a href="developer-hub.html" class="site-footer__nav-link">API hub</a>
+          <a href="blog.html" class="site-footer__nav-link">Guides</a>
+        </div>
+        <div class="site-footer__nav-group">
+          <h3 class="site-footer__nav-title">Company</h3>
+          <a href="about.html" class="site-footer__nav-link">About</a>
+          <a href="support.html" class="site-footer__nav-link">Contact</a>
+        </div>
+      </nav>
+
+      <div class="site-footer__meta">
+        <p class="site-footer__copyright">&copy; <span id="footer-year"></span> FRAME Virtual Fiscalisation. All rights reserved.</p>
+        <div class="site-footer__legal">
+          <a href="#" class="site-footer__nav-link">Privacy</a>
+          <a href="#" class="site-footer__nav-link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
