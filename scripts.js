@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroVideo();
   initHeroTypewriter();
   initDevHubInteractions();
+  initDevHubHeroAnimations();
   initApiDemo();
   initPartnerForm();
   initLucideIcons();
@@ -167,15 +168,25 @@ function initHeroTypewriter() {
 }
 
 function initNavToggle() {
-  const header = document.querySelector(".site-header");
   const navToggle = document.querySelector(".site-header__nav-toggle");
-  if (!header) return;
+  const nav = document.getElementById("primary-nav");
+  if (!navToggle || !nav) return;
 
-  // Always use the inline pill nav; never switch into overlay mode
-  header.classList.remove("site-header--mobile-nav");
-  if (navToggle) {
-    navToggle.setAttribute("aria-expanded", "false");
-  }
+  navToggle.addEventListener("click", () => {
+    const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", String(!isExpanded));
+    nav.classList.toggle("site-header__nav--open", !isExpanded);
+  });
+
+  nav.addEventListener("click", (event) => {
+    const link = event.target.closest(".site-header__nav-link");
+    if (!link) return;
+    const width = window.innerWidth || document.documentElement.clientWidth || 0;
+    if (width < 1024) {
+      nav.classList.remove("site-header__nav--open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
 }
 
 function initHeaderScroll() {
@@ -284,6 +295,98 @@ function initApiDemo() {
       responseEl.textContent = JSON.stringify(mockResponse, null, 2);
       button.disabled = false;
     }, 650);
+  });
+}
+
+function initDevHubHeroAnimations() {
+  if (typeof window.gsap === "undefined") return;
+  const body = document.body;
+  if (!body || !body.classList.contains("page--devhub")) return;
+
+  const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const heroContentSelectors = [
+    ".dev-hero__kicker",
+    ".dev-hero__title",
+    ".dev-hero__subtitle",
+    ".dev-hero__tags",
+    ".dev-hero__actions",
+    ".dev-hero__code-card",
+  ];
+
+  const heroContent = heroContentSelectors
+    .map((sel) => Array.from(document.querySelectorAll(sel)))
+    .flat();
+
+  if (prefersReduced) {
+    if (heroContent.length) window.gsap.set(heroContent, { autoAlpha: 1, y: 0, clearProps: "transform" });
+    return;
+  }
+
+  if (heroContent.length) {
+    const tl = window.gsap.timeline({ defaults: { duration: 0.7, ease: "power2.out" } });
+    tl.from(".dev-hero__kicker", { autoAlpha: 0, y: 18 })
+      .from(".dev-hero__title", { autoAlpha: 0, y: 24 }, "-=0.35")
+      .from(".dev-hero__subtitle", { autoAlpha: 0, y: 20 }, "-=0.3")
+      .from(".dev-hero__tags", { autoAlpha: 0, y: 18 }, "-=0.25")
+      .from(".dev-hero__actions", { autoAlpha: 0, y: 18 }, "-=0.25")
+      .from(".dev-hero__code-card", { autoAlpha: 0, y: 28, scale: 0.98 }, "-=0.25");
+  }
+
+  const shapes = Array.from(document.querySelectorAll(".dev-hero__shape"));
+  if (shapes.length) {
+    shapes.forEach((shape, index) => {
+      const baseDistance = 14 + index * 4;
+      const baseDuration = 16 + index * 3;
+
+      const floatShape = () => {
+        const xOffset = (Math.random() - 0.5) * baseDistance * 2;
+        const yOffset = (Math.random() - 0.5) * baseDistance * 2;
+        const rotation = (Math.random() - 0.5) * 20;
+        window.gsap.to(shape, {
+          x: `+=${xOffset}`,
+          y: `+=${yOffset}`,
+          rotation,
+          duration: baseDuration * (0.7 + Math.random() * 0.6),
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: 1,
+          onComplete: floatShape,
+        });
+      };
+
+      floatShape();
+    });
+  }
+
+  const hero = document.querySelector(".dev-hero");
+  const codeCard = document.querySelector(".dev-hero__code-card");
+  const hasFinePointer = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
+  if (!hero || !codeCard || !hasFinePointer) return;
+
+  hero.addEventListener("pointermove", (event) => {
+    const rect = hero.getBoundingClientRect();
+    const relX = (event.clientX - rect.left) / rect.width - 0.5;
+    const relY = (event.clientY - rect.top) / rect.height - 0.5;
+
+    window.gsap.to(codeCard, {
+      rotationY: relX * 10,
+      rotationX: -relY * 10,
+      y: relY * 8,
+      transformPerspective: 900,
+      transformOrigin: "center center",
+      duration: 0.4,
+      ease: "power2.out",
+    });
+  });
+
+  hero.addEventListener("pointerleave", () => {
+    window.gsap.to(codeCard, {
+      rotationX: 0,
+      rotationY: 0,
+      y: 0,
+      duration: 0.6,
+      ease: "power3.out",
+    });
   });
 }
 

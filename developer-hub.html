@@ -15,71 +15,77 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body class="page page--devhub">
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <body class="page page--devhub">
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header" id="top">
-    <div class="inner-frame container">
-      <div class="site-header__row">
-        <div class="site-header__col -left">
-          <a href="index.html#hero" class="site-header__brand" aria-label="FRAME Virtual Fiscalisation home">
-            <span class="site-header__logo" aria-hidden="true"><img src="assets/frame-logo.png" alt="" class="site-header__logo-img" loading="lazy" decoding="async" /></span>
-          </a>
-        </div>
+    <header class="site-header" id="top">
+      <div class="inner-frame container">
+        <div class="site-header__row flex items-center gap-3 md:gap-5 px-3 md:px-4 py-2">
+          <div class="site-header__col -left flex items-center">
+            <a href="index.html#hero" class="site-header__brand" aria-label="FRAME Virtual Fiscalisation home">
+              <span class="site-header__logo" aria-hidden="true"><img src="assets/frame-logo.png" alt="" class="site-header__logo-img" loading="lazy" decoding="async" /></span>
+            </a>
+          </div>
 
-        <div class="site-header__col -center">
-          <nav id="primary-nav" class="site-header__nav" aria-label="Primary navigation">
-            <ul class="site-header__nav-list">
-              <li class="site-header__nav-item"><a class="site-header__nav-link" href="how-it-works.html">How it works</a></li>
-              <li class="site-header__nav-item"><a class="site-header__nav-link" href="pricing.html">Pricing</a></li>
-              <li class="site-header__nav-item"><a class="site-header__nav-link" href="developer-hub.html">Developer hub</a></li>
-              <li class="site-header__nav-item"><a class="site-header__nav-link" href="partners.html">Partners</a></li>
-              <li class="site-header__nav-item"><a class="site-header__nav-link" href="blog.html">Blog</a></li>
-              <li class="site-header__nav-item"><a class="site-header__nav-link" href="about.html">About</a></li>
-              <li class="site-header__nav-item"><a class="site-header__nav-link" href="support.html">Support</a></li>
-            </ul>
-          </nav>
-        </div>
+          <div class="site-header__col -center flex-1 flex justify-center">
+            <nav id="primary-nav" class="site-header__nav" aria-label="Primary navigation">
+              <ul class="site-header__nav-list">
+                <li class="site-header__nav-item"><a class="site-header__nav-link" href="how-it-works.html">How it works</a></li>
+                <li class="site-header__nav-item"><a class="site-header__nav-link" href="pricing.html">Pricing</a></li>
+                <li class="site-header__nav-item"><a class="site-header__nav-link" href="developer-hub.html">Developer hub</a></li>
+                <li class="site-header__nav-item"><a class="site-header__nav-link" href="partners.html">Partners</a></li>
+                <li class="site-header__nav-item"><a class="site-header__nav-link" href="blog.html">Blog</a></li>
+                <li class="site-header__nav-item"><a class="site-header__nav-link" href="about.html">About</a></li>
+                <li class="site-header__nav-item"><a class="site-header__nav-link" href="support.html">Support</a></li>
+              </ul>
+            </nav>
+          </div>
 
-        <div class="site-header__col -right">
-          <a href="index.html#contact" class="button button--ghost button--small site-header__cta">Book a demo</a>
-          <button class="site-header__nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-            <span class="site-header__nav-toggle-bar"></span>
-            <span class="site-header__nav-toggle-bar"></span>
-            <span class="site-header__nav-toggle-bar"></span>
-            <span class="site-header__nav-toggle-label">Menu</span>
-          </button>
+          <div class="site-header__col -right flex items-center gap-2 ml-auto">
+            <a href="index.html#contact" class="button button--ghost button--small site-header__cta">Book a demo</a>
+            <button class="site-header__nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+              <span class="site-header__nav-toggle-bar"></span>
+              <span class="site-header__nav-toggle-bar"></span>
+              <span class="site-header__nav-toggle-bar"></span>
+              <span class="site-header__nav-toggle-label">Menu</span>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
   <main id="main">
-    <section class="dev-hero" aria-labelledby="dev-hero-title">
-      <div class="container">
-        <div class="dev-hero__inner">
-          <div class="dev-hero__content">
-            <p class="dev-hero__kicker">FRAME DEVELOPER HUB</p>
-            <h1 id="dev-hero-title" class="dev-hero__title">Ship ZIMRA-compliant fiscalisation like any other API integration.</h1>
-            <p class="dev-hero__subtitle">Connect your POS, ERP, or custom apps to FRAME's Virtual Fiscalisation APIs with battle-tested law workflows, Maven setup, and clear examples mapped directly to your production flows.</p>
-            <div class="dev-hero__tags">
-              <span class="dev-hero__tag">Java &amp; REST APIs</span>
-              <span class="dev-hero__tag">Maven library 1.1.4</span>
-              <span class="dev-hero__tag">EDMS-compliant workflows</span>
+    <section class="dev-hero relative overflow-hidden py-12 md:py-20" aria-labelledby="dev-hero-title">
+      <div class="dev-hero__background-shapes" aria-hidden="true">
+        <div class="dev-hero__shape dev-hero__shape--1"></div>
+        <div class="dev-hero__shape dev-hero__shape--2"></div>
+        <div class="dev-hero__shape dev-hero__shape--3"></div>
+        <div class="dev-hero__shape dev-hero__shape--4"></div>
+      </div>
+      <div class="container max-w-6xl mx-auto">
+        <div class="dev-hero__inner grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] lg:items-center">
+          <div class="dev-hero__content space-y-4">
+            <p class="dev-hero__kicker inline-flex items-center gap-1.5 text-xs font-semibold tracking-[0.16em] uppercase text-sky-300">FRAME DEVELOPER HUB</p>
+            <h1 id="dev-hero-title" class="dev-hero__title text-4xl md:text-5xl font-semibold text-slate-50">Ship ZIMRA-compliant fiscalisation like any other API integration.</h1>
+            <p class="dev-hero__subtitle mt-3 max-w-2xl text-base text-slate-200">Connect your POS, ERP, or custom apps to FRAME's Virtual Fiscalisation APIs with battle-tested law workflows, Maven setup, and clear examples mapped directly to your production flows.</p>
+            <div class="dev-hero__tags mt-4 flex flex-wrap gap-2">
+              <span class="dev-hero__tag inline-flex items-center rounded-full border border-sky-400/60 bg-sky-900/40 px-3 py-1 text-[0.7rem] font-medium tracking-[0.18em] uppercase text-sky-100">Java &amp; REST APIs</span>
+              <span class="dev-hero__tag inline-flex items-center rounded-full border border-sky-400/60 bg-sky-900/40 px-3 py-1 text-[0.7rem] font-medium tracking-[0.18em] uppercase text-sky-100">Maven library 1.1.4</span>
+              <span class="dev-hero__tag inline-flex items-center rounded-full border border-sky-400/60 bg-sky-900/40 px-3 py-1 text-[0.7rem] font-medium tracking-[0.18em] uppercase text-sky-100">EDMS-compliant workflows</span>
             </div>
-            <div class="dev-hero__actions">
+            <div class="dev-hero__actions mt-6 flex flex-wrap items-center gap-3">
               <a href="#java-examples" class="button button--primary">Browse Java examples</a>
               <a href="#getting-started" class="button button--secondary">Follow setup guide</a>
             </div>
           </div>
 
-          <aside class="dev-hero__code" aria-label="Java FDMS request example">
-            <div class="dev-hero__code-card">
-              <div class="dev-hero__code-meta">
-                <span class="dev-hero__code-label">FDMS request</span>
-                <span class="dev-hero__code-badge">Live env compliant</span>
+          <aside class="dev-hero__code mt-8 lg:mt-0" aria-label="Java FDMS request example">
+            <div class="dev-hero__code-card rounded-2xl border border-slate-700/70 bg-slate-950/90 p-5 md:p-6 shadow-lg shadow-sky-900/40">
+              <div class="dev-hero__code-meta mb-3 flex items-center justify-between text-xs font-medium text-slate-300">
+                <span class="dev-hero__code-label tracking-[0.18em] uppercase text-slate-400">FDMS request</span>
+                <span class="dev-hero__code-badge rounded-full bg-emerald-500/10 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-emerald-300">Live env compliant</span>
               </div>
-              <pre class="dev-hero__code-block"><code>FrameClient client = new FrameClient.Builder()
+              <pre class="dev-hero__code-block text-xs md:text-[0.8rem] leading-relaxed text-slate-100 overflow-x-auto bg-slate-900/80 rounded-xl border border-slate-700/80 p-4"><code>FrameClient client = new FrameClient.Builder()
     .setApiKey("YOUR_API_KEY")
     .setEnvironment(FrameEnvironment.SANDBOX)
     .build();
@@ -100,73 +106,436 @@ logger.info("FDMS receipt {} -> {}", res.getId(), res.getStatus());</code></pre>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <header class="section__header">
-          <h2 class="section__title">Developer hub</h2>
-          <p class="section__subtitle">API references, guides, and implementation playbooks for FRAME Virtual Fiscalisation.</p>
+    <section class="section py-10 md:py-14">
+      <div class="container max-w-6xl mx-auto">
+        <header class="section__header max-w-3xl mx-auto text-center mb-6">
+          <h2 class="section__title text-3xl font-semibold text-slate-50">Developer hub</h2>
+          <p class="section__subtitle mt-2 text-slate-300">API references, guides, and implementation playbooks for FRAME Virtual Fiscalisation.</p>
         </header>
 
         <div class="page__body">
-          <h2>API overview</h2>
-          <p>FRAME Virtual Fiscalisation provides REST APIs to manage devices, issue fiscal receipts, and query compliance status. Use the API hub to explore endpoints, authentication, and sample requests.</p>
+          <h2 id="overview">Frame Library Developer Guide</h2>
+          <p>
+            This guide explains how to integrate and use the FRAME Virtual Fiscalisation Library. It helps you register fiscal devices,
+            manage fiscal operations such as invoices and credit/debit notes, and stay compliant with ZIMRA requirements while the
+            library handles the low-level FDMS communication.
+          </p>
 
-          <h3>Guides</h3>
+          <h3>In this guide</h3>
           <ul>
-            <li><a href="#getting-started">Getting started with the API</a></li>
-            <li><a href="#devices">Managing fiscal devices</a></li>
-            <li><a href="#receipts">Issuing fiscal receipts</a></li>
-            <li><a href="#webhooks">Configuring webhooks</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#getting-started">Steps to get started</a></li>
+            <li><a href="#register-device">Register a device on the ZIMRA portal</a></li>
+            <li><a href="#setup-library">Setting up the library</a></li>
+            <li><a href="#workflows">Developing the workflows</a></li>
+            <li><a href="#registering-fiscal-device">Registering your fiscal device</a></li>
+            <li><a href="#device-configurations">Getting device configurations</a></li>
+            <li><a href="#fiscal-day-status">Getting the current fiscal day status</a></li>
+            <li><a href="#opening-fiscal-day">Opening a fiscal day</a></li>
+            <li><a href="#processing-invoices">Processing invoices</a></li>
+            <li><a href="#closing-fiscal-day">Closing a fiscal day</a></li>
+            <li><a href="#contact-support">Contact &amp; Support</a></li>
           </ul>
 
-          <h3 id="getting-started">Getting started with the API</h3>
-          <p>Sign in to the FRAME Virtual Fiscalisation console to generate API keys. Use your key in the <code>Authorization</code> header when calling the REST endpoints.</p>
+          <h3 id="getting-started">Steps to get started</h3>
+          <p>To start using the FRAME Virtual Fiscalisation Library, you will generally follow these high-level steps:</p>
+          <ol>
+            <li>Register a fiscal device on the ZIMRA portal and obtain device credentials.</li>
+            <li>Set up the FRAME Virtual Fiscalisation Library in your Java project (Maven).</li>
+            <li>Implement the workflows for registering devices, configuring them, opening/closing fiscal days, and processing invoices.</li>
+          </ol>
 
-          <h3 id="devices">Managing fiscal devices</h3>
-          <p>Register each physical or virtual device that will issue fiscal receipts. Devices can be associated with branches, channels, and merchants.</p>
+          <h3 id="register-device">Register a device on the ZIMRA portal</h3>
+          <p>
+            Before you can interact with FDMS through FRAME, you must register a fiscal device with ZIMRA. From the ZIMRA portal you will
+            obtain:
+          </p>
+          <ul>
+            <li><strong>Device ID</strong> &mdash; a unique identifier for the device.</li>
+            <li><strong>Serial number</strong> &mdash; the device serial number.</li>
+            <li><strong>Activation key</strong> &mdash; a key required to activate the device.</li>
+          </ul>
 
-          <h3 id="receipts">Issuing fiscal receipts</h3>
-          <p>Send receipts to the <code>/v1/receipts</code> endpoint with line items, tax amounts, and payment details. FRAME Virtual Fiscalisation will sign, store, and make them available for reporting.</p>
+          <h3 id="setup-library">Setting up the library</h3>
+          <p>
+            Contact the FRAME sales team to obtain credentials and an API key. You will receive a username and key to authenticate
+            against the FRAME Maven repository.
+          </p>
+          <p>Email: <a href="mailto:sales@frame.co.zw">sales@frame.co.zw</a></p>
 
-          <h3 id="webhooks">Configuring webhooks</h3>
-          <p>Use webhooks to receive real-time notifications when receipts are accepted, rejected, or when device status changes.</p>
+          <p>Add the FRAME Virtual Fiscalisation Library as a dependency in your Maven project:</p>
+          <pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;inc.frame&lt;/groupId&gt;
+  &lt;artifactId&gt;Frame-Virtual-Fiscalisation-Library&lt;/artifactId&gt;
+  &lt;version&gt;1.1.4&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+
+          <p>
+            Next, configure Maven settings to allow access to the FRAME library repository. Place a <code>settings.xml</code> file in
+            your local <code>.m2</code> directory (replacing credentials with those provided by FRAME):
+          </p>
+          <pre><code>&lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+          https://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;
+  &lt;servers&gt;
+    &lt;server&gt;
+      &lt;id&gt;frame-library-releases&lt;/id&gt;
+      &lt;username&gt;library_username&lt;/username&gt;
+      &lt;password&gt;API_KEY&lt;/password&gt;
+    &lt;/server&gt;
+  &lt;/servers&gt;
+
+  &lt;profiles&gt;
+    &lt;profile&gt;
+      &lt;id&gt;allow-insecure-repositories&lt;/id&gt;
+      &lt;activation&gt;
+        &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+      &lt;/activation&gt;
+      &lt;repositories&gt;
+        &lt;repository&gt;
+          &lt;id&gt;frame-library-releases&lt;/id&gt;
+          &lt;url&gt;https://framernd.tech/repository/frame-library-releases/&lt;/url&gt;
+          &lt;releases&gt;
+            &lt;enabled&gt;true&lt;/enabled&gt;
+          &lt;/releases&gt;
+          &lt;snapshots&gt;
+            &lt;enabled&gt;false&lt;/enabled&gt;
+          &lt;/snapshots&gt;
+        &lt;/repository&gt;
+      &lt;/repositories&gt;
+    &lt;/profile&gt;
+  &lt;/profiles&gt;
+&lt;/settings&gt;</code></pre>
+
+          <p>
+            With the dependency and settings in place, run a build to pull the library from the Nexus repository. For example:
+          </p>
+          <pre><code>mvn clean install</code></pre>
+          <p>
+            If you encounter issues resolving the library, reach out to FRAME support at
+            <a href="mailto:support@frame.co.zw">support@frame.co.zw</a>.
+          </p>
+
+          <h3 id="workflows">Developing the workflows</h3>
+          <p>
+            Once the library is installed, you can implement the main workflows required by ZIMRA for fiscalisation. The core
+            scenarios include:
+          </p>
+          <ul>
+            <li>Registering your fiscal device.</li>
+            <li>Getting device configurations.</li>
+            <li>Getting the current fiscal day status.</li>
+            <li>Opening a fiscal day.</li>
+            <li>Processing invoices.</li>
+            <li>Closing a fiscal day.</li>
+          </ul>
+
+          <h3 id="registering-fiscal-device">Registering your fiscal device</h3>
+          <p>
+            Start by building a device registration request using the identifiers obtained from the ZIMRA portal, then call the
+            registration service provided by the library.
+          </p>
+          <pre><code>public void registerDevice() {
+  // Create a RegisterDeviceRequest object using the builder pattern
+  RegisterDeviceRequest request = RegisterDeviceRequest.builder()
+      .deviceId(DEVICE_ID)
+      .serialNumber(DEVICE_SERIAL_NUMBER)
+      .activationKey(DEVICE_ACTIVATION_KEY)
+      .build();
+
+  // Register the device and retrieve the registration response
+  RegisterDeviceResponse registrationResponse = registerDevice(request);
+
+  // Log the registration response
+  LOGGER.log(Level.INFO,
+      "FDMS Registration request log: {0}",
+      registrationResponse.getSomeProperty());
+}</code></pre>
+
+          <pre><code>public RegisterDeviceResponse registerDevice(RegisterDeviceRequest request) {
+  // Initialize the device registration service with the base URL
+  FdmsDeviceRegistration registrationService = new FdmsDeviceRegistration(TEST_SERVER_BASE_URL);
+  try {
+    // Attempt to register the device and return the response
+    return registrationService.registerDevice(request);
+  } catch (DeviceRegistrationException e) {
+    // Handle exceptions and wrap them in a RuntimeException for better error reporting
+    throw new RuntimeException("Failed to register the device: " + e.getMessage(), e);
+  }
+}</code></pre>
+
+          <h3 id="device-configurations">Getting device configurations</h3>
+          <p>
+            After registration, retrieve device configurations to obtain fiscalisation details and ensure the device is correctly
+            configured.
+          </p>
+          <pre><code>public void getDeviceConfigurations() {
+  // Create a DeviceConfigurationRequest object
+  DeviceConfigurationRequest request = DeviceConfigurationRequest.builder()
+      .deviceId(DEVICE_ID)
+      .build();
+
+  // Get the device configurations
+  DeviceConfigurationResponse configResponse = getDeviceConfigurations(request);
+
+  // Log the response
+  LOGGER.log(Level.INFO,
+      "FDMS Device Configuration: {0}",
+      configResponse.getSomeProperty());
+}</code></pre>
+
+          <pre><code>public DeviceConfigurationResponse getDeviceConfigurations(DeviceConfigurationRequest request) {
+  // Initialize the device configuration service
+  FdmsDeviceConfigurations configService = new FdmsDeviceConfigurations(TEST_SERVER_BASE_URL);
+  try {
+    // Fetch and return the device configurations
+    return configService.getDeviceConfigurations(request);
+  } catch (DeviceConfigurationException e) {
+    throw new RuntimeException("Failed to get device configurations: " + e.getMessage(), e);
+  }
+}</code></pre>
+
+          <h3 id="fiscal-day-status">Getting the current fiscal day status</h3>
+          <p>
+            Before opening or closing days, check the current fiscal day status to know whether the device is ready to process
+            invoices.
+          </p>
+          <pre><code>public void getFiscalDayStatus() {
+  // Create a FiscalDayStatusRequest object
+  FiscalDayStatusRequest request = FiscalDayStatusRequest.builder()
+      .deviceId(DEVICE_ID)
+      .build();
+
+  // Get the fiscal day status
+  FiscalDayStatusResponse statusResponse = getFiscalDayStatus(request);
+
+  // Log the response
+  LOGGER.log(Level.INFO,
+      "FDMS Fiscal Day Status: {0}",
+      statusResponse.getStatus());
+}</code></pre>
+
+          <pre><code>public FiscalDayStatusResponse getFiscalDayStatus(FiscalDayStatusRequest request) {
+  // Initialize the fiscal day status service
+  FdmsFiscalDayStatus statusService = new FdmsFiscalDayStatus(TEST_SERVER_BASE_URL);
+  try {
+    // Fetch and return the fiscal day status
+    return statusService.getFiscalDayStatus(request);
+  } catch (FiscalDayStatusException e) {
+    throw new RuntimeException("Failed to get fiscal day status: " + e.getMessage(), e);
+  }
+}</code></pre>
+
+          <h3 id="opening-fiscal-day">Opening a fiscal day</h3>
+          <p>
+            If no fiscal day is currently open, create one for the current date before processing invoices.
+          </p>
+          <pre><code>public void openFiscalDay() {
+  // Create an OpenFiscalDayRequest object
+  OpenFiscalDayRequest request = OpenFiscalDayRequest.builder()
+      .deviceId(DEVICE_ID)
+      .fiscalDay(LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE))
+      .build();
+
+  // Open the fiscal day
+  OpenFiscalDayResponse openResponse = openFiscalDay(request);
+
+  // Log the response
+  LOGGER.log(Level.INFO,
+      "FDMS Open Fiscal Day: {0}",
+      openResponse.isSuccess() ? "Success" : "Failed");
+}</code></pre>
+
+          <pre><code>public OpenFiscalDayResponse openFiscalDay(OpenFiscalDayRequest request) {
+  // Initialize the open fiscal day service
+  FdmsOpenFiscalDay openService = new FdmsOpenFiscalDay(TEST_SERVER_BASE_URL);
+  try {
+    // Open the fiscal day and return the response
+    return openService.openFiscalDay(request);
+  } catch (OpenFiscalDayException e) {
+    throw new RuntimeException("Failed to open fiscal day: " + e.getMessage(), e);
+  }
+}</code></pre>
+
+          <h3 id="processing-invoices">Processing invoices</h3>
+          <p>
+            With an open fiscal day, you can submit invoices that include line items, tax amounts, and customer details. The library
+            will handle signing and submitting these to FDMS.
+          </p>
+          <pre><code>public void processInvoice() {
+  // Create line items for the invoice
+  List&lt;InvoiceLine&gt; invoiceLines = Arrays.asList(
+      InvoiceLine.builder()
+          .itemCode("ITEM001")
+          .description("Product 1")
+          .quantity(2)
+          .unitPrice(BigDecimal.valueOf(100.00))
+          .taxRate(BigDecimal.valueOf(15.00))
+          .discount(BigDecimal.ZERO)
+          .build(),
+      InvoiceLine.builder()
+          .itemCode("ITEM002")
+          .description("Product 2")
+          .quantity(1)
+          .unitPrice(BigDecimal.valueOf(200.00))
+          .taxRate(BigDecimal.valueOf(15.00))
+          .discount(BigDecimal.ZERO)
+          .build());
+
+  // Create the invoice request
+  ProcessInvoiceRequest request = ProcessInvoiceRequest.builder()
+      .deviceId(DEVICE_ID)
+      .invoiceNumber("INV-001")
+      .invoiceDate(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
+      .customerName("John Doe")
+      .customerTin("123456789")
+      .lines(invoiceLines)
+      .build();
+
+  // Process the invoice
+  ProcessInvoiceResponse invoiceResponse = processInvoice(request);
+
+  // Log the response
+  LOGGER.log(Level.INFO,
+      "FDMS Invoice Processed: {0}",
+      invoiceResponse.isSuccess() ? "Success" : "Failed");
+}</code></pre>
+
+          <pre><code>public ProcessInvoiceResponse processInvoice(ProcessInvoiceRequest request) {
+  // Initialize the invoice service
+  FdmsProcessInvoice invoiceService = new FdmsProcessInvoice(TEST_SERVER_BASE_URL);
+  try {
+    // Process the invoice and return the response
+    return invoiceService.processInvoice(request);
+  } catch (ProcessInvoiceException e) {
+    throw new RuntimeException("Failed to process invoice: " + e.getMessage(), e);
+  }
+}</code></pre>
+
+          <h3 id="closing-fiscal-day">Closing a fiscal day</h3>
+          <p>
+            At the end of the business day, close the fiscal day to finalise transactions and generate the required reports.
+          </p>
+          <pre><code>public void closeFiscalDay() {
+  // Create a CloseFiscalDayRequest object
+  CloseFiscalDayRequest request = CloseFiscalDayRequest.builder()
+      .deviceId(DEVICE_ID)
+      .fiscalDay(LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE))
+      .build();
+
+  // Close the fiscal day
+  CloseFiscalDayResponse closeResponse = closeFiscalDay(request);
+
+  // Log the response
+  LOGGER.log(Level.INFO,
+      "FDMS Close Fiscal Day: {0}",
+      closeResponse.isSuccess() ? "Success" : "Failed");
+
+  if (closeResponse.isSuccess()) {
+    LOGGER.log(Level.INFO, "Fiscal Report Number: {0}", closeResponse.getReportNumber());
+    LOGGER.log(Level.INFO, "Fiscal Receipt Count: {0}", closeResponse.getReceiptCount());
+    LOGGER.log(Level.INFO, "Fiscal Day Total: {0}", closeResponse.getFiscalDayTotal());
+  }
+}</code></pre>
+
+          <pre><code>public CloseFiscalDayResponse closeFiscalDay(CloseFiscalDayRequest request) {
+  // Initialize the close fiscal day service
+  FdmsCloseFiscalDay closeService = new FdmsCloseFiscalDay(TEST_SERVER_BASE_URL);
+  try {
+    // Close the fiscal day and return the response
+    CloseFiscalDayResponse response = closeService.closeFiscalDay(request);
+    if (response == null) {
+      throw new CloseFiscalDayException("Received null response from fiscal day service");
+    }
+    return response;
+  } catch (CloseFiscalDayException e) {
+    LOGGER.log(Level.SEVERE, "Error closing fiscal day: " + e.getMessage(), e);
+    throw new RuntimeException("Failed to close fiscal day: " + e.getMessage(), e);
+  }
+}</code></pre>
+
+          <p>
+            Before closing a fiscal day, ensure that all transactions have been processed, all invoices have been transmitted to ZIMRA,
+            and you have a backup of all transaction data. Once the day is closed, no further transactions can be added to it.
+          </p>
+
+          <h3 id="contact-support">Contact &amp; Support</h3>
+          <p>
+            For questions or issues with the FRAME Virtual Fiscalisation Library, you can contact the FRAME team using the following
+            channels:
+          </p>
+          <ul>
+            <li><strong>Technical support:</strong> <a href="mailto:support@frame.co.zw">support@frame.co.zw</a></li>
+            <li><strong>Sales enquiries:</strong> <a href="mailto:sales@frame.co.zw">sales@frame.co.zw</a></li>
+            <li><strong>Phone:</strong> +263 86 7718 6045</li>
+            <li><strong>Address:</strong> 1 Napier Ave., Hillside, Bulawayo, Zimbabwe</li>
+            <li><strong>Website:</strong> <a href="https://frame.co.zw" target="_blank" rel="noreferrer">frame.co.zw</a></li>
+          </ul>
+
+          <p><strong>Support hours (Harare time):</strong></p>
+          <ul>
+            <li>Monday &ndash; Friday: 8:00 AM &ndash; 5:00 PM</li>
+            <li>Saturday: 9:00 AM &ndash; 1:00 PM</li>
+            <li>Sunday: Closed</li>
+          </ul>
+
+          <p>For faster resolution, include the following information in your support request where applicable:</p>
+          <ul>
+            <li>FRAME library version</li>
+            <li>Java version</li>
+            <li>Detailed description of the issue</li>
+            <li>Steps to reproduce the issue</li>
+            <li>Error messages or logs</li>
+            <li>Device ID (if applicable)</li>
+          </ul>
+
+          <p>
+            For critical production issues outside normal business hours, contact the emergency support line as per your FRAME support
+            agreement.
+          </p>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container site-footer__grid">
-      <div class="site-footer__brand">
+    <div class="container site-footer__grid grid gap-8 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1.2fr)_minmax(0,1.2fr)] items-start">
+      <!-- Brand -->
+      <div class="site-footer__brand space-y-2 text-sm text-slate-300">
         <span class="site-footer__logo" aria-hidden="true"><img src="assets/frame-logo.png" alt="" class="site-footer__logo-img" loading="lazy" decoding="async" /></span>
-        <span class="site-footer__name">FRAME Virtual Fiscalisation</span>
-        <p class="site-footer__tagline">Virtual fiscalisation &amp; ZIMRA compliance for modern teams.</p>
+        <span class="site-footer__name block text-base font-semibold text-slate-50">FRAME Virtual Fiscalisation</span>
+        <p class="site-footer__tagline max-w-xs text-sm text-slate-400">Virtual fiscalisation &amp; ZIMRA compliance for modern teams.</p>
       </div>
 
-      <nav class="site-footer__nav" aria-label="Footer navigation">
-        <div class="site-footer__nav-group">
-          <h3 class="site-footer__nav-title">Product</h3>
-          <a href="how-it-works.html" class="site-footer__nav-link">How it works</a>
-          <a href="pricing.html" class="site-footer__nav-link">Pricing</a>
-          <a href="partners.html" class="site-footer__nav-link">Partners</a>
+      <!-- Footer nav -->
+      <nav class="site-footer__nav grid gap-6 sm:grid-cols-2 md:grid-cols-3 text-sm" aria-label="Footer navigation">
+        <div class="site-footer__nav-group space-y-1">
+          <h3 class="site-footer__nav-title text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Product</h3>
+          <a href="how-it-works.html" class="site-footer__nav-link block text-slate-300 hover:text-white">How it works</a>
+          <a href="pricing.html" class="site-footer__nav-link block text-slate-300 hover:text-white">Pricing</a>
+          <a href="partners.html" class="site-footer__nav-link block text-slate-300 hover:text-white">Partners</a>
         </div>
-        <div class="site-footer__nav-group">
-          <h3 class="site-footer__nav-title">Developers</h3>
-          <a href="developer-hub.html" class="site-footer__nav-link">API hub</a>
-          <a href="blog.html" class="site-footer__nav-link">Guides</a>
+        <div class="site-footer__nav-group space-y-1">
+          <h3 class="site-footer__nav-title text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Developers</h3>
+          <a href="developer-hub.html" class="site-footer__nav-link block text-slate-300 hover:text-white">API hub</a>
+          <a href="blog.html" class="site-footer__nav-link block text-slate-300 hover:text-white">Guides</a>
         </div>
-        <div class="site-footer__nav-group">
-          <h3 class="site-footer__nav-title">Company</h3>
-          <a href="about.html" class="site-footer__nav-link">About</a>
-          <a href="support.html" class="site-footer__nav-link">Contact</a>
+        <div class="site-footer__nav-group space-y-1">
+          <h3 class="site-footer__nav-title text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Company</h3>
+          <a href="about.html" class="site-footer__nav-link block text-slate-300 hover:text-white">About</a>
+          <a href="support.html" class="site-footer__nav-link block text-slate-300 hover:text-white">Contact</a>
         </div>
       </nav>
 
-      <div class="site-footer__meta">
-        <p class="site-footer__copyright">&copy; <span id="footer-year"></span> FRAME Virtual Fiscalisation. All rights reserved.</p>
-        <div class="site-footer__legal">
-          <a href="#" class="site-footer__nav-link">Privacy</a>
-          <a href="#" class="site-footer__nav-link">Terms</a>
+      <!-- Meta -->
+      <div class="site-footer__meta mt-4 border-t border-slate-800 pt-4 flex flex-col gap-2 text-xs text-slate-500 md:mt-0 md:border-0 md:pt-0 md:items-end">
+        <p class="site-footer__copyright">
+          &copy; <span id="footer-year"></span> FRAME Virtual Fiscalisation. All rights reserved.
+        </p>
+        <div class="site-footer__legal flex flex-wrap gap-3">
+          <a href="#" class="site-footer__nav-link text-slate-400 hover:text-slate-200">Privacy</a>
+          <a href="#" class="site-footer__nav-link text-slate-400 hover:text-slate-200">Terms</a>
         </div>
       </div>
     </div>

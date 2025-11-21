@@ -305,31 +305,10 @@ body.has-custom-cursor:hover .cursor-outline.hovered {
 
 .site-header__row {
   margin: 0 auto;
-  padding: 0.5rem 1.2rem;
-  display: grid;
-  grid-template-columns: minmax(auto, 180px) 1fr minmax(auto, 250px);
-  align-items: center;
-  gap: 1.5rem;
 }
 
 .site-header__col {
-  display: flex;
-  align-items: center;
   min-width: 0;
-}
-
-.site-header__col.-left {
-  justify-content: flex-start;
-}
-
-.site-header__col.-center {
-  justify-content: center;
-}
-
-.site-header__col.-right {
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-left: auto;
 }
 
 .site-header__brand {
@@ -358,10 +337,18 @@ body.has-custom-cursor:hover .cursor-outline.hovered {
 }
 
 .site-header__nav {
-  position: static;
-  background: transparent;
-  opacity: 1;
-  visibility: visible;
+  position: absolute;
+  inset-inline: 0;
+  top: 100%;
+  background: rgba(0, 0, 0, 0.94);
+  transform-origin: top;
+  transform: scaleY(0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 150ms ease-out,
+    transform 150ms ease-out,
+    visibility 150ms ease-out;
 }
 
 .site-header__nav--open {
@@ -375,8 +362,8 @@ body.has-custom-cursor:hover .cursor-outline.hovered {
   margin: 0;
   padding: var(--space-sm) var(--space-xs) var(--space-sm);
   display: flex;
-  flex-direction: row;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: var(--space-xs);
   align-items: center;
 }
 
@@ -397,7 +384,7 @@ body.has-custom-cursor:hover .cursor-outline.hovered {
   background: #ffffff;
   padding: 0.45rem 0.55rem;
   border-radius: var(--radius-pill);
-  display: none;
+  display: inline-flex;
   flex-direction: column;
   gap: 0.18rem;
   cursor: pointer;
@@ -423,10 +410,10 @@ body.has-custom-cursor:hover .cursor-outline.hovered {
 
 .site-header__cta {
   margin-left: var(--space-sm);
-  display: inline-flex;
+  display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .site-header__nav {
     position: static;
     background: transparent;
@@ -666,28 +653,8 @@ body.has-custom-cursor:hover .cursor-outline.hovered {
   }
 }
 
-/* Features / Pricing / Developer / Partners / Blog / About / Contact ----- */
+ /* Features / Pricing / Developer / Partners / Blog / About / Contact ----- */
 
-.features__grid,
-.pricing__grid,
-.blog__grid {
-  display: grid;
-  gap: var(--space-md);
-}
-
-@media (min-width: 768px) {
-  .pricing__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .blog__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.feature-card,
-.pricing-card,
-.blog-card,
 .form,
 .contact__aside {
   border-radius: var(--radius-lg);
@@ -695,71 +662,6 @@ body.has-custom-cursor:hover .cursor-outline.hovered {
   background: var(--color-surface);
   padding: var(--space-lg);
   box-shadow: var(--shadow-subtle);
-}
-
-.feature-card__title,
-.pricing-card__name,
-.blog-card__title {
-  margin-top: 0;
-  margin-bottom: 0.4rem;
-  font-size: var(--text-lg);
-  color: var(--color-heading);
-}
-
-.feature-card__body,
-.pricing-card__note,
-.blog-card__excerpt {
-  margin: 0;
-  color: var(--color-text-muted);
-}
-
-.pricing-card--highlight {
-  border-color: rgba(59, 130, 246, 0.65);
-  box-shadow: var(--shadow-soft);
-}
-
-.pricing-card__price {
-  margin: 0 0 0.4rem;
-  font-size: var(--text-2xl);
-  font-weight: 600;
-}
-
-.pricing-card__price-meta {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-}
-
-.pricing-card__features {
-  list-style: none;
-  margin: 0 0 var(--space-md);
-  padding: 0;
-  color: var(--color-text-soft);
-}
-
-.developer__grid,
-.partners__grid,
-.about__grid,
-.contact__grid {
-  display: grid;
-  gap: var(--space-xl);
-}
-
-@media (min-width: 768px) {
-  .developer__grid {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  }
-
-  .partners__grid {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-  }
-
-  .about__grid {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  }
-
-  .contact__grid {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
-  }
 }
 
 .developer__bullets,
@@ -914,7 +816,7 @@ body.page--devhub {
   color: #e5e7eb;
 }
 
-.page--devhub main {
+body.page--devhub main {
   padding-top: 0;
 }
 
@@ -950,4 +852,114 @@ body.page--devhub {
 
 .page--devhub .page__body > h3:first-of-type + ul a.dev-toc__link--active {
   color: #7dd3fc;
+}
+
+.dev-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 8.5rem;
+  padding-bottom: 7.5rem;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.4), rgba(15, 23, 42, 0.98));
+}
+
+@media (min-width: 1024px) {
+  .dev-hero {
+    min-height: 88vh;
+  }
+}
+
+.dev-hero__background-shapes {
+  position: absolute;
+  inset: -4rem;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.dev-hero__shape {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 20%, rgba(125, 211, 252, 0.9), transparent 60%);
+  filter: blur(2px);
+}
+
+.dev-hero__shape--1 {
+  width: 14rem;
+  height: 14rem;
+  top: -2rem;
+  left: -3rem;
+}
+
+.dev-hero__shape--2 {
+  width: 18rem;
+  height: 18rem;
+  top: 40%;
+  left: -6rem;
+}
+
+.dev-hero__shape--3 {
+  width: 16rem;
+  height: 16rem;
+  top: 10%;
+  right: -4rem;
+}
+
+.dev-hero__shape--4 {
+  width: 20rem;
+  height: 20rem;
+  bottom: -8rem;
+  right: 10%;
+}
+
+.page--devhub .page__body h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.7);
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.page--devhub .page__body h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #7dd3fc;
+}
+
+.page--devhub .page__body p {
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.page--devhub .page__body ul,
+.page--devhub .page__body ol {
+  margin: 0.5rem 0 1rem 1.25rem;
+}
+
+.page--devhub .page__body pre {
+  margin: 1.25rem 0;
+  padding: 1rem 1.1rem;
+  border-radius: 0.9rem;
+  background: rgba(15, 23, 42, 0.98);
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.page--devhub .page__body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85em;
+  background: rgba(15, 23, 42, 0.9);
+  padding: 0.15em 0.35em;
+  border-radius: 0.35rem;
+}
+
+.page--devhub .page__body pre code {
+  background: transparent;
+  padding: 0;
 }

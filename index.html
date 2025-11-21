@@ -27,14 +27,14 @@
 
   <header class="site-header" id="top">
     <div class="inner-frame container">
-      <div class="site-header__row">
-        <div class="site-header__col -left">
+      <div class="site-header__row flex items-center gap-3 md:gap-5 px-3 md:px-4 py-2">
+        <div class="site-header__col -left flex items-center">
           <a href="index.html#hero" class="site-header__brand" aria-label="FRAME Virtual Fiscalisation home">
             <span class="site-header__logo" aria-hidden="true"><img src="assets/frame-logo.png" alt="" class="site-header__logo-img" loading="lazy" decoding="async" /></span>
           </a>
         </div>
 
-        <div class="site-header__col -center">
+        <div class="site-header__col -center flex-1 flex justify-center">
           <nav id="primary-nav" class="site-header__nav" aria-label="Primary navigation">
             <ul class="site-header__nav-list">
               <li class="site-header__nav-item"><a class="site-header__nav-link" href="how-it-works.html">How it works</a></li>
@@ -48,7 +48,7 @@
           </nav>
         </div>
 
-        <div class="site-header__col -right">
+        <div class="site-header__col -right flex items-center gap-2 ml-auto">
           <a href="#contact" class="button button--ghost button--small site-header__cta">Book a demo</a>
 
           <button class="site-header__nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
@@ -73,41 +73,41 @@
         </video>
       </div>
 
-      <div class="container hero__grid">
-        <div class="hero__content">
-          <p class="hero__kicker">Virtual fiscalisation built for ZIMRA compliance</p>
+      <div class="container hero__grid flex flex-col justify-center min-h-[70vh]">
+        <div class="hero__content space-y-4">
+          <p class="hero__kicker inline-flex items-center gap-1.5 text-xs font-semibold tracking-[0.16em] uppercase">Virtual fiscalisation built for ZIMRA compliance</p>
           <h1 id="hero-title" class="hero__title">Stay compliant in real time, without slowing down your growth.</h1>
-          <p class="hero__subtitle">FRAME Virtual Fiscalisation connects your POS, ERP, and online payments into a single compliant fiscalisation layer. Secure device orchestration, auditable e-receipts, and ZIMRA-ready reporting from day one.</p>
+          <p class="hero__subtitle max-w-xl text-slate-200">FRAME Virtual Fiscalisation connects your POS, ERP, and online payments into a single compliant fiscalisation layer. Secure device orchestration, auditable e-receipts, and ZIMRA-ready reporting from day one.</p>
 
-          <div class="hero__actions">
+          <div class="hero__actions flex flex-wrap items-center gap-3 mt-4">
             <a href="#contact" class="button button--primary">
               <span>Book a demo</span>
               <i data-lucide="calendar-clock" aria-hidden="true" class="w-4 h-4"></i>
             </a>
-            <a href="#developer" class="button button--secondary">
+            <a href="developer-hub.html" class="button button--secondary">
               <span>Get API key</span>
               <i data-lucide="key-round" aria-hidden="true" class="w-4 h-4"></i>
             </a>
           </div>
 
-          <dl class="hero__stats" aria-label="FRAME Virtual Fiscalisation platform highlights">
-            <div class="hero__stat">
-              <dt class="hero__stat-value">99.99%</dt>
-              <dd class="hero__stat-label">API uptime</dd>
+          <dl class="hero__stats mt-6 flex flex-wrap gap-4" aria-label="FRAME Virtual Fiscalisation platform highlights">
+            <div class="hero__stat min-w-[8.5rem] rounded-2xl border border-slate-700/70 bg-slate-900/80 p-4 shadow-lg">
+              <dt class="hero__stat-value text-lg font-semibold text-slate-50">99.99%</dt>
+              <dd class="hero__stat-label text-[0.7rem] font-medium tracking-[0.16em] uppercase text-slate-400">API uptime</dd>
             </div>
-            <div class="hero__stat">
-              <dt class="hero__stat-value">&lt; 350ms</dt>
-              <dd class="hero__stat-label">Median receipt latency</dd>
+            <div class="hero__stat min-w-[8.5rem] rounded-2xl border border-slate-700/70 bg-slate-900/80 p-4 shadow-lg">
+              <dt class="hero__stat-value text-lg font-semibold text-slate-50">&lt; 350ms</dt>
+              <dd class="hero__stat-label text-[0.7rem] font-medium tracking-[0.16em] uppercase text-slate-400">Median receipt latency</dd>
             </div>
-            <div class="hero__stat">
-              <dt class="hero__stat-value">Level 1</dt>
-              <dd class="hero__stat-label">PCI DSS aligned</dd>
+            <div class="hero__stat min-w-[8.5rem] rounded-2xl border border-slate-700/70 bg-slate-900/80 p-4 shadow-lg">
+              <dt class="hero__stat-value text-lg font-semibold text-slate-50">Level 1</dt>
+              <dd class="hero__stat-label text-[0.7rem] font-medium tracking-[0.16em] uppercase text-slate-400">PCI DSS aligned</dd>
             </div>
           </dl>
         </div>
       </div>
       <div class="hero-logos" aria-label="Merchants using FRAME Virtual Fiscalisation" role="region">
-        <p class="hero-logos__label">Trusted by merchants and integrators across Zimbabwe</p>
+        <p class="hero-logos__label">Trusted by leading businesses across Zimbabwe. We are proud to partner with a diverse range of companies.</p>
         <div class="hero-logos__marquee">
           <div class="hero-logos__track">
             <div class="hero-logos__item">
@@ -200,149 +200,151 @@
     </section>
 
     <!-- Features / How it works -->
-    <section id="features" class="section section--alt features" aria-labelledby="features-title">
+    <section id="features" class="section section--alt" aria-labelledby="features-title">
       <div class="container">
-        <header class="section__header">
-          <h2 id="features-title" class="section__title">How FRAME Virtual Fiscalisation works</h2>
-          <p class="section__subtitle">From device registration to compliant e-receipts, FRAME Virtual Fiscalisation handles the full fiscalisation lifecycle.</p>
+        <header class="section__header max-w-3xl mx-auto text-center">
+          <h2 id="features-title" class="section__title text-3xl font-semibold text-slate-900">
+            Comprehensive fiscalisation solutions for your business
+          </h2>
+          <p class="section__subtitle mt-2 text-slate-600">
+            FRAME provides comprehensive virtual fiscalisation and Fiscal Data Management (FDM) compliance solutions in Zimbabwe, 100% compliant with ZIMRA regulations.
+          </p>
         </header>
 
-        <div class="features__grid">
-          <article class="feature-card">
-            <h3 class="feature-card__title">1. Register devices in minutes</h3>
-            <p class="feature-card__body">Connect fiscal devices, virtual devices, and channels (POS, ERP, e‑commerce) via secure APIs. ZimraFlow normalises device capabilities and abstracts away vendor quirks.</p>
+        <div class="grid gap-6 md:grid-cols-3 lg:gap-8">
+          <article class="flex h-full flex-col rounded-2xl border border-slate-200 bg-white/80 p-6 md:p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="text-lg font-semibold text-slate-900">Seamless Integration</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Tailored for seamless integration with existing business systems such as POS or ERP platforms.
+            </p>
           </article>
 
-          <article class="feature-card">
-            <h3 class="feature-card__title">2. Issue compliant receipts</h3>
-            <p class="feature-card__body">Every transaction is enriched with ZIMRA-required metadata, signed, and stored against your fiscal devices. Generate compliant PDFs, QR codes, and audit trails automatically.</p>
+          <article class="flex h-full flex-col rounded-2xl border border-slate-200 bg-white/80 p-6 md:p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="text-lg font-semibold text-slate-900">ZIMRA Compliance</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Direct integration with the Zimbabwe Revenue Authority (ZIMRA) for regulatory compliance.
+            </p>
           </article>
 
-          <article class="feature-card">
-            <h3 class="feature-card__title">3. Automate ZIMRA reporting</h3>
-            <p class="feature-card__body">Stream fiscal data to your reporting stack or download ready-made exports. Alerts, reconciliation dashboards, and exception handling keep your team ahead of audits.</p>
+          <article class="flex h-full flex-col rounded-2xl border border-slate-200 bg-white/80 p-6 md:p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <h3 class="text-lg font-semibold text-slate-900">Remote Management</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Customizable dashboards for remote access and device management.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- Pricing -->
-    <section id="pricing" class="section pricing" aria-labelledby="pricing-title">
+    <section id="pricing" class="section" aria-labelledby="pricing-title">
       <div class="container">
-        <header class="section__header">
-          <h2 id="pricing-title" class="section__title">Pricing that scales with you</h2>
-          <p class="section__subtitle">Simple, transparent plans for startups, growing merchants, and enterprise retailers.</p>
+        <header class="section__header max-w-3xl mx-auto text-center">
+          <h2 id="pricing-title" class="section__title text-3xl font-semibold text-slate-900">
+            Pricing that works for every business
+          </h2>
+          <p class="section__subtitle mt-2 text-slate-600">
+            Choose the FRAME solution that matches your size and setup. All plans are billed annually (VAT inclusive).
+          </p>
         </header>
 
-        <div class="pricing__grid">
-          <article class="pricing-card" aria-label="Starter plan">
-            <h3 class="pricing-card__name">Starter</h3>
-            <p class="pricing-card__price">US$49<span class="pricing-card__price-meta">/month</span></p>
-            <p class="pricing-card__note">For pilots and single-location merchants.</p>
-            <ul class="pricing-card__features">
-              <li>Up to 3 fiscal devices</li>
-              <li>10k receipts / month</li>
-              <li>Email support</li>
+        <div class="grid gap-6 md:grid-cols-3 lg:gap-8">
+          <!-- FRAME Mobile App -->
+          <article class="flex h-full flex-col rounded-2xl border border-slate-200 bg-white/80 p-6 md:p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg" aria-label="FRAME Mobile App plan">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-sky-600">Mobile</p>
+            <h3 class="text-lg font-semibold text-slate-900">FRAME Mobile App</h3>
+            <p class="mt-2 text-3xl font-semibold text-slate-900">
+              US$69.99
+              <span class="ml-1 align-middle text-sm font-normal text-slate-500">/year</span>
+            </p>
+            <p class="mt-2 text-sm text-slate-600">
+              Are you a startup with no accounting software? No problem. Start fiscalising on your mobile device today.
+            </p>
+            <ul class="mt-4 space-y-1 text-sm text-slate-600">
+              <li>Designed for early-stage teams</li>
+              <li>Mobile-first virtual fiscalisation</li>
+              <li>Quick onboarding and local support</li>
             </ul>
-            <button class="button button--secondary pricing-card__cta" type="button">Get API key</button>
+            <div class="mt-6">
+              <button class="inline-flex w-full justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-slate-800" type="button">
+                Get started
+              </button>
+            </div>
           </article>
 
-          <article class="pricing-card pricing-card--highlight" aria-label="Growth plan">
-            <h3 class="pricing-card__name">Growth</h3>
-            <p class="pricing-card__price">US$149<span class="pricing-card__price-meta">/month</span></p>
-            <p class="pricing-card__note">For multi-branch teams and omni-channel setups.</p>
-            <ul class="pricing-card__features">
-              <li>Up to 20 fiscal devices</li>
-              <li>100k receipts / month</li>
-              <li>Priority support &amp; sandbox</li>
+          <!-- FRAME Desktop Version (highlight) -->
+          <article class="relative flex h-full flex-col overflow-hidden rounded-2xl border border-sky-400/80 bg-sky-950/90 p-6 md:p-8 text-slate-50 shadow-xl shadow-sky-900/40" aria-label="FRAME Desktop Version plan">
+            <span class="absolute right-5 top-5 rounded-full bg-sky-400/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-sky-100">
+              Most popular
+            </span>
+            <p class="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-sky-300">Desktop</p>
+            <h3 class="text-lg font-semibold text-white">FRAME Desktop Version</h3>
+            <p class="mt-2 text-3xl font-semibold text-white">
+              US$99.99
+              <span class="ml-1 align-middle text-sm font-normal text-sky-200">/year</span>
+            </p>
+            <p class="mt-2 text-sm text-slate-200">
+              Simplify invoicing and automate compliance, all from your computer.
+            </p>
+            <ul class="mt-4 space-y-1 text-sm text-slate-100">
+              <li>Ideal for growing merchants</li>
+              <li>Rich desktop invoicing experience</li>
+              <li>Most popular option for SMEs</li>
             </ul>
-            <button class="button button--primary pricing-card__cta" type="button">Talk to sales</button>
+            <div class="mt-6">
+              <button class="inline-flex w-full justify-center rounded-full bg-sky-400 px-4 py-2 text-sm font-medium text-slate-900 shadow-sm transition hover:bg-sky-300" type="button">
+                Get started
+              </button>
+            </div>
           </article>
 
-          <article class="pricing-card" aria-label="Enterprise plan">
-            <h3 class="pricing-card__name">Enterprise</h3>
-            <p class="pricing-card__price">Let's talk</p>
-            <p class="pricing-card__note">For high-volume and regulated environments.</p>
-            <ul class="pricing-card__features">
-              <li>Unlimited devices</li>
-              <li>Custom SLAs &amp; on-prem options</li>
-              <li>Dedicated compliance advisor</li>
+          <!-- FRAME Library -->
+          <article class="flex h-full flex-col rounded-2xl border border-slate-200 bg-white/80 p-6 md:p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg" aria-label="FRAME Library plan">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Enterprise</p>
+            <h3 class="text-lg font-semibold text-slate-900">FRAME Library</h3>
+            <p class="mt-2 text-2xl font-semibold text-slate-900">Price TBA</p>
+            <p class="mt-2 text-sm text-slate-600">
+              A custom solution for 50+ devices, including a device monitoring dashboard.
+            </p>
+            <ul class="mt-4 space-y-1 text-sm text-slate-600">
+              <li>Built for large, distributed environments</li>
+              <li>Advanced monitoring and dashboards</li>
+              <li>Tailored to your architecture</li>
             </ul>
-            <button class="button button--outline pricing-card__cta" type="button">Book a demo</button>
+            <div class="mt-6">
+              <button class="inline-flex w-full justify-center rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-50" type="button">
+                Talk to sales
+              </button>
+            </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Developer / API Hub -->
-    <section id="developer" class="section developer" aria-labelledby="developer-title">
-      <div class="container developer__grid">
-        <div class="developer__content">
-          <h2 id="developer-title" class="section__title">Developer &amp; API hub</h2>
-          <p class="section__subtitle">Modern, well-documented APIs that make fiscalisation just another service call.</p>
-          <ul class="developer__bullets">
-            <li>Language-agnostic REST APIs with JSON payloads</li>
-            <li>Test keys, sandbox mode, and predictable versioning</li>
-            <li>Webhook callbacks for device and receipt lifecycle events</li>
-          </ul>
-          <p class="developer__hint">Use the sample below to register a device and send a fiscal receipt. Then trigger the mock API demo to see a JSON response.</p>
-        </div>
-
-        <div class="developer__code">
-          <pre class="code-block" aria-label="Sample fiscal API usage"><code class="code-block__code">// 1. Register a fiscal device
-fetch("https://api.zimraflow.io/v1/devices", {
-  method: "POST",
-  headers: {
-    "Authorization": "Bearer YOUR_API_KEY",
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    deviceId: "ZIMRA-HQ-001",
-    channel: "POS",
-    branch: "Harare HQ"
-  })
-});
-
-// 2. Issue a fiscal receipt
-fetch("https://api.zimraflow.io/v1/receipts", {
-  method: "POST",
-  headers: {
-    "Authorization": "Bearer YOUR_API_KEY",
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    deviceId: "ZIMRA-HQ-001",
-    receiptNumber: "INV-24801",
-    currency: "ZWL",
-    totalAmount: 1250.00,
-    taxAmount: 187.50,
-    items: [{ sku: "SKU-001", description: "Smart POS", qty: 1, unitPrice: 1250.00 }]
-  })
-});
-</code></pre>
-
-          <button type="button" class="button button--full developer__try-button">Try API demo</button>
-          <div class="developer__response" role="status" aria-live="polite"></div>
         </div>
       </div>
     </section>
 
     <!-- Partner program -->
-    <section id="partners" class="section partners" aria-labelledby="partners-title">
-      <div class="container partners__grid">
-        <div class="partners__content">
-          <h2 id="partners-title" class="section__title">Partner with FRAME Virtual Fiscalisation</h2>
-          <p class="section__subtitle">Integrators, ISVs, and resellers use FRAME Virtual Fiscalisation to make compliance an embedded value, not a blocker.</p>
-          <ul class="partners__bullets">
+    <section id="partners" class="section" aria-labelledby="partners-title">
+      <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] items-start">
+        <!-- Copy / benefits -->
+        <div class="space-y-4">
+          <h2 id="partners-title" class="section__title text-3xl font-semibold text-slate-900">
+            Partner with FRAME Virtual Fiscalisation
+          </h2>
+          <p class="section__subtitle text-slate-600">
+            Integrators, ISVs, and resellers use FRAME Virtual Fiscalisation to make compliance an embedded value, not a blocker.
+          </p>
+          <ul class="partners__bullets mt-2 space-y-1 text-sm text-slate-600 list-disc list-inside">
             <li>Revenue share for referred merchants</li>
             <li>Co-branded onboarding and marketing support</li>
             <li>Technical enablement for your implementation teams</li>
           </ul>
-          <p id="partner-form-help" class="partners__hint">Share a few details and our partner team will respond within one business day.</p>
+          <p id="partner-form-help" class="partners__hint text-sm text-slate-500">
+            Share a few details and our partner team will respond within one business day.
+          </p>
         </div>
 
-        <div class="partners__form-wrapper">
-          <form class="form partner-form" novalidate aria-describedby="partner-form-help">
+        <!-- Partner enquiry form -->
+        <div class="partners__form-wrapper rounded-2xl border border-slate-200 bg-white/80 p-6 md:p-8 shadow-sm">
+          <form class="form partner-form space-y-4" novalidate aria-describedby="partner-form-help">
             <div class="form__field">
               <label class="form__label" for="partner-name">Full name</label>
               <input class="form__input" type="text" id="partner-name" name="name" autocomplete="name" required />
@@ -386,39 +388,110 @@ fetch("https://api.zimraflow.io/v1/receipts", {
               <p class="form__error" id="partner-terms-error" data-error-for="terms" aria-live="polite"></p>
             </div>
 
-            <button class="button button--primary form__submit" type="submit">Become a partner</button>
+            <button class="button button--primary form__submit w-full" type="submit">Become a partner</button>
             <p class="form__success" aria-live="polite"></p>
           </form>
         </div>
       </div>
     </section>
-
     <!-- Blog previews -->
-    <section id="blog" class="section blog" aria-labelledby="blog-title">
+    <section id="blog" class="section" aria-labelledby="blog-title">
       <div class="container">
-        <header class="section__header">
-          <h2 id="blog-title" class="section__title">From the compliance desk</h2>
-          <p class="section__subtitle">Insights from fiscalisation experts, ZIMRA updates, and implementation stories.</p>
+        <header class="section__header max-w-3xl mx-auto text-center">
+          <h2 id="blog-title" class="section__title text-3xl font-semibold text-slate-900">Our Latest Articles</h2>
+          <p class="section__subtitle mt-2 text-slate-600">
+            Stay updated with the latest news, tips, and insights about fiscalisation and business compliance in Zimbabwe.
+          </p>
         </header>
 
-        <div class="blog__grid">
-          <article class="blog-card">
-            <img class="blog-card__image" src="https://via.placeholder.com/480x280.png?text=ZIMRA+Guidelines" alt="Dashboard visualisation of fiscal receipts" loading="lazy" width="480" height="280" />
-            <div class="blog-card__body">
-              <p class="blog-card__meta">Compliance • 7 min read</p>
-              <h3 class="blog-card__title">A practical guide to virtual fiscalisation for ZIMRA</h3>
-              <p class="blog-card__excerpt">Understand how virtual fiscal devices fit into ZIMRA's regulatory landscape, and how to de-risk your rollout.</p>
-              <a class="blog-card__link" href="#" aria-label="Read article: A practical guide to virtual fiscalisation for ZIMRA">Read article</a>
+        <div class="grid gap-6 md:grid-cols-3 lg:gap-8">
+          <!-- Article 1 -->
+          <article class="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white/80 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <img
+              src="https://via.placeholder.com/480x280.png?text=ZIMRA+Guidelines"
+              alt="Dashboard visualisation of fiscal receipts"
+              loading="lazy"
+              width="480"
+              height="280"
+              class="h-48 w-full object-cover"
+            />
+            <div class="flex flex-1 flex-col p-5 md:p-6">
+              <p class="mb-1 text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Compliance • 7 min read</p>
+              <h3 class="text-base font-semibold text-slate-900">
+                Understanding ZIMRA's Latest Fiscalisation Requirements
+              </h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Stay ahead of the curve with our comprehensive guide to the latest ZIMRA fiscalisation requirements and how they impact your business.
+              </p>
+              <div class="mt-4">
+                <a
+                  href="#"
+                  class="inline-flex items-center text-sm font-medium text-sky-700 hover:text-sky-900"
+                  aria-label="Read article: Understanding ZIMRA's Latest Fiscalisation Requirements"
+                >
+                  Read more
+                </a>
+              </div>
             </div>
           </article>
 
-          <article class="blog-card">
-            <img class="blog-card__image" src="https://via.placeholder.com/480x280.png?text=API+Playbook" alt="Abstract illustration of secure API connections" loading="lazy" width="480" height="280" />
-            <div class="blog-card__body">
-              <p class="blog-card__meta">Developers • 5 min read</p>
-              <h3 class="blog-card__title">Designing a fiscalisation-ready payments stack</h3>
-              <p class="blog-card__excerpt">Architect a modern payments flow that routes transactions through FRAME Virtual Fiscalisation without adding friction to your checkout.</p>
-              <a class="blog-card__link" href="#" aria-label="Read article: Designing a fiscalisation-ready payments stack">Read article</a>
+          <!-- Article 2 -->
+          <article class="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white/80 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <img
+              src="https://via.placeholder.com/480x280.png?text=Virtual+Fiscalisation"
+              alt="Abstract illustration of virtual fiscalisation technology"
+              loading="lazy"
+              width="480"
+              height="280"
+              class="h-48 w-full object-cover"
+            />
+            <div class="flex flex-1 flex-col p-5 md:p-6">
+              <p class="mb-1 text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Technology • 5 min read</p>
+              <h3 class="text-base font-semibold text-slate-900">
+                The Future of Virtual Fiscalisation in Zimbabwe
+              </h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Explore how virtual fiscalisation is transforming business operations and what it means for the future of commerce in Zimbabwe.
+              </p>
+              <div class="mt-4">
+                <a
+                  href="#"
+                  class="inline-flex items-center text-sm font-medium text-sky-700 hover:text-sky-900"
+                  aria-label="Read article: The Future of Virtual Fiscalisation in Zimbabwe"
+                >
+                  Read more
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white/80 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <img
+              src="https://via.placeholder.com/480x280.png?text=Business+Growth"
+              alt="Business owner reviewing fiscal reports"
+              loading="lazy"
+              width="480"
+              height="280"
+              class="h-48 w-full object-cover"
+            />
+            <div class="flex flex-1 flex-col p-5 md:p-6">
+              <p class="mb-1 text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Business Tips • 5 min read</p>
+              <h3 class="text-base font-semibold text-slate-900">
+                5 Ways Virtual Fiscalisation Can Grow Your Business
+              </h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Discover how implementing virtual fiscalisation can lead to improved efficiency, better compliance, and business growth.
+              </p>
+              <div class="mt-4">
+                <a
+                  href="#"
+                  class="inline-flex items-center text-sm font-medium text-sky-700 hover:text-sky-900"
+                  aria-label="Read article: 5 Ways Virtual Fiscalisation Can Grow Your Business"
+                >
+                  Read more
+                </a>
+              </div>
             </div>
           </article>
         </div>
@@ -426,33 +499,41 @@ fetch("https://api.zimraflow.io/v1/receipts", {
     </section>
 
     <!-- About / Team -->
-    <section id="about" class="section about" aria-labelledby="about-title">
-      <div class="container about__grid">
-        <div class="about__content">
-          <h2 id="about-title" class="section__title">About FRAME Virtual Fiscalisation</h2>
-          <p class="section__subtitle">We're a fiscal-tech team focused on making compliance invisible, reliable, and audit‑ready.</p>
-          <p>FRAME Virtual Fiscalisation is built by engineers, tax specialists, and ex‑fintech operators who have implemented fiscalisation for high-volume merchants across the region. We obsess over reliability, security, and clear documentation so you don't have to.</p>
-          <ul class="about__values">
-            <li><strong>Compliance-first.</strong> Every release is reviewed with tax and regulatory experts.</li>
-            <li><strong>Developer-friendly.</strong> Opinionated APIs, consistent error codes, and rich examples.</li>
-            <li><strong>Secure by design.</strong> Encryption in transit and at rest, with detailed audit trails.</li>
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-start">
+        <!-- Company story -->
+        <div class="space-y-4">
+          <h2 id="about-title" class="section__title text-3xl font-semibold text-slate-900">About FRAME</h2>
+          <p class="section__subtitle text-slate-600">Leading the digital transformation of fiscal compliance in Zimbabwe.</p>
+          <p class="text-sm text-slate-700">
+            FRAME (Fiscal Revenue Automated Management E-Solution) is a leading provider of comprehensive fiscalisation and Fiscal Data Management (FDM) compliance solutions in Zimbabwe. The company specializes in virtual fiscalisation, helping businesses streamline financial processes, reduce operational costs, and enhance efficiency while ensuring full compliance with local tax regulations. In 2015, Scentpro Tech signed up as Regional Implementation and Support Partner for Fiscal Revenue Solutions (FRS). FRAME was developed six years later in response to ZIMRA requirements, backed by a technical team with extensive experience in fiscal device installations, support, maintenance, and compliance.
+          </p>
+          <ul class="about__values mt-2 space-y-1 text-sm text-slate-700 list-disc list-inside">
+            <li><strong>ZIMRA-compliant virtual fiscalisation.</strong> Stay tax compliant with a solution that meets all Zimbabwe Revenue Authority requirements.</li>
+            <li><strong>Cloud-based and hardware-free.</strong> No physical devices needed, making setup fast and cost-effective.</li>
+            <li><strong>Customisable in-house software.</strong> FRAME can be adapted to your POS, ERP, or accounting system.</li>
+            <li><strong>Real-time fiscal reporting.</strong> Instantly monitor your transactions and performance from anywhere.</li>
+            <li><strong>Offline functionality.</strong> Keep operating and reporting during internet or power outages.</li>
+            <li><strong>Scales with your business.</strong> Multi-branch and multi-level integration across locations and platforms.</li>
+            <li><strong>Data security and local support.</strong> Built with enterprise-grade security and responsive local support.</li>
           </ul>
         </div>
 
-        <div class="about__team">
-          <h3 class="about__team-title">Leadership team</h3>
-          <ul class="about__team-list">
+        <!-- Leadership card -->
+        <div class="about__team rounded-2xl border border-slate-200 bg-white/80 p-6 md:p-8 shadow-sm">
+          <h3 class="about__team-title mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">Leadership team</h3>
+          <ul class="about__team-list space-y-3">
             <li class="about__team-member">
-              <p class="about__team-name">Tariro M.</p>
-              <p class="about__team-role">Co‑founder &amp; CEO • Ex‑payments regulator</p>
+              <p class="about__team-name text-sm font-medium text-slate-900">Tariro M.</p>
+              <p class="about__team-role text-sm text-slate-600">Co‑founder &amp; CEO • Ex‑payments regulator</p>
             </li>
             <li class="about__team-member">
-              <p class="about__team-name">Leroy K.</p>
-              <p class="about__team-role">Co‑founder &amp; CTO • Ex‑fintech architect</p>
+              <p class="about__team-name text-sm font-medium text-slate-900">Leroy K.</p>
+              <p class="about__team-role text-sm text-slate-600">Co‑founder &amp; CTO • Ex‑fintech architect</p>
             </li>
             <li class="about__team-member">
-              <p class="about__team-name">Rudo N.</p>
-              <p class="about__team-role">Head of Compliance • Tax &amp; ZIMRA specialist</p>
+              <p class="about__team-name text-sm font-medium text-slate-900">Rudo N.</p>
+              <p class="about__team-role text-sm text-slate-600">Head of Compliance • Tax &amp; ZIMRA specialist</p>
             </li>
           </ul>
         </div>
@@ -460,71 +541,82 @@ fetch("https://api.zimraflow.io/v1/receipts", {
     </section>
 
     <!-- Contact / Support -->
-    <section id="contact" class="section contact" aria-labelledby="contact-title">
-      <div class="container contact__grid">
-        <div class="contact__content">
-          <h2 id="contact-title" class="section__title">Contact &amp; support</h2>
-          <p class="section__subtitle">Whether you're designing a new architecture or preparing for an audit, we're here to help.</p>
-          <ul class="contact__channels">
-            <li>
-              <h3 class="contact__channel-title">Book a demo</h3>
-              <p>Walk through your current stack with our solutions team and get a tailored compliance plan.</p>
-              <a class="contact__link" href="mailto:sales@frame.co.zw">sales@frame.co.zw</a>
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.9fr)] items-start">
+        <div class="space-y-4">
+          <h2 id="contact-title" class="section__title text-3xl font-semibold text-slate-900">Contact us</h2>
+          <p class="section__subtitle text-slate-600">Get in touch with our team today.</p>
+          <ul class="contact__channels grid gap-4">
+            <li class="rounded-2xl border border-slate-200 bg-white/80 p-4 md:p-5 shadow-sm">
+              <h3 class="contact__channel-title text-sm font-semibold text-slate-900">Phone</h3>
+              <p class="mt-1 text-sm text-slate-600">Speak directly with our sales and support teams during business hours.</p>
+              <a class="contact__link mt-2 inline-flex text-sm font-medium text-sky-700 hover:text-sky-900" href="tel:+2638677186045">+263 86 7718 6045</a>
             </li>
-            <li>
-              <h3 class="contact__channel-title">Technical support</h3>
-              <p>Priority support for production incidents and go‑live launches.</p>
-              <a class="contact__link" href="mailto:support@frame.co.zw">support@frame.co.zw</a>
+            <li class="rounded-2xl border border-slate-200 bg-white/80 p-4 md:p-5 shadow-sm">
+              <h3 class="contact__channel-title text-sm font-semibold text-slate-900">WhatsApp</h3>
+              <p class="mt-1 text-sm text-slate-600">Send us a quick message on WhatsApp and we'll respond as soon as possible.</p>
+              <a class="contact__link mt-2 inline-flex text-sm font-medium text-sky-700 hover:text-sky-900" href="https://wa.me/263783940835" target="_blank" rel="noreferrer">+263 78 394 0835</a>
             </li>
-            <li>
-              <h3 class="contact__channel-title">Documentation</h3>
-              <p>Explore guides, API references, and implementation playbooks.</p>
-              <a class="contact__link" href="#developer">View developer hub</a>
+            <li class="rounded-2xl border border-slate-200 bg-white/80 p-4 md:p-5 shadow-sm">
+              <h3 class="contact__channel-title text-sm font-semibold text-slate-900">Email &amp; website</h3>
+              <p class="mt-1 text-sm text-slate-600">Email our team or visit our website to learn more about FRAME.</p>
+              <a class="contact__link mt-2 inline-flex text-sm font-medium text-sky-700 hover:text-sky-900" href="mailto:sales@frame.co.zw">sales@frame.co.zw</a>
+              <br />
+              <a class="contact__link inline-flex text-sm font-medium text-sky-700 hover:text-sky-900" href="https://www.frame.co.zw" target="_blank" rel="noreferrer">www.frame.co.zw</a>
+            </li>
+            <li class="rounded-2xl border border-slate-200 bg-white/80 p-4 md:p-5 shadow-sm">
+              <h3 class="contact__channel-title text-sm font-semibold text-slate-900">Location</h3>
+              <p class="mt-1 text-sm text-slate-600">Visit us at Napier Office Park, Unit 4, 1 Napier Ave. Hillside, Bulawayo.</p>
             </li>
           </ul>
         </div>
 
-        <aside class="contact__aside" aria-label="Operational status">
-          <h3 class="contact__status-title">Platform status</h3>
-          <p class="contact__status-indicator">All systems operational</p>
-          <p class="contact__status-copy">We publish uptime history and incident reports so your risk and compliance teams stay informed.</p>
+        <aside class="contact__aside rounded-2xl border border-slate-900/40 bg-slate-950/95 p-6 md:p-7 text-slate-100 shadow-sm" aria-label="Operational status">
+          <h3 class="contact__status-title mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">Platform status</h3>
+          <p class="contact__status-indicator text-lg font-semibold text-emerald-400">All systems operational</p>
+          <p class="contact__status-copy mt-2 text-sm text-slate-200">We publish uptime history and incident reports so your risk and compliance teams stay informed.</p>
         </aside>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container site-footer__grid">
-      <div class="site-footer__brand">
+    <div class="container site-footer__grid grid gap-8 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1.2fr)_minmax(0,1.2fr)] items-start">
+      <!-- Brand -->
+      <div class="site-footer__brand space-y-2 text-sm text-slate-300">
         <span class="site-footer__logo" aria-hidden="true"><img src="assets/frame-logo.png" alt="" class="site-footer__logo-img" loading="lazy" decoding="async" /></span>
-        <span class="site-footer__name">FRAME Virtual Fiscalisation</span>
-        <p class="site-footer__tagline">Virtual fiscalisation &amp; ZIMRA compliance for modern teams.</p>
+        <span class="site-footer__name block text-base font-semibold text-slate-50">FRAME Virtual Fiscalisation</span>
+        <p class="site-footer__tagline max-w-xs text-sm text-slate-400">Virtual fiscalisation &amp; ZIMRA compliance for modern teams.</p>
       </div>
 
-      <nav class="site-footer__nav" aria-label="Footer navigation">
-        <div class="site-footer__nav-group">
-          <h3 class="site-footer__nav-title">Product</h3>
-          <a href="how-it-works.html" class="site-footer__nav-link">How it works</a>
-          <a href="pricing.html" class="site-footer__nav-link">Pricing</a>
-          <a href="partners.html" class="site-footer__nav-link">Partners</a>
+      <!-- Footer nav -->
+      <nav class="site-footer__nav grid gap-6 sm:grid-cols-2 md:grid-cols-3 text-sm" aria-label="Footer navigation">
+        <div class="site-footer__nav-group space-y-1">
+          <h3 class="site-footer__nav-title text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Product</h3>
+          <a href="how-it-works.html" class="site-footer__nav-link block text-slate-300 hover:text-white">How it works</a>
+          <a href="pricing.html" class="site-footer__nav-link block text-slate-300 hover:text-white">Pricing</a>
+          <a href="partners.html" class="site-footer__nav-link block text-slate-300 hover:text-white">Partners</a>
         </div>
-        <div class="site-footer__nav-group">
-          <h3 class="site-footer__nav-title">Developers</h3>
-          <a href="developer-hub.html" class="site-footer__nav-link">API hub</a>
-          <a href="blog.html" class="site-footer__nav-link">Guides</a>
+        <div class="site-footer__nav-group space-y-1">
+          <h3 class="site-footer__nav-title text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Developers</h3>
+          <a href="developer-hub.html" class="site-footer__nav-link block text-slate-300 hover:text-white">API hub</a>
+          <a href="blog.html" class="site-footer__nav-link block text-slate-300 hover:text-white">Guides</a>
         </div>
-        <div class="site-footer__nav-group">
-          <h3 class="site-footer__nav-title">Company</h3>
-          <a href="about.html" class="site-footer__nav-link">About</a>
-          <a href="support.html" class="site-footer__nav-link">Contact</a>
+        <div class="site-footer__nav-group space-y-1">
+          <h3 class="site-footer__nav-title text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Company</h3>
+          <a href="about.html" class="site-footer__nav-link block text-slate-300 hover:text-white">About</a>
+          <a href="support.html" class="site-footer__nav-link block text-slate-300 hover:text-white">Contact</a>
         </div>
       </nav>
 
-      <div class="site-footer__meta">
-        <p class="site-footer__copyright">&copy; <span id="footer-year"></span> FRAME Virtual Fiscalisation. All rights reserved.</p>
-        <div class="site-footer__legal">
-          <a href="#" class="site-footer__nav-link">Privacy</a>
-          <a href="#" class="site-footer__nav-link">Terms</a>
+      <!-- Meta -->
+      <div class="site-footer__meta mt-4 border-t border-slate-800 pt-4 flex flex-col gap-2 text-xs text-slate-500 md:mt-0 md:border-0 md:pt-0 md:items-end">
+        <p class="site-footer__copyright">
+          &copy; <span id="footer-year"></span> FRAME Virtual Fiscalisation. All rights reserved.
+        </p>
+        <div class="site-footer__legal flex flex-wrap gap-3">
+          <a href="#" class="site-footer__nav-link text-slate-400 hover:text-slate-200">Privacy</a>
+          <a href="#" class="site-footer__nav-link text-slate-400 hover:text-slate-200">Terms</a>
         </div>
       </div>
     </div>
