@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandcircle - Management Consultancy International</title>
+
+    <!-- Fonts: Inter for that clean tech look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <style>
+        :root {
+            --primary: #2a2c5b;
+            --primary-dark: #1e1f42;
+            --accent: #cf4a4a;
+            --bg-blur: rgba(255, 255, 255, 0.7);
+            --bg-blur-dark: rgba(15, 23, 42, 0.8);
+        }
+
+        body {
+            font-family: 'Outfit', 'Inter', sans-serif;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass {
+            background: var(--bg-blur);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-dark {
+            background: var(--bg-blur-dark);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Premium Gradients */
+        .bg-mesh {
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(42, 44, 91, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(232, 49, 49, 0.05) 0px, transparent 50%);
+        }
+
+        /* Animations */
+        @keyframes float-blob {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: float-blob 12s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #2a2c5b, #cf4a4a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen relative text-slate-900 selection:bg-blue-100 bg-mesh">
+
+    <!-- BACKGROUND BLOBS & PATTERNS -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <!-- Floating Blobs -->
+        <div
+            class="absolute top-[-5%] left-[-5%] w-[45%] h-[45%] bg-[#2a2c5b]/5 rounded-full blur-[100px] animate-blob">
+        </div>
+        <div class="absolute bottom-[25%] right-[-10%] w-[35%] h-[45%] bg-[#cf4a4a]/5 rounded-full blur-[100px] animate-blob"
+            style="animation-delay: -5s;"></div>
+
+        <!-- Left Circuit -->
+        <svg class="absolute top-24 left-0 w-[400px] h-[400px] text-[#2a2c5b]/[0.1] opacity-80" viewBox="0 0 400 400"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M-10 100 H100 L130 130 H220" />
+            <circle cx="220" cy="130" r="4" fill="currentColor" class="text-[#2a2c5b]/40" />
+            <path d="M-10 250 H80 L120 210 H180" />
+            <circle cx="180" cy="210" r="3" fill="currentColor" class="text-[#cf4a4a]/40" />
+            <path d="M50 350 H150 L180 380 H250" />
+            <circle cx="250" cy="380" r="2" fill="currentColor" class="text-[#2a2c5b]/30" />
+            <path d="M100 100 V150" />
+            <path d="M80 250 V280" />
+        </svg>
+
+        <!-- Right Circuit -->
+        <svg class="absolute top-10 right-0 w-[500px] h-[600px] text-[#2a2c5b]/[0.1] opacity-80" viewBox="0 0 500 600"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M510 120 H400 L350 170 H280" />
+            <circle cx="280" cy="170" r="4" fill="currentColor" class="text-[#cf4a4a]/40" />
+            <path d="M510 320 H420 L380 360 H300" />
+            <circle cx="300" cy="360" r="3" fill="currentColor" class="text-[#2a2c5b]/40" />
+            <path d="M510 450 H450 L400 500 H350" />
+            <circle cx="350" cy="500" r="4" fill="currentColor" class="text-[#cf4a4a]/40" />
+            <circle cx="400" cy="120" r="2" fill="currentColor" class="opacity-20" />
+            <circle cx="420" cy="320" r="2" fill="currentColor" class="opacity-20" />
+        </svg>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav id="main-nav"
+        class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-6 flex items-center justify-between sticky top-4 z-[100] glass rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-white/20 mx-4"
+        data-aos="fade-down">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <a href="#" class="flex items-center">
+                <img src="assets/logo.png" alt="Sandcircle Logo" class="h-8 md:h-10 w-auto object-contain">
+            </a>
+        </div>
+
+        <!-- Center Pill Menu (Desktop Only) -->
+        <div
+            class="hidden md:flex bg-white/40 border border-white/20 rounded-full p-1.5 items-center shadow-sm absolute left-1/2 -translate-x-1/2">
+            <a href="#"
+                class="bg-[#2a2c5b] text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md shadow-[#2a2c5b]/20">Home</a>
+            <a href="#about"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">About</a>
+            <a href="#services"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Services</a>
+            <a href="clientele.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Clients</a>
+            <a href="contact.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Contact</a>
+        </div>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-2 md:gap-6">
+            <span
+                class="hidden lg:flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+                <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                Precision Driven
+            </span>
+            <!-- Desktop CTA -->
+            <a href="contact.html"
+                class="hidden md:inline-flex bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#cf4a4a] transition-all hover:shadow-lg">Expert
+                Consultation</a>
+            <!-- Mobile CTA -->
+            <a href="contact.html"
+                class="md:hidden bg-[#cf4a4a] text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-[#b93a3a] transition-all">Inquire</a>
+            <!-- Mobile Hamburger -->
+            <button id="mobile-menu-btn"
+                class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-900 text-white">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="mobile-nav-panel"
+        class="fixed inset-0 z-[200] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
+        <button id="mobile-nav-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <a href="#" class="text-4xl font-bold text-white hover:text-[#cf4a4a] transition-colors">Home</a>
+        <a href="#about"
+            class="text-4xl font-bold text-white hover:text-[#cf4a4a] transition-colors mobile-nav-link">About</a>
+        <a href="#services"
+            class="text-4xl font-bold text-white hover:text-[#cf4a4a] transition-colors mobile-nav-link">Services</a>
+        <a href="clientele.html"
+            class="text-4xl font-bold text-white hover:text-[#cf4a4a] transition-colors">Clients</a>
+        <a href="contact.html" class="text-4xl font-bold text-white hover:text-[#cf4a4a] transition-colors">Contact</a>
+        <a href="contact.html"
+            class="mt-8 bg-[#cf4a4a] text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-[#b93a3a] transition-all">Expert
+            Consultation</a>
+    </div>
+
+    <!-- MAIN HERO SECTION -->
+    <main class="max-w-7xl mx-auto px-4 mt-16 md:mt-24 pb-20 flex flex-col items-center text-center z-10 relative">
+
+        <!-- Headline -->
+        <h1 id="hero-title"
+            class="text-6xl md:text-7xl lg:text-[6rem] font-bold tracking-tight leading-[1] max-w-5xl text-[#2a2c5b]">
+            <span data-phrase="1" class="text-[#cf4a4a]">Efficiency</span><span data-phrase="2"> Our Virtue,</span>
+            <br />
+            <span data-phrase="3" class="text-[#cf4a4a]">Experience</span><span data-phrase="4"> Our <br />
+                Attitude!!!</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="mt-8 text-slate-500 text-lg md:text-xl font-medium max-w-2xl leading-relaxed" data-aos="fade-up"
+            data-aos-delay="100">
+            Sandcircle Management Consultancy International (SMCI) - Celebrating <span
+                class="text-[#2a2c5b] font-bold px-2 py-1 bg-[#2a2c5b]/5 rounded">25 Years</span> of precision in ICT
+            Hardware, Software, and Customised Training.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="mt-12 flex flex-col sm:flex-row gap-6 w-full sm:w-auto" data-aos="fade-up" data-aos-delay="200">
+            <button
+                class="group bg-[#2a2c5b] hover:bg-[#1e1f42] text-white px-10 py-5 rounded-full font-semibold flex items-center justify-center gap-3 transition-all shadow-2xl shadow-[#2a2c5b]/30 hover:scale-105 active:scale-95">
+                Get In Touch
+                <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+            <button
+                class="group glass px-10 py-5 rounded-full font-semibold flex items-center justify-center gap-3 transition-all hover:bg-white active:scale-95">
+                Learn More
+                <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+        </div>
+
+
+
+    </main>
+
+    <!-- MARQUEE CAROUSEL -->
+    <div class="w-full flex justify-center py-10 relative z-20">
+        <div
+            class="py-10 border border-white/5 bg-black/90 overflow-hidden rounded-[2.5rem] w-full max-w-[95vw] shadow-2xl">
+            <div
+                class="flex gap-16 whitespace-nowrap animate-marquee items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- Set 1 -->
+                <span class="text-2xl font-sans font-bold text-white uppercase">Computer Sales</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Networking</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Maintenance</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Lab Designs</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Pastel Training</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">E-Learning</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Security Systems</span>
+
+                <!-- Set 2 (Duplicate for seamless loop) -->
+                <span class="text-2xl font-sans font-bold text-white uppercase">Computer Sales</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Networking</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Maintenance</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Lab Designs</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Pastel Training</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">E-Learning</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Security Systems</span>
+
+                <!-- Set 3 (Extra Duplicate for Ultra-Wide Viewports) -->
+                <span class="text-2xl font-sans font-bold text-white uppercase">Computer Sales</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Networking</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Maintenance</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Lab Designs</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Pastel Training</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">E-Learning</span>
+                <span class="text-2xl font-sans font-bold text-white uppercase">Security Systems</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="max-w-7xl mx-auto px-6 py-32 relative overflow-hidden">
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-5xl font-bold tracking-tight text-slate-900 mb-8">Who We <span
+                        class="text-gradient">Are</span></h2>
+                <p class="text-xl text-slate-500 leading-relaxed mb-10">
+                    Sandcircle Management Consultancy International (SMCI) is a leading Zimbabwean-owned consultancy
+                    providing precision technical solutions. With over <span
+                        class="text-slate-900 font-bold border-b-2 border-[#cf4a4a]">25 years</span> of trading
+                    excellence, we excel in manipulating ICT to deliver industry-leading results.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div
+                        class="p-8 glass rounded-3xl border border-white hover:border-[#2a2c5b]/20 transition-all group">
+                        <div
+                            class="w-14 h-14 bg-[#2a2c5b]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="eye" class="text-[#2a2c5b] w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-slate-900 mb-3">Our Vision</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">To be the preferred one-stop choice in the
+                            provision of ICT hardware and software based solutions packages.</p>
+                    </div>
+                    <div class="p-8 glass rounded-3xl border border-white hover:border-blue-200 transition-all group">
+                        <div
+                            class="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="target" class="text-slate-900 w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-slate-900 mb-3">Our Mission</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Design and produce world-class ICT standard
+                            packages that satisfy wide-ranging clientele needs using optimal resources.</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 flex flex-wrap gap-4">
+                    <span
+                        class="px-6 py-2.5 glass text-slate-700 rounded-full text-sm font-semibold shadow-sm border border-white">Honesty</span>
+                    <span
+                        class="px-6 py-2.5 glass text-slate-700 rounded-full text-sm font-semibold shadow-sm border border-white">Transparency</span>
+                    <span
+                        class="px-6 py-2.5 glass text-slate-700 rounded-full text-sm font-semibold shadow-sm border border-white">Efficiency</span>
+                    <span
+                        class="px-6 py-2.5 glass text-slate-700 rounded-full text-sm font-semibold shadow-sm border border-white">Proficiency</span>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="fade-left">
+                <div class="aspect-square bg-slate-100 rounded-[3rem] overflow-hidden relative shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop"
+                        alt="Team Meeting"
+                        class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-[#2a2c5b]/30 to-transparent"></div>
+                </div>
+                <!-- Experience Badge -->
+                <div
+                    class="absolute -bottom-10 -left-10 glass p-10 rounded-[2.5rem] shadow-2xl border border-white animate-float">
+                    <div class="text-5xl font-extrabold text-gradient">25+</div>
+                    <div class="text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mt-2">Years of Excellence
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES WORLD SECTION -->
+    <section id="services" class="py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-5xl font-bold tracking-tight text-slate-900 mb-6">Our <span
+                        class="text-gradient">Service Worlds</span></h2>
+                <p class="max-w-2xl mx-auto text-slate-500 text-lg">Comprehensive technical solutions engineered with
+                    over two decades of expertise to exceed modern industry standards.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Hardware World -->
+                <div class="group p-10 glass rounded-[2rem] border border-white hover:border-[#2a2c5b]/20 transition-all hover:shadow-2xl hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-16 h-16 bg-[#2a2c5b]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+                        <i data-lucide="cpu" class="text-[#2a2c5b] w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Computer Hardware</h3>
+                    <ul class="space-y-3 text-slate-500">
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-[#cf4a4a]"></i> Desktops & Laptops</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-[#cf4a4a]"></i> Printers & Scanners</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-[#cf4a4a]"></i> Interactive Boards</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-[#cf4a4a]"></i> Full Maintenance</li>
+                    </ul>
+                </div>
+
+                <!-- Software World -->
+                <div class="group p-10 glass rounded-[2rem] border border-white hover:border-[#2a2c5b]/20 transition-all hover:shadow-2xl hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-16 h-16 bg-[#cf4a4a]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+                        <i data-lucide="code" class="text-[#cf4a4a] w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Computer Software</h3>
+                    <ul class="space-y-3 text-slate-500">
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-[#cf4a4a]"></i> OS Deployment</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-[#cf4a4a]"></i> MS Office & Security</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-[#cf4a4a]"></i> Custom LMS Solutions</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-[#cf4a4a]"></i> Research Applications</li>
+                    </ul>
+                </div>
+
+                <!-- E-Learning World (Featured) -->
+                <div class="group p-10 bg-slate-900 rounded-[2.5rem] border border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all relative overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#cf4a4a]/10 rounded-full blur-3xl"></div>
+                    <div class="w-16 h-16 bg-[#cf4a4a]/20 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="globe" class="text-[#cf4a4a] w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">E-Learning World</h3>
+                    <p class="text-slate-400 mb-6 leading-relaxed">Advanced ELPo & ELEd portals with interactive classes
+                        derived from state-approved curriculums.</p>
+                    <a href="#"
+                        class="inline-flex items-center gap-3 font-bold text-[#cf4a4a] hover:gap-4 transition-all">
+                        Explore Platforms <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <!-- Designing & Fitting -->
+                <div class="group p-10 glass rounded-[2rem] border border-white hover:border-blue-300 transition-all hover:shadow-2xl hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-16 h-16 bg-orange-100/50 rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+                        <i data-lucide="layout" class="text-orange-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Designing & Fitting</h3>
+                    <ul class="space-y-3 text-slate-500">
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-orange-500"></i> Lab Structural Design</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-orange-500"></i> Carpentry & Tiling</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-orange-500"></i> Electrical Wiring</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-orange-500"></i> Metal Fabrication</li>
+                    </ul>
+                </div>
+
+                <!-- Security Systems -->
+                <div class="group p-10 glass rounded-[2rem] border border-white hover:border-[#2a2c5b]/20 transition-all hover:shadow-2xl hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-16 h-16 bg-red-100/50 rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+                        <i data-lucide="shield-check" class="text-red-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Security Systems</h3>
+                    <ul class="space-y-3 text-slate-500">
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-red-500"></i> Access Control Units</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-red-500"></i> CCTV Control Rooms</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-red-500"></i> Data Integrity</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-red-500"></i> Ethical Hacking</li>
+                    </ul>
+                </div>
+
+                <!-- Customised Training -->
+                <div class="group p-10 glass rounded-[2rem] border border-white hover:border-[#2a2c5b]/20 transition-all hover:shadow-2xl hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-16 h-16 bg-purple-100/50 rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform">
+                        <i data-lucide="book-open" class="text-purple-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Customised Training</h3>
+                    <ul class="space-y-3 text-slate-500">
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-purple-500"></i> SMCI Certified Paths</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-purple-500"></i> Pastel Accounting</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-purple-500"></i> Intermediate ICT</li>
+                        <li class="flex items-center gap-3"><i data-lucide="chevron-right"
+                                class="w-4 h-4 text-purple-500"></i> Org. Specific Training</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTELE SECTION -->
+    <section id="clients" class="py-32 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20" data-aos="fade-up">
+            <h2 class="text-5xl font-bold tracking-tight text-slate-900 mb-6">Our <span
+                    class="text-gradient">Clientele</span></h2>
+            <p class="text-xl text-slate-500 leading-relaxed max-w-3xl mx-auto">
+                A diverse and distinguished portfolio of clients across the public, private, and non-profit sectors.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Education Sector -->
+            <div class="group p-10 glass rounded-[2.5rem] border border-white hover:border-[#2a2c5b]/20 transition-all hover:shadow-2xl h-full"
+                data-aos="fade-up" data-aos-delay="100">
+                <div
+                    class="w-16 h-16 bg-[#2a2c5b]/5 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                    <i data-lucide="graduation-cap" class="text-[#2a2c5b] w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-6">Education Sector</h3>
+                <div class="space-y-6">
+                    <div class="bg-white/40 p-6 rounded-2xl border border-white/60">
+                        <div class="text-3xl font-extrabold text-[#2a2c5b] mb-1">50+</div>
+                        <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none">Partner
+                            Schools & Colleges</div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">Providing high-impact ICT solutions to Government,
+                        Local Government, and Private institutions across the nation.</p>
+                </div>
+            </div>
+
+            <!-- Public Sector & Councils -->
+            <div class="group p-10 glass rounded-[2.5rem] border border-white hover:border-[#2a2c5b]/20 transition-all hover:shadow-2xl h-full"
+                data-aos="fade-up" data-aos-delay="200">
+                <div
+                    class="w-16 h-16 bg-[#cf4a4a]/5 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                    <i data-lucide="landmark" class="text-[#cf4a4a] w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-6">Govt & Councils</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <span class="w-1.5 h-1.5 bg-[#cf4a4a] rounded-full mt-2"></span>
+                        <span class="text-slate-600">Bulawayo City Council</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="w-1.5 h-1.5 bg-[#cf4a4a] rounded-full mt-2"></span>
+                        <span class="text-slate-600">Gwanda Rural District Council</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="w-1.5 h-1.5 bg-[#cf4a4a] rounded-full mt-2"></span>
+                        <span class="text-slate-600">Zimparks - Hwange</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Private Sector - Enterprise -->
+            <div class="group p-10 glass rounded-[2.5rem] border border-white hover:border-[#2a2c5b]/20 transition-all hover:shadow-2xl h-full"
+                data-aos="fade-up" data-aos-delay="300">
+                <div
+                    class="w-16 h-16 bg-[#2a2c5b]/5 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                    <i data-lucide="briefcase" class="text-[#2a2c5b] w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-6">Private Enterprise</h3>
+                <ul class="space-y-3">
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">Innscor</strong> (Bulawayo Head
+                        Offices)</li>
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">Clothing Industry Pension
+                            Fund</strong></li>
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">Afdaal Investments</strong>
+                        (Finance)</li>
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">Reliable Designs</strong> (Graphic
+                        Design)</li>
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">Michview Enterprises</strong>
+                        (Livestock)</li>
+                </ul>
+            </div>
+
+            <!-- Professional Services & Health -->
+            <div class="group p-10 glass rounded-[2.5rem] border border-white hover:border-[#2a2c5b]/20 transition-all hover:shadow-2xl h-full"
+                data-aos="fade-up" data-aos-delay="100">
+                <div
+                    class="w-16 h-16 bg-[#2a2c5b]/5 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                    <i data-lucide="stethoscope" class="text-[#2a2c5b] w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-6">Professional & Health</h3>
+                <ul class="space-y-3">
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">Calderwood, Bryce Hendrie &
+                            Partners</strong></li>
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">Fiscal Consultancy</strong>
+                        (Accounting)</li>
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">Royal Pharmacy</strong></li>
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">Medsup & Lab Supplies</strong>
+                    </li>
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">Millenium Marketing</strong>
+                        (Medical)</li>
+                </ul>
+            </div>
+
+            <!-- NGOs & Social Development -->
+            <div class="group p-10 glass rounded-[2.5rem] border border-white hover:border-[#2a2c5b]/20 transition-all hover:shadow-2xl h-full"
+                data-aos="fade-up" data-aos-delay="200">
+                <div
+                    class="w-16 h-16 bg-[#2a2c5b]/5 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                    <i data-lucide="users" class="text-[#2a2c5b] w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-6">NGOs & Development</h3>
+                <ul class="space-y-3">
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">ZimCare Trust</strong> (Gibbs
+                        Training Centre)</li>
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">Jairos Jiri Association</strong>
+                    </li>
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">YMCA</strong> (Bulawayo & Head
+                        Office)</li>
+                    <li class="text-sm text-slate-600"><strong class="text-slate-900">Focus Development Trust</strong>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Specialized Sectors -->
+            <div class="group p-10 glass rounded-[2.5rem] border border-white hover:border-[#2a2c5b]/20 transition-all hover:shadow-2xl h-full"
+                data-aos="fade-up" data-aos-delay="300">
+                <div
+                    class="w-16 h-16 bg-[#2a2c5b]/5 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                    <i data-lucide="component" class="text-[#2a2c5b] w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-6">Specialized Sectors</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-xs font-bold text-[#cf4a4a] uppercase tracking-widest mb-1">Faith-Based</h4>
+                        <p class="text-xs text-slate-600">Brethren In Christ Church (Admin & Treasury)</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-[#cf4a4a] uppercase tracking-widest mb-1">Security</h4>
+                        <p class="text-xs text-slate-600">Safesec Security, Highway Security</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-[#cf4a4a] uppercase tracking-widest mb-1">Tourism & Community
+                        </h4>
+                        <p class="text-xs text-slate-600">Elgiboh Travel, School of Mines, MAGENTS Society</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-20 text-center" data-aos="fade-up">
+            <a href="clientele.html"
+                class="inline-flex items-center gap-3 bg-slate-900 text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-slate-800 transition-all hover:shadow-2xl hover:-translate-y-1 group">
+                View Full Clientele Directory
+                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+            <p class="mt-4 text-sm text-slate-500 font-medium italic">Efficiency Our Virtue, Experience Our Attitude!!
+            </p>
+        </div>
+    </section>
+
+    <!-- CSR SECTION -->
+    <section class="py-32 relative overflow-hidden bg-slate-900 text-white">
+        <!-- Abstract Decoration -->
+        <div class="absolute top-0 left-0 w-full h-full pointer-events-none -z-0">
+            <div class="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] bg-[#2a2c5b]/10 rounded-full blur-[120px]">
+            </div>
+            <div class="absolute bottom-[-10%] left-[-5%] w-[30%] h-[40%] bg-[#cf4a4a]/5 rounded-full blur-[100px]">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-24 items-center">
+                <div class="order-2 md:order-1" data-aos="zoom-in-right">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1000&auto=format&fit=crop"
+                            alt="Youth Education" class="rounded-[3rem] shadow-2xl border border-white/10">
+                        <div class="absolute -bottom-8 -right-8 glass-dark p-8 rounded-3xl border border-white/10">
+                            <i data-lucide="heart" class="text-red-500 w-10 h-10 animate-pulse"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2" data-aos="fade-left">
+                    <h2 class="text-5xl font-bold tracking-tight mb-8">Giving <span class="text-[#cf4a4a]">Back</span>
+                    </h2>
+                    <h3 class="text-[#2a2c5b] font-bold text-2xl mb-6 flex items-center gap-3 italic">
+                        <span class="w-12 h-[2px] bg-[#cf4a4a]"></span>
+                        "Creating tomorrow’s industrious leaders today"
+                    </h3>
+                    <p class="text-xl text-slate-400 leading-relaxed mb-12">
+                        We are fundamentally committed to empowering the Bulawayo community through sustainable
+                        educational partnerships and sponsorships.
+                    </p>
+                    <div class="space-y-10">
+                        <div class="flex gap-6 group">
+                            <div
+                                class="w-16 h-16 glass-dark rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i data-lucide="users" class="text-[#cf4a4a] w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-2xl mb-3">Boys to Real Man (B2RM)</h4>
+                                <p class="text-slate-400 leading-relaxed">A prestigious provincial program preparing
+                                    male young learners for responsible adulthood.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 group">
+                            <div
+                                class="w-16 h-16 glass-dark rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i data-lucide="award" class="text-[#cf4a4a] w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-2xl mb-3">Merit & Quiz Sponsorship</h4>
+                                <p class="text-slate-400 leading-relaxed">Leading partner in Bulawayo Province Merit
+                                    Awards and High Schools Quiz competitions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT SECTION -->
+    <footer id="contact" class="bg-slate-950 pt-32 pb-16 relative overflow-hidden text-slate-400">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+                <!-- Branding & Slogan -->
+                <div class="lg:col-span-1" data-aos="fade-up">
+                    <img src="assets/logo.png" alt="Sandcircle Logo"
+                        class="h-12 w-auto object-contain mb-8 brightness-0 invert">
+                    <p class="text-slate-500 text-sm leading-relaxed mb-10 italic">
+                        "Efficiency Our Virtue, <br />Experience Our Attitude!!!"
+                    </p>
+                    <div class="flex gap-5">
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#cf4a4a] transition-all text-white shadow-lg shadow-[#cf4a4a]/10">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#cf4a4a] transition-all text-white shadow-lg shadow-[#cf4a4a]/10">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#cf4a4a] transition-all text-white shadow-lg shadow-[#cf4a4a]/10">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Contact Gateway</h4>
+                    <ul class="space-y-6 text-sm">
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#cf4a4a] transition-colors">
+                                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="leading-relaxed">143 J.M.N Nkomo Street, Bulawayo</span>
+                                <a href="contact.html"
+                                    class="block text-[#cf4a4a] text-[10px] font-bold uppercase tracking-widest hover:underline">View
+                                    Interactive Map</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#cf4a4a] transition-colors">
+                                <i data-lucide="phone" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>+263 292 887600</p>
+                                <p class="text-slate-500 text-xs">Mon-Fri: 8AM - 5PM</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#cf4a4a] transition-colors">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>sales@sandcircle.co.zw</p>
+                                <a href="contact.html"
+                                    class="block text-[#cf4a4a] text-[10px] font-bold uppercase tracking-widest hover:underline">Send
+                                    Secure Message</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Banking Details -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Banking Protocol</h4>
+                    <div class="glass-dark p-6 rounded-2xl border border-white/5 space-y-4">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-slate-500">Bank</span>
+                            <span class="font-bold text-white">CBZ Bank</span>
+                        </div>
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="text-slate-500">Branch</span>
+                            <span class="font-bold text-white">Jason Moyo</span>
+                        </div>
+                        <div class="pt-4 border-t border-white/5 space-y-3">
+                            <div>
+                                <p class="text-[10px] uppercase text-slate-500 mb-1">ZWL Account</p>
+                                <p class="text-xs font-mono text-[#cf4a4a]">01224188760014</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase text-slate-500 mb-1">USD Account</p>
+                                <p class="text-xs font-mono text-[#cf4a4a]">01224188760034</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Navigation</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="index.html" class="hover:text-white transition-colors flex items-center gap-2">
+                                <i data-lucide="chevron-right" class="w-3 h-3 text-[#cf4a4a]"></i> Home</a>
+                        </li>
+                        <li><a href="index.html#about"
+                                class="hover:text-white transition-colors flex items-center gap-2">
+                                <i data-lucide="chevron-right" class="w-3 h-3 text-[#cf4a4a]"></i> About Us</a>
+                        </li>
+                        <li><a href="clientele.html" class="hover:text-white transition-colors flex items-center gap-2">
+                                <i data-lucide="chevron-right" class="w-3 h-3 text-[#cf4a4a]"></i> Clientele
+                                Directory</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors flex items-center gap-2">
+                                <i data-lucide="chevron-right" class="w-3 h-3 text-[#cf4a4a]"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] uppercase tracking-[0.3em] font-bold text-slate-500">
+                <div>© 2026 Sandcircle International / Precision Driven</div>
+                <div class="flex gap-10">
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                        REG: 1033/2001</span>
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#cf4a4a] rounded-full"></span>
+                        VAT: 10020676</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize AOS and Lucide Icons -->
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        lucide.createIcons();
+
+        // GSAP Typewriter Effect for Hero Title (Phrase-by-Phrase)
+        window.addEventListener('load', () => {
+            const heroTitle = document.getElementById('hero-title');
+            if (heroTitle) {
+                // Get all phrase containers
+                const phrases = heroTitle.querySelectorAll('[data-phrase]');
+
+                // Wrap characters in each phrase
+                phrases.forEach(phrase => {
+                    const text = phrase.textContent;
+                    phrase.innerHTML = '';
+                    text.split('').forEach(char => {
+                        const span = document.createElement('span');
+                        span.textContent = char;
+                        span.style.opacity = '0';
+                        phrase.appendChild(span);
+                    });
+                });
+
+                // Create GSAP timeline for sequential animation with pauses
+                const tl = gsap.timeline();
+                const pauseDuration = 0.4; // Pause between phrases
+
+                phrases.forEach((phrase, index) => {
+                    const chars = phrase.querySelectorAll('span');
+                    tl.to(chars, {
+                        opacity: 1,
+                        duration: 0.08,
+                        stagger: 0.04,
+                        ease: "none"
+                    });
+                    // Add pause after each phrase except the last
+                    if (index < phrases.length - 1) {
+                        tl.to({}, { duration: pauseDuration });
+                    }
+                });
+            }
+        });
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNavPanel = document.getElementById('mobile-nav-panel');
+        const mobileNavClose = document.getElementById('mobile-nav-close');
+        const mobileNavLinks = document.querySelectorAll('#mobile-nav-panel a');
+
+        if (mobileMenuBtn && mobileNavPanel) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNavPanel.classList.remove('opacity-0', 'pointer-events-none');
+                mobileNavPanel.classList.add('opacity-100', 'pointer-events-auto');
+            });
+
+            mobileNavClose.addEventListener('click', () => {
+                mobileNavPanel.classList.add('opacity-0', 'pointer-events-none');
+                mobileNavPanel.classList.remove('opacity-100', 'pointer-events-auto');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNavPanel.classList.add('opacity-0', 'pointer-events-none');
+                    mobileNavPanel.classList.remove('opacity-100', 'pointer-events-auto');
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

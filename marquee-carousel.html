@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquee Carousel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+
+        /* Pause animation on hover for better UX */
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 min-h-screen flex items-center justify-center p-8">
+
+    <div class="py-10 border border-white/5 bg-black/50 overflow-hidden rounded-lg w-full max-w-6xl">
+        <div
+            class="flex gap-16 whitespace-nowrap animate-marquee items-center opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+            <!-- Set 1 -->
+            <span class="text-2xl font-sans font-bold text-white">SALES</span>
+            <span class="text-2xl font-sans font-bold text-white">SERVING SKILLS</span>
+            <span class="text-2xl font-sans font-bold text-white">HARDWARE</span>
+            <span class="text-2xl font-sans font-bold text-white">NETWORKING</span>
+            <span class="text-2xl font-sans font-bold text-white">LAB DESIGNS</span>
+            <span class="text-2xl font-sans font-bold text-white">MAINTENANCE</span>
+            <span class="text-2xl font-sans font-bold text-white">E-LEARNING</span>
+
+            <!-- Set 2 (Duplicate for seamless loop) -->
+            <span class="text-2xl font-sans font-bold text-white">SALES</span>
+            <span class="text-2xl font-sans font-bold text-white">SERVING SKILLS</span>
+            <span class="text-2xl font-sans font-bold text-white">HARDWARE</span>
+            <span class="text-2xl font-sans font-bold text-white">NETWORKING</span>
+            <span class="text-2xl font-sans font-bold text-white">LAB DESIGNS</span>
+            <span class="text-2xl font-sans font-bold text-white">MAINTENANCE</span>
+            <span class="text-2xl font-sans font-bold text-white">E-LEARNING</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
