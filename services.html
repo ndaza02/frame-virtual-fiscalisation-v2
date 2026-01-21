@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Sandcircle International</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary: #2a2c5b;
+            --primary-dark: #1e1f42;
+            --accent: #cf4a4a;
+            --bg-blur: rgba(255, 255, 255, 0.7);
+            --bg-blur-dark: rgba(15, 23, 42, 0.8);
+        }
+
+        body {
+            font-family: 'Outfit', 'Inter', sans-serif;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: var(--bg-blur);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-dark {
+            background: var(--bg-blur-dark);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bg-mesh {
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(42, 44, 91, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(232, 49, 49, 0.05) 0px, transparent 50%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #2a2c5b, #cf4a4a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-mesh selection:bg-blue-100">
+
+    <!-- NAVIGATION -->
+    <nav id="main-nav"
+        class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-6 flex items-center justify-between sticky top-4 z-[100] glass rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-white/20 mx-4">
+        <div class="flex items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/logo.png" alt="Sandcircle Logo" class="h-8 md:h-10 w-auto object-contain">
+            </a>
+        </div>
+        <div
+            class="hidden md:flex bg-white/40 border border-white/20 rounded-full p-1.5 items-center shadow-sm absolute left-1/2 -translate-x-1/2">
+            <a href="index.html"
+                class="text-slate-500 hover:text-slate-900 px-5 py-2 text-sm font-medium transition-colors">Home</a>
+            <a href="about.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">About</a>
+            <a href="services.html"
+                class="bg-[#2a2c5b] text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md shadow-[#2a2c5b]/20">Services</a>
+            <a href="clientele.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Clients</a>
+            <a href="contact.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Contact</a>
+        </div>
+        <div class="flex items-center gap-2 md:gap-6">
+            <span
+                class="hidden lg:flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+                <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                Precision Driven
+            </span>
+            <!-- Desktop CTA -->
+            <a href="contact.html"
+                class="hidden md:inline-flex bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#cf4a4a] transition-all hover:shadow-lg">Expert
+                Consultation</a>
+            <!-- Mobile CTA -->
+            <a href="contact.html"
+                class="md:hidden bg-[#cf4a4a] text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-[#b93a3a] transition-all">Inquire</a>
+            <!-- Mobile Hamburger -->
+            <button id="mobile-menu-btn"
+                class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-900 text-white">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="mobile-nav-panel"
+        class="fixed inset-0 z-[200] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
+        <button id="mobile-nav-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <a href="index.html" class="text-4xl font-bold text-white hover:text-[#cf4a4a] transition-colors">Home</a>
+        <a href="about.html" class="text-4xl font-bold text-white hover:text-[#cf4a4a] transition-colors">About</a>
+        <a href="services.html" class="text-4xl font-bold text-[#cf4a4a] transition-colors">Services</a>
+        <a href="clientele.html"
+            class="text-4xl font-bold text-white hover:text-[#cf4a4a] transition-colors">Clients</a>
+        <a href="contact.html" class="text-4xl font-bold text-white hover:text-[#cf4a4a] transition-colors">Contact</a>
+        <a href="contact.html"
+            class="mt-8 bg-[#cf4a4a] text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-[#b93a3a] transition-all">Expert
+            Consultation</a>
+    </div>
+
+    <!-- HEADER -->
+    <header class="max-w-5xl mx-auto px-6 pt-32 pb-20 text-center">
+        <h1 class="text-6xl md:text-7xl font-bold tracking-tight text-[#2a2c5b] mb-8" data-aos="fade-up">
+            Our Service <span class="text-[#cf4a4a]">Worlds</span>
+        </h1>
+        <p class="text-xl text-slate-500 leading-relaxed max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            Comprehensive technical solutions engineered with intelligence and creativity to exceed modern industry
+            standards.
+        </p>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-7xl mx-auto px-6 pb-40">
+
+        <div class="grid lg:grid-cols-2 gap-12">
+
+            <!-- Hardware World -->
+            <section
+                class="glass p-12 rounded-[3.5rem] border border-white hover:border-[#2a2c5b]/20 transition-all shadow-sm hover:shadow-xl"
+                data-aos="fade-up">
+                <div class="w-16 h-16 bg-[#2a2c5b]/10 rounded-2xl flex items-center justify-center mb-10">
+                    <i data-lucide="cpu" class="text-[#2a2c5b] w-8 h-8"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Computer Hardware</h2>
+                <p class="text-slate-600 mb-8 leading-relaxed">
+                    We supply top-tier computing equipment tailored for high-performance corporate environments and
+                    educational institutions.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-white/50 p-4 rounded-2xl border border-white/40">
+                        <h4 class="font-bold text-slate-800 mb-2 text-sm">Computing</h4>
+                        <ul class="text-xs text-slate-500 space-y-2">
+                            <li>• Desktops & Laptops</li>
+                            <li>• Servers & Workstations</li>
+                            <li>• Tablets & Mobile Devices</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-2xl border border-white/40">
+                        <h4 class="font-bold text-slate-800 mb-2 text-sm">Peripherals</h4>
+                        <ul class="text-xs text-slate-500 space-y-2">
+                            <li>• Printers & Scanners</li>
+                            <li>• Projectors & Screens</li>
+                            <li>• Interactive Smart Boards</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Software World -->
+            <section
+                class="glass p-12 rounded-[3.5rem] border border-white hover:border-[#cf4a4a]/20 transition-all shadow-sm hover:shadow-xl"
+                data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 bg-[#cf4a4a]/10 rounded-2xl flex items-center justify-center mb-10">
+                    <i data-lucide="code" class="text-[#cf4a4a] w-8 h-8"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Computer Software</h2>
+                <p class="text-slate-600 mb-8 leading-relaxed">
+                    From operating systems to specialized business applications, we ensure your digital infrastructure
+                    is robust and secure.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-white/50 p-4 rounded-2xl border border-white/40">
+                        <h4 class="font-bold text-slate-800 mb-2 text-sm">Core Systems</h4>
+                        <ul class="text-xs text-slate-500 space-y-2">
+                            <li>• Microsoft Windows & Office</li>
+                            <li>• Antivirus & Security Suites</li>
+                            <li>• Server OS Deployment</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-2xl border border-white/40">
+                        <h4 class="font-bold text-slate-800 mb-2 text-sm">Business Apps</h4>
+                        <ul class="text-xs text-slate-500 space-y-2">
+                            <li>• Sage Pastel Accounting</li>
+                            <li>• Payroll Systems</li>
+                            <li>• Custom Database Solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- E-Learning World (Featured Full Width) -->
+            <section
+                class="lg:col-span-2 bg-[#0f172a] p-12 md:p-16 rounded-[3.5rem] border border-slate-800 relative overflow-hidden group"
+                data-aos="fade-up">
+                <div
+                    class="absolute top-0 right-0 w-96 h-96 bg-[#cf4a4a]/10 blur-[80px] rounded-full group-hover:bg-[#cf4a4a]/20 transition-colors duration-700">
+                </div>
+                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="w-16 h-16 bg-[#cf4a4a]/20 rounded-2xl flex items-center justify-center mb-8">
+                            <i data-lucide="globe" class="text-[#cf4a4a] w-8 h-8"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">E-Learning World</h2>
+                        <p class="text-slate-400 mb-8 leading-relaxed">
+                            Revolutionizing education with our bespoke **ELPo** (E-Learning Portal) and **ELEd**
+                            (E-Learning Education) platforms. We provide interactive, curriculum-compliant digital
+                            classrooms.
+                        </p>
+                        <a href="contact.html"
+                            class="inline-flex items-center gap-3 text-white font-bold hover:gap-4 transition-all">
+                            Request Demo <i data-lucide="arrow-right" class="text-[#cf4a4a] w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <!-- Feature List -->
+                    <div class="grid gap-4">
+                        <div class="bg-white/5 p-6 rounded-3xl border border-white/10 flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                                <i data-lucide="video" class="w-5 h-5"></i></div>
+                            <div>
+                                <div class="font-bold text-white text-sm">Interactive Classes</div>
+                                <div class="text-xs text-slate-500">Video & Audio Integration</div>
+                            </div>
+                        </div>
+                        <div class="bg-white/5 p-6 rounded-3xl border border-white/10 flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
+                                <i data-lucide="book-open" class="w-5 h-5"></i></div>
+                            <div>
+                                <div class="font-bold text-white text-sm">Digital Libraries</div>
+                                <div class="text-xs text-slate-500">Access to thousands of resources</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Designing & Fitting -->
+            <section
+                class="glass p-12 rounded-[3.5rem] border border-white hover:border-orange-300/30 transition-all shadow-sm hover:shadow-xl"
+                data-aos="fade-up">
+                <div class="w-16 h-16 bg-orange-100/50 rounded-2xl flex items-center justify-center mb-10">
+                    <i data-lucide="layout" class="text-orange-600 w-8 h-8"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Designing & Fitting</h2>
+                <p class="text-slate-600 mb-8 leading-relaxed">
+                    We transform empty spaces into state-of-the-art computer laboratories and office environments.
+                </p>
+                <ul class="space-y-4 text-sm font-medium text-slate-600">
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                        Structural Lab Design</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                        Carpentry & Furniture Fitting</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                        Electrical Wiring & Networking</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                        Aluminum & Metal Fabrication</li>
+                </ul>
+            </section>
+
+            <!-- Security Systems -->
+            <section
+                class="glass p-12 rounded-[3.5rem] border border-white hover:border-red-300/30 transition-all shadow-sm hover:shadow-xl"
+                data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 bg-red-100/50 rounded-2xl flex items-center justify-center mb-10">
+                    <i data-lucide="shield-check" class="text-red-600 w-8 h-8"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Security Systems</h2>
+                <p class="text-slate-600 mb-8 leading-relaxed">
+                    Protecting your assets with advanced digital surveillance and access control technologies.
+                </p>
+                <ul class="space-y-4 text-sm font-medium text-slate-600">
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-red-500"></span> CCTV
+                        Installation & Monitoring</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-red-500"></span> Biometric
+                        Access Control</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-red-500"></span> Security
+                        Alarms & Sensors</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-red-500"></span> Remote
+                        Viewing Setup</li>
+                </ul>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0f172a] py-32 relative overflow-hidden text-slate-400">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-20">
+                <div>
+                    <img src="assets/logo.png" alt="SMCI Logo" class="h-10 w-auto mb-10 brightness-0 invert opacity-80">
+                    <p class="text-xs leading-relaxed mb-10">
+                        Bridging the ICT gap with precision technical solutions for 25 years. Zimbabwe's preferred
+                        choice for hardware, software, and training.
+                    </p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Navigation</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors text-white">Services</a>
+                        </li>
+                        <li><a href="clientele.html" class="hover:text-white transition-colors">Clientele Directory</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-[10px]">USD Account</h4>
+                    <div class="glass-dark p-6 rounded-2xl border border-white/5">
+                        <p class="text-xs uppercase text-slate-500 mb-1">CBZ Bank - Jason Moyo</p>
+                        <p class="text-sm font-mono text-[#cf4a4a] font-bold">01224188760034</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-[10px]">Slogan</h4>
+                    <p class="text-sm font-bold text-[#cf4a4a]">Efficiency Our Virtue, Experience Our Attitude!!</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+        lucide.createIcons();
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNavPanel = document.getElementById('mobile-nav-panel');
+        const mobileNavClose = document.getElementById('mobile-nav-close');
+        const mobileNavLinks = document.querySelectorAll('#mobile-nav-panel a');
+
+        if (mobileMenuBtn && mobileNavPanel) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNavPanel.classList.remove('opacity-0', 'pointer-events-none');
+                mobileNavPanel.classList.add('opacity-100', 'pointer-events-auto');
+            });
+
+            mobileNavClose.addEventListener('click', () => {
+                mobileNavPanel.classList.add('opacity-0', 'pointer-events-none');
+                mobileNavPanel.classList.remove('opacity-100', 'pointer-events-auto');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNavPanel.classList.add('opacity-0', 'pointer-events-none');
+                    mobileNavPanel.classList.remove('opacity-100', 'pointer-events-auto');
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
