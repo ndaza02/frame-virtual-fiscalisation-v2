@@ -238,35 +238,47 @@
                         <div class="space-y-2">
                             <label class="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Full
                                 Name</label>
-                            <input type="text" placeholder="John Doe"
+                            <input type="text" placeholder="John Doe" required
                                 class="w-full bg-white/40 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#224fc6]/10 focus:border-[#224fc6] transition-all outline-none">
                         </div>
                         <div class="space-y-2">
-                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Email
-                                Address</label>
-                            <input type="email" placeholder="john@company.com"
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Company
+                                Name</label>
+                            <input type="text" placeholder="Your Business Ltd" required
                                 class="w-full bg-white/40 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#224fc6]/10 focus:border-[#224fc6] transition-all outline-none">
                         </div>
                     </div>
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Subject</label>
-                        <select
-                            class="w-full bg-white/40 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#2a2c5b]/10 focus:border-[#2a2c5b] transition-all outline-none appearance-none">
-                            <option>ICT Hardware Inquiry</option>
-                            <option>Software Solutions</option>
-                            <option>Customised Training</option>
-                            <option>Other Services</option>
-                        </select>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Email
+                                Address</label>
+                            <input type="email" placeholder="john@company.com" required
+                                class="w-full bg-white/40 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#224fc6]/10 focus:border-[#224fc6] transition-all outline-none">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Inquiry
+                                Type</label>
+                            <select required
+                                class="w-full bg-white/40 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#224fc6]/10 focus:border-[#224fc6] transition-all outline-none appearance-none">
+                                <option value="" disabled selected>Select an option</option>
+                                <option>Virtual Fiscalisation Setup</option>
+                                <option>Partner Program Inquiry</option>
+                                <option>API Integration & Dev Hub</option>
+                                <option>Sales & Pricing</option>
+                                <option>Technical Support</option>
+                                <option>Other Inquiry</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="space-y-2">
                         <label class="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Your
                             Message</label>
-                        <textarea rows="5" placeholder="How can we help you?"
+                        <textarea rows="4" placeholder="How can we help your business?" required
                             class="w-full bg-white/40 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#224fc6]/10 focus:border-[#224fc6] transition-all outline-none resize-none"></textarea>
                     </div>
                     <button type="submit"
                         class="w-full bg-[#224fc6] text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-[#183bb0] transition-all shadow-xl shadow-[#224fc6]/20 group">
-                        Send Message
+                        Send Inquiry
                         <i data-lucide="send"
                             class="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
                     </button>
