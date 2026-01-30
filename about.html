@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Sandcircle International</title>
+    <meta name="description"
+        content="Learn about FRAME's mission to transform fiscal compliance in Zimbabwe through virtual fiscalisation and local expertise.">
+    <title>About Us - FRAME Virtual Fiscalisation</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,9 +28,9 @@
 
     <style>
         :root {
-            --primary: #2a2c5b;
-            --primary-dark: #1e1f42;
-            --accent: #cf4a4a;
+            --primary: #224fc6;
+            --primary-dark: #183bb0;
+            --accent: #224fc6;
             --bg-blur: rgba(255, 255, 255, 0.7);
             --bg-blur-dark: rgba(15, 23, 42, 0.8);
         }
@@ -56,12 +59,12 @@
         .bg-mesh {
             background-color: #f8fafc;
             background-image:
-                radial-gradient(at 0% 0%, rgba(42, 44, 91, 0.05) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(232, 49, 49, 0.05) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(34, 79, 198, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(34, 79, 198, 0.05) 0px, transparent 50%);
         }
 
         .text-gradient {
-            background: linear-gradient(to right, #2a2c5b, #cf4a4a);
+            background: linear-gradient(to right, #224fc6, #183bb0);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -82,6 +85,32 @@
                 transform: translateY(-20px);
             }
         }
+
+        /* Search Results Styling */
+        .search-result-item {
+            transition: all 0.2s ease;
+        }
+
+        .search-result-item:hover {
+            background: rgba(34, 79, 198, 0.1);
+            transform: translateX(4px);
+        }
+
+        .search-highlight {
+            animation: highlight-pulse 2s ease-out;
+        }
+
+        @keyframes highlight-pulse {
+            0% {
+                background-color: rgba(34, 79, 198, 0.4);
+                box-shadow: 0 0 20px rgba(34, 79, 198, 0.4);
+            }
+
+            100% {
+                background-color: transparent;
+                box-shadow: 0 0 0 rgba(34, 79, 198, 0);
+            }
+        }
     </style>
 </head>
 
@@ -89,41 +118,51 @@
 
     <!-- NAVIGATION -->
     <nav id="main-nav"
-        class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-6 flex items-center justify-between sticky top-4 z-[100] glass rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-white/20 mx-4">
+        class="max-w-7xl mx-auto px-4 lg:px-6 py-3 lg:py-6 flex items-center justify-between sticky top-4 z-[100] glass rounded-[2rem] lg:rounded-[2.5rem] shadow-xl border border-white/20 mx-4">
         <div class="flex items-center">
-            <a href="index.html" class="flex items-center">
-                <img src="assets/logo.png" alt="Sandcircle Logo" class="h-8 md:h-10 w-auto object-contain">
-            </a>
+            <div class="relative w-24 lg:w-32 h-8 lg:h-10 flex items-center">
+                <a href="index.html"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 scale-[5] origin-left z-20 transition-transform hover:scale-[5.1]">
+                    <img src="assets/frame-logo.png" alt="FRAME Logo" class="h-8 lg:h-10 w-auto object-contain">
+                </a>
+            </div>
         </div>
         <div
-            class="hidden md:flex bg-white/40 border border-white/20 rounded-full p-1.5 items-center shadow-sm absolute left-1/2 -translate-x-1/2">
+            class="hidden lg:flex bg-white/40 border border-white/20 rounded-full p-1.5 items-center shadow-sm absolute left-1/2 -translate-x-1/2">
             <a href="index.html"
                 class="text-slate-500 hover:text-slate-900 px-5 py-2 text-sm font-medium transition-colors">Home</a>
+
             <a href="about.html"
-                class="bg-[#2a2c5b] text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md shadow-[#2a2c5b]/20">About</a>
-            <a href="services.html"
-                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Services</a>
-            <a href="clientele.html"
-                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Clients</a>
-            <a href="contact.html"
-                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Contact</a>
+                class="bg-[#224fc6] text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md shadow-[#224fc6]/20">About</a>
+
+            <a href="pricing.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Pricing</a>
+            <a href="partners.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Partners</a>
+            <a href="resources.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Resources</a>
+            <a href="developer-hub.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Dev Hub</a>
+            <a href="support.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Support</a>
         </div>
-        <div class="flex items-center gap-2 md:gap-6">
-            <span
-                class="hidden lg:flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
-                <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                Precision Driven
-            </span>
+        <div class="flex items-center gap-2 lg:gap-6">
+            <!-- Search Button -->
+            <button id="search-btn"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-slate-600 hover:text-[#224fc6] transition-all hover:shadow-md"
+                title="Search">
+                <i data-lucide="search" class="w-5 h-5"></i>
+            </button>
             <!-- Desktop CTA -->
             <a href="contact.html"
-                class="hidden md:inline-flex bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#cf4a4a] transition-all hover:shadow-lg">Expert
-                Consultation</a>
+                class="hidden lg:inline-flex bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#224fc6] transition-all hover:shadow-lg">Get
+                Started Here</a>
             <!-- Mobile CTA -->
             <a href="contact.html"
-                class="md:hidden bg-[#cf4a4a] text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-[#b93a3a] transition-all">Inquire</a>
+                class="lg:hidden bg-[#224fc6] text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-[#183bb0] transition-all">Inquire</a>
             <!-- Mobile Hamburger -->
             <button id="mobile-menu-btn"
-                class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-900 text-white">
+                class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-900 text-white">
                 <i data-lucide="menu" class="w-5 h-5"></i>
             </button>
         </div>
@@ -136,48 +175,163 @@
             class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white">
             <i data-lucide="x" class="w-6 h-6"></i>
         </button>
-        <a href="index.html" class="text-4xl font-bold text-white hover:text-[#cf4a4a] transition-colors">Home</a>
-        <a href="about.html" class="text-4xl font-bold text-[#cf4a4a] transition-colors">About</a>
-        <a href="services.html"
-            class="text-4xl font-bold text-white hover:text-[#cf4a4a] transition-colors">Services</a>
-        <a href="clientele.html"
-            class="text-4xl font-bold text-white hover:text-[#cf4a4a] transition-colors">Clients</a>
-        <a href="contact.html" class="text-4xl font-bold text-white hover:text-[#cf4a4a] transition-colors">Contact</a>
+        <a href="index.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Home</a>
+
+        <a href="about.html" class="text-4xl font-bold text-[#224fc6] transition-colors">About</a>
+        <a href="pricing.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Pricing</a>
+        <a href="partners.html"
+            class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors mobile-nav-link">Partners</a>
+        <a href="resources.html"
+            class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors mobile-nav-link">Resources</a>
+        <a href="developer-hub.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Dev
+            Hub</a>
+        <a href="support.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Support</a>
         <a href="contact.html"
-            class="mt-8 bg-[#cf4a4a] text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-[#b93a3a] transition-all">Expert
-            Consultation</a>
+            class="mt-8 bg-[#224fc6] text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-[#183bb0] transition-all">Get
+            Started Here</a>
     </div>
 
-    <!-- HEADER -->
-    <header class="max-w-5xl mx-auto px-6 pt-32 pb-20 text-center">
-        <h1 class="text-6xl md:text-7xl font-bold tracking-tight text-[#2a2c5b] mb-8" data-aos="fade-up">
-            Who We <span class="text-[#cf4a4a]">Are</span>
+    <!-- SEARCH OVERLAY MODAL -->
+    <div id="search-overlay"
+        class="fixed inset-0 z-[300] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-start pt-32 opacity-0 pointer-events-none transition-all duration-300">
+        <button id="search-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="w-full max-w-2xl px-6">
+            <div class="relative">
+                <i data-lucide="search" class="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-slate-400"></i>
+                <input type="text" id="search-input"
+                    class="w-full bg-white/10 border border-white/20 rounded-full px-16 py-5 text-xl text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#224fc6]/50 backdrop-blur-sm"
+                    placeholder="Search this page..." autocomplete="off">
+            </div>
+            <p id="search-hint" class="text-slate-500 text-sm mt-4 text-center">Press <kbd
+                    class="px-2 py-1 bg-white/10 rounded text-white">Esc</kbd> to close</p>
+
+            <!-- Dynamic Results Container -->
+            <div id="search-results-container" class="mt-8 max-h-[50vh] overflow-y-auto hidden custom-scrollbar">
+                <div id="search-results-list" class="space-y-2 pb-8">
+                    <!-- Results will be injected here -->
+                </div>
+            </div>
+
+            <p id="search-no-results" class="text-slate-500 text-center mt-8 hidden">No matches found for "<span
+                    id="search-query-display" class="text-white"></span>"</p>
+        </div>
+    </div>
+    <header
+        class="max-w-7xl mx-auto px-6 pt-32 pb-20 text-center relative z-10 rounded-[3.5rem] overflow-hidden min-h-[60vh] flex flex-col items-center justify-center mb-12 mt-8">
+        <!-- Background Video -->
+        <div class="absolute inset-0 -z-10">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-20">
+                <source src="assets/hero-bg-abstract.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#224fc6]/30 to-transparent"></div>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#224fc6]/10 text-[#224fc6] text-xs font-bold tracking-[0.2em] uppercase mb-8"
+            data-aos="fade-up">
+            <span class="w-2 h-2 rounded-full bg-[#224fc6] animate-pulse"></span>
+            About FRAME
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-8 max-w-5xl" data-aos="fade-up"
+            data-aos-delay="100">
+            Leading the digital transformation of <span class="text-gradient">fiscal compliance</span> in Zimbabwe.
         </h1>
-        <p class="text-xl text-slate-500 leading-relaxed max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-            Celebrating over <span class="text-[#2a2c5b] font-bold">25 years</span> of excellence in providing precision
-            ICT hardware, software, and consultancy solutions in Zimbabwe.
+        <p class="text-xl text-slate-500 leading-relaxed max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+            FRAME is a virtual fiscalisation platform built by local experts to help Zimbabwean businesses stay
+            compliant, efficient, and ready for growth.
         </p>
     </header>
 
     <!-- MAIN CONTENT -->
     <main class="max-w-7xl mx-auto px-6 pb-40">
 
+        <!-- Company Story Section -->
+        <section class="mb-32">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8 leading-tight">
+                        From fiscal devices to <br>
+                        <span class="text-[#224fc6]">fully virtual compliance.</span>
+                    </h2>
+                    <div class="space-y-6 text-slate-600 leading-relaxed">
+                        <p>
+                            FRAME (Fiscal Revenue Automated Management E-Solution) is a leading provider of
+                            comprehensive fiscalisation and Fiscal Data Management (FDM) compliance solutions in
+                            Zimbabwe.
+                        </p>
+                        <p>
+                            We specialise in virtual fiscalisation, helping businesses streamline financial processes,
+                            reduce operational costs, and enhance efficiency while staying fully compliant with local
+                            tax regulations.
+                        </p>
+                        <p>
+                            In 2015, Scentpro Tech signed up as Regional Implementation and Support Partner for Fiscal
+                            Revenue Solutions (FRS). FRAME was developed six years later in direct response to evolving
+                            ZIMRA requirements.
+                        </p>
+                        <p>
+                            Our technical team brings years of experience in fiscal device installations, support,
+                            maintenance, and compliance projects across sectors.
+                        </p>
+                    </div>
+
+                    <div class="mt-10 grid sm:grid-cols-3 gap-6">
+                        <div class="p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                            <div class="text-[#224fc6] mb-3"><i data-lucide="scan" class="w-6 h-6"></i></div>
+                            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider">Virtual Fiscalisation
+                            </h4>
+                        </div>
+                        <div class="p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                            <div class="text-[#224fc6] mb-3"><i data-lucide="layers" class="w-6 h-6"></i></div>
+                            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider">System Integration
+                            </h4>
+                        </div>
+                        <div class="p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                            <div class="text-[#224fc6] mb-3"><i data-lucide="headset" class="w-6 h-6"></i></div>
+                            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider">Local Support</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <div class="aspect-square rounded-[3rem] overflow-hidden bg-slate-200">
+                        <img src="assets/about-hero-2553.jpg" alt="FRAME Story" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Stats Overlay -->
+                    <div class="absolute -bottom-10 -right-10 glass p-8 rounded-[2rem] border-white shadow-2xl">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-[#224fc6] rounded-xl flex items-center justify-center text-white">
+                                <i data-lucide="check-circle" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-slate-900">100%</div>
+                                <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">ZIMRA
+                                    Compliant</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Mission & Vision -->
         <section class="grid md:grid-cols-2 gap-10 mb-24">
-            <div class="glass p-12 rounded-[3rem] border border-white hover:border-[#2a2c5b]/20 transition-all group"
+            <div class="glass p-12 rounded-[3rem] border border-white hover:border-[#224fc6]/20 transition-all group"
                 data-aos="fade-right">
                 <div
-                    class="w-16 h-16 bg-[#2a2c5b]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                    <i data-lucide="eye" class="text-[#2a2c5b] w-8 h-8"></i>
+                    class="w-16 h-16 bg-[#224fc6]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                    <i data-lucide="eye" class="text-[#224fc6] w-8 h-8"></i>
                 </div>
                 <h3 class="font-bold text-3xl text-slate-900 mb-6">Our Vision</h3>
                 <p class="text-lg text-slate-600 leading-relaxed">
-                    To be the preferred one-stop choice in the provision of ICT hardware and software based solutions
-                    packages, setting the standard for technological excellence in the region.
+                    To become Zimbabwe's leading provider of digital compliance solutions, ensuring fiscalisation is a
+                    quiet enabler of business growth.
                 </p>
             </div>
 
-            <div class="glass p-12 rounded-[3rem] border border-white hover:border-[#2a2c5b]/20 transition-all group"
+            <div class="glass p-12 rounded-[3rem] border border-white hover:border-[#224fc6]/20 transition-all group"
                 data-aos="fade-left">
                 <div
                     class="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
@@ -185,131 +339,315 @@
                 </div>
                 <h3 class="font-bold text-3xl text-slate-900 mb-6">Our Mission</h3>
                 <p class="text-lg text-slate-600 leading-relaxed">
-                    Design and produce world-class ICT standard packages that satisfy wide-ranging clientele needs using
-                    optimal resources, ensuring sustainable growth for our partners.
+                    To empower business through innovative and affordable E-Solutions, combining strong fiscal controls
+                    with simplified software adoption.
                 </p>
+            </div>
+        </section>
+
+        <!-- What Makes Us Different -->
+        <section class="mb-32">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">What Makes Us <span
+                        class="text-[#224fc6]">Different</span></h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Combining deep fiscal expertise, in-house technology, and
+                    on-the-ground support.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-3xl border border-white hover:border-[#224fc6]/20 transition-all group"
+                    data-aos="fade-up">
+                    <div
+                        class="w-12 h-12 bg-[#224fc6]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield-check" class="text-[#224fc6] w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-3 text-pretty">ZIMRA-compliant virtual fiscalisation
+                    </h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Built around ZIMRA requirements from day one to
+                        ensure full compliance.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-3xl border border-white hover:border-[#224fc6]/20 transition-all group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-12 h-12 bg-[#224fc6]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="cloud" class="text-[#224fc6] w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-3 text-pretty">Cloud-based & hardware-free</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">No specialised fiscal devices required. Run
+                        everything from your existing systems.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-3xl border border-white hover:border-[#224fc6]/20 transition-all group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-12 h-12 bg-[#224fc6]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="code-2" class="text-[#224fc6] w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-3 text-pretty">In-house, customisable software</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Adaptable to POS, ERP, or custom workflows for
+                        seamless implementation.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="glass p-8 rounded-3xl border border-white hover:border-[#224fc6]/20 transition-all group"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-12 h-12 bg-[#224fc6]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="bar-chart-3" class="text-[#224fc6] w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-3 text-pretty">Real-time fiscal reporting</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Monitor all branches and transactions from a
+                        single dashboard interface.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="glass p-8 rounded-3xl border border-white hover:border-[#224fc6]/20 transition-all group"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="w-12 h-12 bg-[#224fc6]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="zap-off" class="text-[#224fc6] w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-3 text-pretty">Offline-ready workflows</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Issue receipts even during internet or power
+                        outages with locally cached data.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="glass p-8 rounded-3xl border border-white hover:border-[#224fc6]/20 transition-all group"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <div
+                        class="w-12 h-12 bg-[#224fc6]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="phone-call" class="text-[#224fc6] w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-3 text-pretty">Local support you can call</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">A dedicated Zimbabwe-based support team ready to
+                        assist your IT and finance teams.</p>
+                </div>
             </div>
         </section>
 
         <!-- Core Values -->
         <section class="mb-32">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold text-slate-900">Our Core <span class="text-[#cf4a4a]">Values</span></h2>
+                <h2 class="text-4xl font-bold text-slate-900">Our Core <span class="text-[#224fc6]">Values</span></h2>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid md:grid-cols-3 gap-8">
                 <!-- Value 1 -->
-                <div class="glass p-8 rounded-[2rem] border border-white text-center hover:-translate-y-2 transition-transform duration-300"
+                <div class="glass p-10 rounded-[2.5rem] border border-white text-center hover:-translate-y-2 transition-transform duration-300"
                     data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-12 h-12 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-6">
-                        <i data-lucide="shield-check" class="text-green-600 w-6 h-6"></i>
+                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="shield-check" class="text-[#224fc6] w-8 h-8"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Honesty</h4>
-                    <p class="text-sm text-slate-500">We conduct our business with absolute integrity in every
-                        transaction.</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-4">Compliance you can trust</h4>
+                    <p class="text-slate-500 leading-relaxed">Staying close to ZIMRA guidelines to ensure you are always
+                        audit-ready and legally compliant.</p>
                 </div>
 
                 <!-- Value 2 -->
-                <div class="glass p-8 rounded-[2rem] border border-white text-center hover:-translate-y-2 transition-transform duration-300"
+                <div class="glass p-10 rounded-[2.5rem] border border-white text-center hover:-translate-y-2 transition-transform duration-300"
                     data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <i data-lucide="search" class="text-blue-600 w-6 h-6"></i>
+                    <div class="w-16 h-16 mx-auto bg-indigo-100 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="users" class="text-indigo-600 w-8 h-8"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Transparency</h4>
-                    <p class="text-sm text-slate-500">Open communication and clear processes with all our clients.</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-4">Local-first partnership</h4>
+                    <p class="text-slate-500 leading-relaxed">Working alongside your finance and IT teams within the
+                        local context to solve Zimbabwean challenges.</p>
                 </div>
 
                 <!-- Value 3 -->
-                <div class="glass p-8 rounded-[2rem] border border-white text-center hover:-translate-y-2 transition-transform duration-300"
+                <div class="glass p-10 rounded-[2.5rem] border border-white text-center hover:-translate-y-2 transition-transform duration-300"
                     data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                        <i data-lucide="zap" class="text-purple-600 w-6 h-6"></i>
+                    <div class="w-16 h-16 mx-auto bg-purple-100 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="sparkles" class="text-purple-600 w-8 h-8"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Efficiency</h4>
-                    <p class="text-sm text-slate-500">Delivering precision solutions that optimize your operations.</p>
-                </div>
-
-                <!-- Value 4 -->
-                <div class="glass p-8 rounded-[2rem] border border-white text-center hover:-translate-y-2 transition-transform duration-300"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 mx-auto bg-orange-100 rounded-full flex items-center justify-center mb-6">
-                        <i data-lucide="award" class="text-orange-600 w-6 h-6"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Proficiency</h4>
-                    <p class="text-sm text-slate-500">Expert technical skills backed by 25+ years of industry
-                        experience.</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-4">Simple, modern experiences</h4>
+                    <p class="text-slate-500 leading-relaxed">Easy to roll out, simple to use, and flexible enough to
+                        scale with your business growth.</p>
                 </div>
             </div>
         </section>
 
         <!-- Stats / History -->
-        <section class="glass-dark rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden" data-aos="fade-up">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-[#cf4a4a]/20 blur-[100px] rounded-full"></div>
+        <section class="glass-dark rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden mb-32"
+            data-aos="fade-up">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-[#224fc6]/20 blur-[100px] rounded-full"></div>
             <div class="grid md:grid-cols-2 gap-16 relative z-10 items-center">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-bold mb-6">A Legacy of <br><span
-                            class="text-[#cf4a4a]">Innovation</span></h2>
+                            class="text-[#224fc6]">Technical Expertise</span></h2>
                     <p class="text-slate-300 leading-relaxed mb-8">
-                        Sandcircle Management Consultancy International (SMCI) was established to bridge the gap in
-                        technical ICT services in Zimbabwe. Over the decades, we have grown from a hardware supplier to
-                        a full-service consultancy partner for government, education, and private sectors.
+                        Our technical team brings years of experience in fiscal device installations, support,
+                        maintenance, and compliance projects across all sectors in Zimbabwe. FRAME was developed in
+                        direct response to evolving digital requirements.
                     </p>
                     <a href="contact.html"
-                        class="inline-flex items-center gap-3 bg-[#cf4a4a] hover:bg-[#b93a3a] text-white px-8 py-3 rounded-full font-bold transition-all">
-                        Partner With Us <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        class="inline-flex items-center gap-3 bg-[#224fc6] hover:bg-[#183bb0] text-white px-8 py-3 rounded-full font-bold transition-all">
+                        Talk To Our Team <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
                 </div>
                 <div class="grid grid-cols-2 gap-8">
                     <div class="text-center p-6 bg-white/5 rounded-3xl border border-white/10">
-                        <div class="text-4xl font-bold text-[#cf4a4a] mb-2">25+</div>
-                        <div class="text-xs uppercase tracking-widest text-slate-400">Years Active</div>
+                        <div class="text-4xl font-bold text-[#224fc6] mb-2">9+</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-400">Years Experience</div>
                     </div>
                     <div class="text-center p-6 bg-white/5 rounded-3xl border border-white/10">
-                        <div class="text-4xl font-bold text-white mb-2">50+</div>
-                        <div class="text-xs uppercase tracking-widest text-slate-400">Major Clients</div>
+                        <div class="text-4xl font-bold text-white mb-2">100%</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-400">Compliant</div>
                     </div>
-                    <div class="text-center p-6 bg-white/5 rounded-3xl border border-white/10 col-span-2">
-                        <div class="text-4xl font-bold text-blue-400 mb-2">100%</div>
-                        <div class="text-xs uppercase tracking-widest text-slate-400">Client Satisfaction</div>
+                    <div
+                        class="text-center p-6 bg-white/5 rounded-3xl border border-white/10 col-span-2 text-[#224fc6]">
+                        <div class="text-4xl font-bold mb-2 uppercase tracking-tighter">ZIMRA</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-400">Approved Platform</div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Final CALL TO ACTION -->
+        <section class="relative py-20 px-10 rounded-[3rem] overflow-hidden text-center bg-slate-900"
+            data-aos="zoom-in">
+            <div class="absolute inset-0 -z-10">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#224fc6]/20 to-transparent"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#224fc6]/10 blur-[100px] rounded-full"></div>
+            </div>
+
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Let us help you modernise <br> fiscal compliance.
+            </h2>
+            <p class="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">Whether you are a small merchant or a multi-branch
+                enterprise, FRAME can simplify your ZIMRA compliance.</p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html"
+                    class="bg-[#224fc6] text-white px-10 py-4 rounded-full font-bold hover:bg-[#183bb0] transition-all flex items-center justify-center gap-2">
+                    Talk To Our Team <i data-lucide="message-square" class="w-5 h-5"></i>
+                </a>
+                <a href="how-it-works.html"
+                    class="bg-white/10 text-white border border-white/20 px-10 py-4 rounded-full font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-2">
+                    See How It Works <i data-lucide="play-circle" class="w-5 h-5"></i>
+                </a>
             </div>
         </section>
 
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-[#0f172a] py-32 relative overflow-hidden text-slate-400">
+    <footer id="contact" class="bg-slate-950 pt-32 pb-16 relative overflow-hidden text-slate-400">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-20">
-                <div>
-                    <img src="assets/logo.png" alt="SMCI Logo" class="h-10 w-auto mb-10 brightness-0 invert opacity-80">
-                    <p class="text-xs leading-relaxed mb-10">
-                        Bridging the ICT gap with precision technical solutions for 25 years. Zimbabwe's preferred
-                        choice for hardware, software, and training.
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+                <!-- Branding & Slogan -->
+                <div class="lg:col-span-1" data-aos="fade-up">
+                    <img src="assets/frame-logo.png" alt="FRAME Logo"
+                        class="h-48 w-auto object-contain mb-8 brightness-0 invert">
+                    <p class="text-slate-500 text-sm leading-relaxed mb-10 italic">
+                        "Where Compliance Meets Innovation"
                     </p>
+                    <div class="flex gap-5">
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#224fc6] transition-all text-white shadow-lg shadow-[#224fc6]/10">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#224fc6] transition-all text-white shadow-lg shadow-[#224fc6]/10">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#224fc6] transition-all text-white shadow-lg shadow-[#224fc6]/10">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Contact Info -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Contact Gateway</h4>
+                    <ul class="space-y-6 text-sm">
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="leading-relaxed text-xs">1 Napier Ave. Hillside, Bulawayo<br>Napier Office
+                                    Park, Unit 4</span>
+                                <a href="contact.html"
+                                    class="block text-[#224fc6] text-[10px] font-bold uppercase tracking-widest hover:underline">View
+                                    Interactive Map</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="phone" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>+263 86 7718 6045</p>
+                                <p class="text-slate-500 text-xs">Mon-Fri: 8AM - 5PM</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="message-square" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>+263 78 394 0835 (WhatsApp)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>sales@frame.co.zw</p>
+                                <a href="contact.html"
+                                    class="block text-[#224fc6] text-[10px] font-bold uppercase tracking-widest hover:underline">Send
+                                    Secure Message</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
                 <div data-aos="fade-up" data-aos-delay="300">
                     <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Navigation</h4>
                     <ul class="space-y-4 text-sm font-medium">
                         <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="about.html" class="hover:text-white transition-colors text-white">About Us</a></li>
-                        <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
-                        <li><a href="clientele.html" class="hover:text-white transition-colors">Clientele Directory</a>
+                        <li><a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="partners.html" class="hover:text-white transition-colors">Partners</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="resources.html" class="hover:text-white transition-colors">Resources</a></li>
+                        <li><a href="support.html" class="hover:text-white transition-colors">Support</a></li>
+                        <li><a href="developer-hub.html" class="hover:text-white transition-colors">Developer Hub</a>
                         </li>
-                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
                     </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-[10px]">USD Account</h4>
-                    <div class="glass-dark p-6 rounded-2xl border border-white/5">
-                        <p class="text-xs uppercase text-slate-500 mb-1">CBZ Bank - Jason Moyo</p>
-                        <p class="text-sm font-mono text-[#cf4a4a] font-bold">01224188760034</p>
+
+                    <div class="mt-10 pt-8 border-t border-white/5">
+                        <h4 class="font-bold text-white mb-4 uppercase tracking-[0.2em] text-[10px]">Platform Status
+                        </h4>
+                        <div class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
+                            <span class="relative flex h-2 w-2">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">All systems
+                                operational</span>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-[10px]">Slogan</h4>
-                    <p class="text-sm font-bold text-[#cf4a4a]">Efficiency Our Virtue, Experience Our Attitude!!</p>
+            </div>
+
+            <div
+                class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] uppercase tracking-[0.3em] font-bold text-slate-500">
+                <div>© 2026 FRAME Virtual Fiscalisation. All Rights Reserved.</div>
+                <div class="flex gap-10">
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                        REG: 1033/2001</span>
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#224fc6] rounded-full"></span>
+                        VAT: 10020676</span>
                 </div>
             </div>
         </div>
@@ -341,6 +679,101 @@
                     mobileNavPanel.classList.add('opacity-0', 'pointer-events-none');
                     mobileNavPanel.classList.remove('opacity-100', 'pointer-events-auto');
                 });
+            });
+        }
+
+        // Site Search Functionality
+        const searchBtn = document.getElementById('search-btn');
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchClose = document.getElementById('search-close');
+        const searchInput = document.getElementById('search-input');
+        const resultsContainer = document.getElementById('search-results-container');
+        const resultsList = document.getElementById('search-results-list');
+        const noResults = document.getElementById('search-no-results');
+        const queryDisplay = document.getElementById('search-query-display');
+
+        function openSearch() {
+            searchOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            searchOverlay.classList.add('opacity-100', 'pointer-events-auto');
+            setTimeout(() => searchInput.focus(), 100);
+        }
+
+        function closeSearch() {
+            searchOverlay.classList.add('opacity-0', 'pointer-events-none');
+            searchOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+            searchInput.value = '';
+            resultsContainer.classList.add('hidden');
+            noResults.classList.add('hidden');
+            if (window.getSelection) window.getSelection().removeAllRanges();
+        }
+
+        function performSearch(query) {
+            query = query.toLowerCase().trim();
+            resultsList.innerHTML = '';
+
+            if (query.length < 2) {
+                resultsContainer.classList.add('hidden');
+                noResults.classList.add('hidden');
+                return;
+            }
+
+            // Elements to search in
+            const elements = document.querySelectorAll('h1, h2, h3, h4, p, li, .text-xl, .text-lg');
+            const matches = [];
+
+            elements.forEach((el, index) => {
+                const text = el.textContent.trim();
+                if (text.toLowerCase().includes(query) && !el.closest('#search-overlay') && !el.closest('nav')) {
+                    if (!el.id) el.id = 'search-match-' + index;
+                    matches.push({ id: el.id, text: text, tag: el.tagName.toLowerCase() });
+                }
+            });
+
+            if (matches.length > 0) {
+                noResults.classList.add('hidden');
+                resultsContainer.classList.remove('hidden');
+                matches.forEach(match => {
+                    const btn = document.createElement('button');
+                    btn.className = 'w-full text-left p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all group search-result-item';
+                    let displayText = match.text;
+                    if (displayText.length > 150) displayText = displayText.substring(0, 150) + '...';
+                    const regex = new RegExp(`(${query})`, 'gi');
+                    const highlightedText = displayText.replace(regex, '<span class="text-primary font-bold">$1</span>');
+                    btn.innerHTML = `
+                        <div class="flex items-center gap-3 mb-1">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">${match.tag}</span>
+                            <div class="h-px flex-1 bg-white/5"></div>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed">${highlightedText}</p>
+                    `;
+                    btn.onclick = () => {
+                        const target = document.getElementById(match.id);
+                        if (target) {
+                            closeSearch();
+                            setTimeout(() => {
+                                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                target.classList.add('search-highlight');
+                                setTimeout(() => target.classList.remove('search-highlight'), 2000);
+                            }, 300);
+                        }
+                    };
+                    resultsList.appendChild(btn);
+                });
+            } else {
+                resultsContainer.classList.add('hidden');
+                noResults.classList.remove('hidden');
+                queryDisplay.textContent = query;
+            }
+        }
+
+        if (searchBtn && searchOverlay) {
+            searchBtn.addEventListener('click', openSearch);
+            searchClose.addEventListener('click', closeSearch);
+            searchOverlay.addEventListener('click', (e) => { if (e.target === searchOverlay) closeSearch(); });
+            searchInput.addEventListener('input', (e) => performSearch(e.target.value));
+            searchInput.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSearch(); });
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
             });
         }
     </script>

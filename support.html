@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & Contact | FRAME Virtual Fiscalisation</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta name="description"
+        content="Get local support for every stage of your fiscalisation journey. Contact the FRAME team for onboarding, technical questions, or operational support.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <style>
+        :root {
+            --primary: #224fc6;
+            --primary-dark: #183bb0;
+            --accent: #224fc6;
+            --bg-blur: rgba(255, 255, 255, 0.7);
+            --bg-blur-dark: rgba(15, 23, 42, 0.8);
+        }
+
+        body {
+            font-family: 'Outfit', 'Inter', sans-serif;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass {
+            background: var(--bg-blur);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-dark {
+            background: var(--bg-blur-dark);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Premium Gradients */
+        .bg-mesh {
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(34, 79, 198, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(34, 79, 198, 0.05) 0px, transparent 50%);
+        }
+
+        @keyframes float-blob {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: float-blob 12s infinite alternate ease-in-out;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #224fc6, #183bb0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -20px rgba(34, 79, 198, 0.15);
+        }
+
+        input,
+        select,
+        textarea {
+            transition: all 0.2s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            transform: scale(1.01);
+        }
+
+        /* Search Results Styling */
+        .search-result-item {
+            transition: all 0.2s ease;
+        }
+
+        .search-result-item:hover {
+            background: rgba(34, 79, 198, 0.1);
+            transform: translateX(4px);
+        }
+
+        .search-highlight {
+            animation: highlight-pulse 2s ease-out;
+        }
+
+        @keyframes highlight-pulse {
+            0% {
+                background-color: rgba(34, 79, 198, 0.4);
+                box-shadow: 0 0 20px rgba(34, 79, 198, 0.4);
+            }
+
+            100% {
+                background-color: transparent;
+                box-shadow: 0 0 0 rgba(34, 79, 198, 0);
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen relative text-slate-900 selection:bg-blue-100 bg-mesh">
+
+    <!-- BACKGROUND BLOBS & PATTERNS -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <!-- Floating Blobs -->
+        <div
+            class="absolute top-[-5%] left-[-5%] w-[45%] h-[45%] bg-[#224fc6]/5 rounded-full blur-[100px] animate-blob">
+        </div>
+        <div class="absolute bottom-[25%] right-[-10%] w-[35%] h-[45%] bg-[#224fc6]/5 rounded-full blur-[100px] animate-blob"
+            style="animation-delay: -5s;"></div>
+
+        <!-- Left Circuit -->
+        <svg class="absolute top-24 left-0 w-[400px] h-[400px] text-[#224fc6]/[0.1] opacity-80" viewBox="0 0 400 400"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M-10 100 H100 L130 130 H220" />
+            <circle cx="220" cy="130" r="4" fill="currentColor" class="text-[#224fc6]/40" />
+            <path d="M-10 250 H80 L120 210 H180" />
+            <circle cx="180" cy="210" r="3" fill="currentColor" class="text-[#224fc6]/40" />
+        </svg>
+
+        <!-- Right Circuit -->
+        <svg class="absolute top-10 right-0 w-[500px] h-[600px] text-[#224fc6]/[0.1] opacity-80" viewBox="0 0 500 600"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M510 320 H420 L380 360 H300" />
+            <circle cx="300" cy="360" r="3" fill="currentColor" class="text-[#224fc6]/40" />
+            <path d="M510 450 H450 L400 500 H350" />
+            <circle cx="350" cy="500" r="4" fill="currentColor" class="text-[#224fc6]/40" />
+        </svg>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav id="main-nav"
+        class="max-w-7xl mx-auto px-4 lg:px-6 py-3 lg:py-6 flex items-center justify-between sticky top-4 z-[100] glass rounded-[2rem] lg:rounded-[2.5rem] shadow-xl border border-white/20 mx-4"
+        data-aos="fade-down">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <div class="relative w-24 lg:w-32 h-8 lg:h-10 flex items-center">
+                <a href="index.html"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 scale-[5] origin-left z-20 transition-transform hover:scale-[5.1]">
+                    <img src="assets/frame-logo.png" alt="FRAME Logo" class="h-8 lg:h-10 w-auto object-contain">
+                </a>
+            </div>
+        </div>
+
+        <!-- Center Pill Menu (Desktop Only) -->
+        <div
+            class="hidden lg:flex bg-white/40 border border-white/20 rounded-full p-1.5 items-center shadow-sm absolute left-1/2 -translate-x-1/2">
+            <a href="index.html"
+                class="text-slate-500 hover:text-slate-900 px-5 py-2 text-sm font-medium transition-colors">Home</a>
+
+            <a href="about.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">About</a>
+
+            <a href="pricing.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Pricing</a>
+            <a href="partners.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Partners</a>
+            <a href="resources.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Resources</a>
+            <a href="developer-hub.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Dev Hub</a>
+            <a href="support.html"
+                class="bg-[#224fc6] text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md shadow-[#224fc6]/20">Support</a>
+        </div>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-2 lg:gap-6">
+            <!-- Search Button -->
+            <button id="search-btn"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-slate-600 hover:text-[#224fc6] transition-all hover:shadow-md"
+                title="Search">
+                <i data-lucide="search" class="w-5 h-5"></i>
+            </button>
+            <a href="support.html"
+                class="hidden lg:inline-flex bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#224fc6] transition-all hover:shadow-lg">Get
+                Started Here</a>
+            <a href="support.html"
+                class="lg:hidden bg-[#224fc6] text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-[#183bb0] transition-all">Inquire</a>
+            <button id="mobile-menu-btn"
+                class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-900 text-white">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- SEARCH OVERLAY MODAL -->
+    <div id="search-overlay"
+        class="fixed inset-0 z-[300] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-start pt-32 opacity-0 pointer-events-none transition-all duration-300">
+        <button id="search-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="w-full max-w-2xl px-6">
+            <div class="relative">
+                <i data-lucide="search" class="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-slate-400"></i>
+                <input type="text" id="search-input"
+                    class="w-full bg-white/10 border border-white/20 rounded-full px-16 py-5 text-xl text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#224fc6]/50 backdrop-blur-sm"
+                    placeholder="Search this page..." autocomplete="off">
+            </div>
+            <p id="search-hint" class="text-slate-500 text-sm mt-4 text-center">Press <kbd
+                    class="px-2 py-1 bg-white/10 rounded text-white">Esc</kbd> to close</p>
+
+            <!-- Dynamic Results Container -->
+            <div id="search-results-container" class="mt-8 max-h-[50vh] overflow-y-auto hidden custom-scrollbar">
+                <div id="search-results-list" class="space-y-2 pb-8">
+                    <!-- Results will be injected here -->
+                </div>
+            </div>
+
+            <p id="search-no-results" class="text-slate-500 text-center mt-8 hidden">No matches found for "<span
+                    id="search-query-display" class="text-white"></span>"</p>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="mobile-nav-panel"
+        class="fixed inset-0 z-[200] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
+        <button id="mobile-nav-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <a href="index.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Home</a>
+        <a href="about.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">About</a>
+        <a href="pricing.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Pricing</a>
+        <a href="partners.html"
+            class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors mobile-nav-link">Partners</a>
+        <a href="resources.html"
+            class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Resources</a>
+        <a href="developer-hub.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Dev
+            Hub</a>
+        <a href="support.html" class="text-4xl font-bold text-[#224fc6] transition-colors">Support</a>
+        <a href="support.html"
+            class="mt-8 bg-[#224fc6] text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-[#183bb0] transition-all">Get
+            Started Here</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section
+        class="max-w-7xl mx-auto px-6 pt-32 pb-20 text-center relative z-10 rounded-[3.5rem] overflow-hidden min-h-[60vh] flex flex-col items-center justify-center mb-12 mt-8">
+        <!-- Background Video -->
+        <div class="absolute inset-0 -z-10">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-20">
+                <source src="assets/hero-bg-abstract.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#224fc6]/30 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center">
+            <span
+                class="inline-block px-4 py-1.5 rounded-full bg-[#224fc6]/10 text-[#224fc6] text-[10px] font-bold uppercase tracking-[0.2em] mb-6"
+                data-aos="fade-up">SUPPORT & CONTACT</span>
+            <h1 class="text-5xl md:text-7xl font-bold text-slate-900 mb-8 tracking-tight leading-[1.1]"
+                data-aos="fade-up" data-aos-delay="100">
+                Local support for every stage <br><span class="text-gradient">of your fiscalisation journey.</span>
+            </h1>
+            <p class="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                Onboarding, technical questions, or day-to-day operational support. Our dedicated team is here to ensure
+                your business remains compliant and efficient.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT OPTIONS & FORM -->
+    <main class="max-w-7xl mx-auto px-6 pb-40">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+            <!-- LEFT: CONTACT OPTIONS -->
+            <div class="space-y-8" data-aos="fade-right">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-2">Talk to the FRAME team.</h2>
+                    <p class="text-slate-500 mb-10">We're available across multiple channels for your convenience.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <!-- Urgent Issues -->
+                    <div class="contact-card glass p-6 rounded-[2rem] border border-white">
+                        <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="phone-forwarded" class="text-red-600 w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1 uppercase tracking-wider">Urgent Issues</h4>
+                        <p class="text-lg font-bold text-[#224fc6]">+263 86 7718 6045</p>
+                    </div>
+
+                    <!-- Quick Check-ins -->
+                    <div class="contact-card glass p-6 rounded-[2rem] border border-white">
+                        <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="message-square" class="text-green-600 w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1 uppercase tracking-wider">WhatsApp</h4>
+                        <p class="text-lg font-bold text-green-600">+263 78 394 0835</p>
+                    </div>
+
+                    <!-- Sales Email -->
+                    <div class="contact-card glass p-6 rounded-[2rem] border border-white">
+                        <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="mail" class="text-blue-600 w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1 uppercase tracking-wider">Sales & Demos</h4>
+                        <p class="text-sm font-bold text-[#224fc6] truncate">sales@frame.co.zw</p>
+                    </div>
+
+                    <!-- Tech Support -->
+                    <div class="contact-card glass p-6 rounded-[2rem] border border-white">
+                        <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="terminal" class="text-purple-600 w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-sm mb-1 uppercase tracking-wider">Tech Support</h4>
+                        <p class="text-sm font-bold text-[#224fc6] truncate">support@frame.co.zw</p>
+                    </div>
+                </div>
+
+                <!-- Emergency Support -->
+                <div class="glass-dark p-8 rounded-[2.5rem] border border-white/10 text-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 blur-[60px] rounded-full"></div>
+                    <div class="flex items-center gap-6 relative z-10">
+                        <div class="w-14 h-14 bg-red-500/20 rounded-2xl flex items-center justify-center shrink-0">
+                            <i data-lucide="alert-circle" class="text-red-500 w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Emergency Support</h4>
+                            <p class="text-slate-400 text-xs uppercase tracking-[0.2em] mb-2 font-bold">Outside Business
+                                Hours</p>
+                            <p class="text-2xl font-bold text-red-500 tracking-tight">+263 77 123 4567</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office Location -->
+                <div class="glass p-10 rounded-[3rem] border border-white relative overflow-hidden">
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 bg-slate-100 rounded-2xl flex items-center justify-center shrink-0">
+                            <i data-lucide="map-pin" class="text-slate-600 w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl text-slate-900 mb-2">Office Location</h4>
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                1 Napier Ave. Hillside, Bulawayo<br>
+                                Napier Office Park, Unit 4
+                            </p>
+                            <div
+                                class="inline-flex items-center gap-2 bg-blue-50 text-[#224fc6] px-4 py-1.5 rounded-full text-xs font-bold">
+                                <i data-lucide="calendar" class="w-4 h-4"></i> Note: Book a time before visiting.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: MESSAGE FORM -->
+            <div class="glass p-12 rounded-[4rem] border border-white shadow-2xl sticky top-24" data-aos="fade-left">
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-2">Send a Message</h2>
+                    <p class="text-slate-500">Expect a response within 2-4 business hours.</p>
+                </div>
+
+                <form class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] ml-2">Full
+                            Name</label>
+                        <input type="text" placeholder="John Doe"
+                            class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-[#224fc6]/5 focus:border-[#224fc6] transition-all outline-none text-sm">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] ml-2">Work
+                            Email</label>
+                        <input type="email" placeholder="john@company.com"
+                            class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-[#224fc6]/5 focus:border-[#224fc6] transition-all outline-none text-sm">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label
+                            class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] ml-2">Subject</label>
+                        <select
+                            class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-[#224fc6]/5 focus:border-[#224fc6] transition-all outline-none text-sm appearance-none cursor-pointer">
+                            <option value="general">General Inquiry</option>
+                            <option value="sales">Sales & Demos</option>
+                            <option value="support">Technical Support</option>
+                            <option value="partnership">Partner Program</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label
+                            class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] ml-2">Message</label>
+                        <textarea rows="5" placeholder="How can we help your business today?"
+                            class="w-full bg-white/50 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-4 focus:ring-[#224fc6]/5 focus:border-[#224fc6] transition-all outline-none text-sm resize-none"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-[#224fc6] text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-[#183bb0] transition-all shadow-xl shadow-[#224fc6]/20 group">
+                        Send Secure Message
+                        <i data-lucide="send"
+                            class="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    </button>
+
+                    <p class="text-[10px] text-center text-slate-400 uppercase tracking-widest font-medium">
+                        By submitting, you agree to our <a href="#"
+                            class="text-[#224fc6] border-b border-[#224fc6]/20">Privacy Policy</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- SELF-SERVE RESOURCES -->
+    <section class="py-24 bg-slate-900 relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-[20%] left-[-10%] w-[40%] h-[40%] bg-[#224fc6]/10 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-0 right-0 w-[30%] h-[50%] bg-[#224fc6]/5 blur-[100px] rounded-full"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-4xl font-bold text-white mb-12 tracking-tight">Self-Serve <span
+                    class="text-[#224fc6]">Resources</span></h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Developer Hub -->
+                <a href="developer-hub.html"
+                    class="glass-dark p-10 rounded-[3rem] border border-white/5 text-left hover:-translate-y-2 transition-all group">
+                    <div
+                        class="w-12 h-12 bg-[#224fc6]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#224fc6] transition-colors">
+                        <i data-lucide="code-2" class="text-[#224fc6] group-hover:text-white w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 tracking-tight">Developer Hub</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Full API documentation, integration guides,
+                        and environment setups.</p>
+                    <span
+                        class="text-xs font-bold text-[#224fc6] uppercase tracking-widest flex items-center gap-2">Explore
+                        Docs <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                </a>
+
+                <!-- Blog & Guides -->
+                <a href="resources.html"
+                    class="glass-dark p-10 rounded-[3rem] border border-white/5 text-left hover:-translate-y-2 transition-all group">
+                    <div
+                        class="w-12 h-12 bg-green-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500 transition-colors">
+                        <i data-lucide="book-open" class="text-green-500 group-hover:text-white w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 tracking-tight">Blog & Guides</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Best practices, implementation stories, and
+                        compliance updates.</p>
+                    <span
+                        class="text-xs font-bold text-green-500 uppercase tracking-widest flex items-center gap-2">View
+                        Articles <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                </a>
+
+                <!-- Partner Program -->
+                <a href="resources.html"
+                    class="glass-dark p-10 rounded-[3rem] border border-white/5 text-left hover:-translate-y-2 transition-all group">
+                    <div
+                        class="w-12 h-12 bg-orange-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-500 transition-colors">
+                        <i data-lucide="users-2" class="text-orange-500 group-hover:text-white w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 tracking-tight">Partner Program</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Exclusive resources for integrators, ISVs,
+                        and resellers.</p>
+                    <span
+                        class="text-xs font-bold text-orange-500 uppercase tracking-widest flex items-center gap-2">Become
+                        Partner <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-slate-950 pt-32 pb-16 relative overflow-hidden text-slate-400">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+                <!-- Branding & Slogan -->
+                <div class="lg:col-span-1" data-aos="fade-up">
+                    <img src="assets/frame-logo.png" alt="Sandcircle Logo"
+                        class="h-48 w-auto object-contain mb-8 brightness-0 invert">
+                    <p class="text-slate-500 text-sm leading-relaxed mb-10 italic">
+                        "Where Compliance Meets Innovation"
+                    </p>
+                    <div class="flex gap-5">
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#224fc6] transition-all text-white shadow-lg shadow-[#224fc6]/10">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#224fc6] transition-all text-white shadow-lg shadow-[#224fc6]/10">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#224fc6] transition-all text-white shadow-lg shadow-[#224fc6]/10">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Contact Gateway</h4>
+                    <ul class="space-y-6 text-sm">
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="leading-relaxed text-xs">1 Napier Ave. Hillside, Bulawayo<br>Napier Office
+                                    Park, Unit 4</span>
+                                <a href="contact.html"
+                                    class="block text-[#224fc6] text-[10px] font-bold uppercase tracking-widest hover:underline">View
+                                    Interactive Map</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="phone" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>+263 86 7718 6045</p>
+                                <p class="text-slate-500 text-xs">Mon-Fri: 8AM - 5PM</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="message-square" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>+263 78 394 0835 (WhatsApp)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>sales@frame.co.zw</p>
+                                <a href="contact.html"
+                                    class="block text-[#224fc6] text-[10px] font-bold uppercase tracking-widest hover:underline">Send
+                                    Secure Message</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Navigation</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="partners.html" class="hover:text-white transition-colors">Partners</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="resources.html" class="hover:text-white transition-colors">Resources</a></li>
+                        <li><a href="support.html" class="hover:text-white transition-colors">Support</a></li>
+                        <li><a href="developer-hub.html" class="hover:text-white transition-colors">Developer Hub</a>
+                        </li>
+                    </ul>
+
+                    <div class="mt-10 pt-8 border-t border-white/5">
+                        <h4 class="font-bold text-white mb-4 uppercase tracking-[0.2em] text-[10px]">Platform Status
+                        </h4>
+                        <div class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
+                            <span class="relative flex h-2 w-2">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">All systems
+                                operational</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] uppercase tracking-[0.3em] font-bold text-slate-500">
+                <div>© 2026 FRAME Virtual Fiscalisation. All Rights Reserved.</div>
+                <div class="flex gap-10">
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                        REG: 1033/2001</span>
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#224fc6] rounded-full"></span>
+                        VAT: 10020676</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+        lucide.createIcons();
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNavPanel = document.getElementById('mobile-nav-panel');
+        const mobileNavClose = document.getElementById('mobile-nav-close');
+        const mobileNavLinks = document.querySelectorAll('#mobile-nav-panel a');
+
+        if (mobileMenuBtn && mobileNavPanel) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNavPanel.classList.remove('opacity-0', 'pointer-events-none');
+                mobileNavPanel.classList.add('opacity-100', 'pointer-events-auto');
+            });
+
+            mobileNavClose.addEventListener('click', () => {
+                mobileNavPanel.classList.add('opacity-0', 'pointer-events-none');
+                mobileNavPanel.classList.remove('opacity-100', 'pointer-events-auto');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNavPanel.classList.add('opacity-0', 'pointer-events-none');
+                    mobileNavPanel.classList.remove('opacity-100', 'pointer-events-auto');
+                });
+            });
+        }
+
+        // Site Search Functionality
+        const searchBtn = document.getElementById('search-btn');
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchClose = document.getElementById('search-close');
+        const searchInput = document.getElementById('search-input');
+        const resultsContainer = document.getElementById('search-results-container');
+        const resultsList = document.getElementById('search-results-list');
+        const noResults = document.getElementById('search-no-results');
+        const queryDisplay = document.getElementById('search-query-display');
+
+        function openSearch() {
+            searchOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            searchOverlay.classList.add('opacity-100', 'pointer-events-auto');
+            setTimeout(() => searchInput.focus(), 100);
+        }
+
+        function closeSearch() {
+            searchOverlay.classList.add('opacity-0', 'pointer-events-none');
+            searchOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+            searchInput.value = '';
+            resultsContainer.classList.add('hidden');
+            noResults.classList.add('hidden');
+            if (window.getSelection) window.getSelection().removeAllRanges();
+        }
+
+        function performSearch(query) {
+            query = query.toLowerCase().trim();
+            resultsList.innerHTML = '';
+
+            if (query.length < 2) {
+                resultsContainer.classList.add('hidden');
+                noResults.classList.add('hidden');
+                return;
+            }
+
+            // Elements to search in
+            const elements = document.querySelectorAll('h1, h2, h3, h4, p, li, .text-xl, .text-lg');
+            const matches = [];
+
+            elements.forEach((el, index) => {
+                const text = el.textContent.trim();
+                if (text.toLowerCase().includes(query) && !el.closest('#search-overlay') && !el.closest('nav')) {
+                    if (!el.id) el.id = 'search-match-' + index;
+                    matches.push({ id: el.id, text: text, tag: el.tagName.toLowerCase() });
+                }
+            });
+
+            if (matches.length > 0) {
+                noResults.classList.add('hidden');
+                resultsContainer.classList.remove('hidden');
+                matches.forEach(match => {
+                    const btn = document.createElement('button');
+                    btn.className = 'w-full text-left p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all group search-result-item';
+                    let displayText = match.text;
+                    if (displayText.length > 150) displayText = displayText.substring(0, 150) + '...';
+                    const regex = new RegExp(`(${query})`, 'gi');
+                    const highlightedText = displayText.replace(regex, '<span class="text-primary font-bold">$1</span>');
+                    btn.innerHTML = `
+                        <div class="flex items-center gap-3 mb-1">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">${match.tag}</span>
+                            <div class="h-px flex-1 bg-white/5"></div>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed">${highlightedText}</p>
+                    `;
+                    btn.onclick = () => {
+                        const target = document.getElementById(match.id);
+                        if (target) {
+                            closeSearch();
+                            setTimeout(() => {
+                                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                target.classList.add('search-highlight');
+                                setTimeout(() => target.classList.remove('search-highlight'), 2000);
+                            }, 300);
+                        }
+                    };
+                    resultsList.appendChild(btn);
+                });
+            } else {
+                resultsContainer.classList.add('hidden');
+                noResults.classList.remove('hidden');
+                queryDisplay.textContent = query;
+            }
+        }
+
+        if (searchBtn && searchOverlay) {
+            searchBtn.addEventListener('click', openSearch);
+            searchClose.addEventListener('click', closeSearch);
+            searchOverlay.addEventListener('click', (e) => { if (e.target === searchOverlay) closeSearch(); });
+            searchInput.addEventListener('input', (e) => performSearch(e.target.value));
+            searchInput.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSearch(); });
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+            });
+        }
+    </script>
+</body>
+
+</html>

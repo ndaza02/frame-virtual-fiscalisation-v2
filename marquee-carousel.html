@@ -7,6 +7,11 @@
     <title>Marquee Carousel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        :root {
+            --primary: #224fc6;
+            --accent: #224fc6;
+        }
+
         @keyframes marquee {
             0% {
                 transform: translateX(0);
@@ -18,7 +23,8 @@
         }
 
         .animate-marquee {
-            animation: marquee 20s linear infinite;
+            animation: marquee 10s linear infinite;
+            background: linear-gradient(to right, #224fc6, #183bb0);
         }
 
         /* Pause animation on hover for better UX */
@@ -34,22 +40,64 @@
         <div
             class="flex gap-16 whitespace-nowrap animate-marquee items-center opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
             <!-- Set 1 -->
-            <span class="text-2xl font-sans font-bold text-white">SALES</span>
-            <span class="text-2xl font-sans font-bold text-white">SERVING SKILLS</span>
-            <span class="text-2xl font-sans font-bold text-white">HARDWARE</span>
-            <span class="text-2xl font-sans font-bold text-white">NETWORKING</span>
-            <span class="text-2xl font-sans font-bold text-white">LAB DESIGNS</span>
-            <span class="text-2xl font-sans font-bold text-white">MAINTENANCE</span>
-            <span class="text-2xl font-sans font-bold text-white">E-LEARNING</span>
+            <img src="assets/hero-section-logo-carousel/buynbuild-logo-removebg-preview.png" alt="Buy n Build"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/eightmotors-logo-removebg-preview.png" alt="Eight Motors"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/erksales-logo-removebg-preview.png" alt="ERK Sales"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/kbtiles-logo-removebg-preview.png" alt="KB Tiles"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/lindcandy-logo-removebg-preview.png" alt="Lindcandy"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/luciedie-marketing-logo-removebg-preview.png"
+                alt="Luciedie Marketing" class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/minemachines-logo-removebg-preview.png" alt="Minemachines"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/np2solutions-logo-removebg-preview.png" alt="NP2 Solutions"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/reditech-logo-removebg-preview.png" alt="Reditech"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/tigermark-logo-removebg-preview.png" alt="Tigermark"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/topdeck-bricks-logo-removebg-preview.png" alt="Topdeck Bricks"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/apatron-mining-logo-removebg-preview.png" alt="Apatron Mining"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/best-supermarket-logo-removebg-preview.png"
+                alt="Best Supermarket" class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/builders-choice-logo-removebg-preview.png" alt="Builders Choice"
+                class="h-12 w-auto object-contain">
 
             <!-- Set 2 (Duplicate for seamless loop) -->
-            <span class="text-2xl font-sans font-bold text-white">SALES</span>
-            <span class="text-2xl font-sans font-bold text-white">SERVING SKILLS</span>
-            <span class="text-2xl font-sans font-bold text-white">HARDWARE</span>
-            <span class="text-2xl font-sans font-bold text-white">NETWORKING</span>
-            <span class="text-2xl font-sans font-bold text-white">LAB DESIGNS</span>
-            <span class="text-2xl font-sans font-bold text-white">MAINTENANCE</span>
-            <span class="text-2xl font-sans font-bold text-white">E-LEARNING</span>
+            <img src="assets/hero-section-logo-carousel/buynbuild-logo-removebg-preview.png" alt="Buy n Build"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/eightmotors-logo-removebg-preview.png" alt="Eight Motors"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/erksales-logo-removebg-preview.png" alt="ERK Sales"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/kbtiles-logo-removebg-preview.png" alt="KB Tiles"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/lindcandy-logo-removebg-preview.png" alt="Lindcandy"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/luciedie-marketing-logo-removebg-preview.png"
+                alt="Luciedie Marketing" class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/minemachines-logo-removebg-preview.png" alt="Minemachines"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/np2solutions-logo-removebg-preview.png" alt="NP2 Solutions"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/reditech-logo-removebg-preview.png" alt="Reditech"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/tigermark-logo-removebg-preview.png" alt="Tigermark"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/topdeck-bricks-logo-removebg-preview.png" alt="Topdeck Bricks"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/apatron-mining-logo-removebg-preview.png" alt="Apatron Mining"
+                class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/best-supermarket-logo-removebg-preview.png"
+                alt="Best Supermarket" class="h-12 w-auto object-contain">
+            <img src="assets/hero-section-logo-carousel/builders-choice-logo-removebg-preview.png" alt="Builders Choice"
+                class="h-12 w-auto object-contain">
         </div>
     </div>
 

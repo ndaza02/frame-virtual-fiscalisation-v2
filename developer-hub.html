@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Hub | FRAME Virtual Fiscalisation</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --primary: #224fc6;
+            --primary-dark: #183bb0;
+            --accent: #224fc6;
+            --bg-blur: rgba(255, 255, 255, 0.7);
+            --bg-blur-dark: rgba(15, 23, 42, 0.8);
+        }
+
+        body {
+            font-family: 'Outfit', 'Inter', sans-serif;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: var(--bg-blur);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-dark {
+            background: var(--bg-blur-dark);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #224fc6, #183bb0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes float-blob {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: float-blob 12s infinite alternate ease-in-out;
+        }
+
+        .code-block {
+            background: #0f172a;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            color: #e2e8f0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.875rem;
+            line-height: 1.7;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-link.active {
+            color: #224fc6;
+            background: rgba(34, 79, 200, 0.05);
+            border-right: 3px solid #224fc6;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Search Results Styling */
+        .search-result-item {
+            transition: all 0.2s ease;
+        }
+
+        .search-result-item:hover {
+            background: rgba(34, 79, 198, 0.1);
+            transform: translateX(4px);
+        }
+
+        .search-highlight {
+            animation: highlight-pulse 2s ease-out;
+        }
+
+        @keyframes highlight-pulse {
+            0% {
+                background-color: rgba(34, 79, 198, 0.4);
+                box-shadow: 0 0 20px rgba(34, 79, 198, 0.4);
+            }
+
+            100% {
+                background-color: transparent;
+                box-shadow: 0 0 0 rgba(34, 79, 198, 0);
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen relative text-slate-900 selection:bg-blue-100">
+
+    <!-- BACKGROUND BLOBS & PATTERNS -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <!-- Floating Blobs -->
+        <div
+            class="absolute top-[-5%] left-[-5%] w-[45%] h-[45%] bg-[#224fc6]/5 rounded-full blur-[100px] animate-blob">
+        </div>
+        <div class="absolute bottom-[25%] right-[-10%] w-[35%] h-[45%] bg-[#224fc6]/5 rounded-full blur-[100px] animate-blob"
+            style="animation-delay: -5s;"></div>
+
+        <!-- Left Circuit -->
+        <svg class="absolute top-24 left-0 w-[400px] h-[400px] text-[#224fc6]/[0.1] opacity-80" viewBox="0 0 400 400"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M-10 100 H100 L130 130 H220" />
+            <circle cx="220" cy="130" r="4" fill="currentColor" class="text-[#224fc6]/40" />
+            <path d="M-10 250 H80 L120 210 H180" />
+            <circle cx="180" cy="210" r="3" fill="currentColor" class="text-[#224fc6]/40" />
+            <path d="M50 350 H150 L180 380 H250" />
+            <circle cx="250" cy="380" r="2" fill="currentColor" class="text-[#224fc6]/30" />
+            <path d="M100 100 V150" />
+            <path d="M80 250 V280" />
+        </svg>
+
+        <!-- Right Circuit -->
+        <svg class="absolute top-10 right-0 w-[500px] h-[600px] text-[#224fc6]/[0.1] opacity-80" viewBox="0 0 500 600"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M510 120 H400 L350 170 H280" />
+            <circle cx="280" cy="170" r="4" fill="currentColor" class="text-[#224fc6]/40" />
+            <path d="M510 320 H420 L380 360 H300" />
+            <circle cx="300" cy="360" r="3" fill="currentColor" class="text-[#224fc6]/40" />
+            <path d="M510 450 H450 L400 500 H350" />
+            <circle cx="350" cy="500" r="4" fill="currentColor" class="text-[#224fc6]/40" />
+            <circle cx="400" cy="120" r="2" fill="currentColor" class="opacity-20" />
+            <circle cx="420" cy="320" r="2" fill="currentColor" class="opacity-20" />
+        </svg>
+    </div>
+
+    <!-- HUB HERO -->
+    <header
+        class="max-w-7xl mx-auto px-6 pt-56 pb-24 bg-slate-950 relative overflow-hidden text-white rounded-[3.5rem] mt-8">
+        <!-- Background Video -->
+        <div class="absolute inset-0 -z-10">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-20">
+                <source src="assets/hero-bg-abstract.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#224fc6]/40 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10 text-left">
+            <div class="max-w-3xl" data-aos="fade-up">
+                <div class="flex items-center gap-3 mb-6">
+                    <span
+                        class="px-4 py-1.5 bg-[#224fc6]/20 border border-[#224fc6]/30 rounded-full text-[10px] font-black uppercase tracking-widest text-[#224fc6]">API
+                        v1.1.4</span>
+                    <span
+                        class="px-4 py-1.5 bg-green-500/20 border border-green-500/30 rounded-full text-[10px] font-black uppercase tracking-widest text-green-400">Stable</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-8">Developer <span
+                        class="text-[#224fc6]">Hub</span></h1>
+                <p class="text-xl text-slate-300 leading-relaxed mb-10">
+                    Integrate FRAME's Virtual Fiscalisation Library into your application with our comprehensive
+                    documentation, guides, and technical resources.
+                </p>
+                <div class="flex gap-6">
+                    <a href="#overview"
+                        class="bg-[#224fc6] hover:bg-[#183bb0] text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-xl shadow-[#224fc6]/20">Get
+                        Started</a>
+                    <a href="#"
+                        class="glass-dark border border-white/10 px-8 py-4 rounded-2xl font-bold hover:bg-white/5 transition-all flex items-center gap-3">
+                        <i data-lucide="github" class="w-5 h-5"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav id="main-nav"
+        class="max-w-7xl mx-auto px-4 lg:px-6 py-3 lg:py-6 flex items-center justify-between fixed top-4 right-0 left-0 z-[100] glass rounded-[2rem] lg:rounded-[2.5rem] shadow-xl border border-white/20 mx-4"
+        data-aos="fade-down">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <div class="relative w-24 lg:w-32 h-8 lg:h-10 flex items-center">
+                <a href="index.html"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 scale-[5] origin-left z-20 transition-transform hover:scale-[5.1]">
+                    <img src="assets/frame-logo.png" alt="FRAME Logo" class="h-8 lg:h-10 w-auto object-contain">
+                </a>
+            </div>
+        </div>
+
+        <!-- Center Pill Menu (Desktop Only) -->
+        <div
+            class="hidden lg:flex bg-white/40 border border-white/20 rounded-full p-1.5 items-center shadow-sm absolute left-1/2 -translate-x-1/2">
+            <a href="index.html"
+                class="text-slate-500 hover:text-slate-900 px-5 py-2 text-sm font-medium transition-colors">Home</a>
+
+            <a href="about.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">About</a>
+
+            <a href="pricing.html"
+                class="text-[#94a3b8] hover:text-white px-4 py-2 text-sm font-medium transition-colors">Pricing</a>
+            <a href="partners.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Partners</a>
+            <a href="developer-hub.html"
+                class="bg-[#224fc6] text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md shadow-[#224fc6]/20">Dev
+                Hub</a>
+            <a href="support.html"
+                class="text-[#94a3b8] hover:text-white px-4 py-2 text-sm font-medium transition-colors">Support</a>
+        </div>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-2 lg:gap-6">
+            <!-- Search Button -->
+            <button id="search-btn"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-slate-600 hover:text-[#224fc6] transition-all hover:shadow-md"
+                title="Search">
+                <i data-lucide="search" class="w-5 h-5"></i>
+            </button>
+            <!-- Desktop CTA -->
+            <a href="support.html"
+                class="hidden lg:inline-flex bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#224fc6] transition-all hover:shadow-lg">Get
+                Started Here</a>
+            <!-- Mobile CTA -->
+            <a href="contact.html"
+                class="lg:hidden bg-[#224fc6] text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-[#183bb0] transition-all">Inquire</a>
+            <!-- Mobile Hamburger -->
+            <button id="mobile-menu-btn"
+                class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-900 text-white">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </nav>
+
+    </nav>
+
+    <!-- SEARCH OVERLAY MODAL -->
+    <div id="search-overlay"
+        class="fixed inset-0 z-[300] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-start pt-32 opacity-0 pointer-events-none transition-all duration-300">
+        <button id="search-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="w-full max-w-2xl px-6">
+            <div class="relative">
+                <i data-lucide="search" class="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-slate-400"></i>
+                <input type="text" id="search-input"
+                    class="w-full bg-white/10 border border-white/20 rounded-full px-16 py-5 text-xl text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#224fc6]/50 backdrop-blur-sm"
+                    placeholder="Search this page..." autocomplete="off">
+            </div>
+            <p id="search-hint" class="text-slate-500 text-sm mt-4 text-center">Press <kbd
+                    class="px-2 py-1 bg-white/10 rounded text-white">Esc</kbd> to close</p>
+
+            <!-- Dynamic Results Container -->
+            <div id="search-results-container" class="mt-8 max-h-[50vh] overflow-y-auto hidden custom-scrollbar">
+                <div id="search-results-list" class="space-y-2 pb-8">
+                    <!-- Results will be injected here -->
+                </div>
+            </div>
+
+            <p id="search-no-results" class="text-slate-500 text-center mt-8 hidden">No matches found for "<span
+                    id="search-query-display" class="text-white"></span>"</p>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="mobile-nav-panel"
+        class="fixed inset-0 z-[200] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
+        <button id="mobile-nav-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <a href="index.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Home</a>
+
+        <a href="about.html"
+            class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors mobile-nav-link">About</a>
+        <a href="pricing.html"
+            class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors mobile-nav-link">Pricing</a>
+        <a href="partners.html"
+            class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors mobile-nav-link">Partners</a>
+
+        <a href="developer-hub.html" class="text-4xl font-bold text-[#224fc6] transition-colors">Dev Hub</a>
+        <a href="support.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Support</a>
+        <a href="support.html"
+            class="mt-8 bg-[#224fc6] text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-[#183bb0] transition-all">Get
+            Started Here</a>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col lg:flex-row gap-16">
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="lg:w-64 flex-shrink-0">
+            <div class="sticky top-32 space-y-8">
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6">Getting Started
+                    </h4>
+                    <nav class="flex flex-col gap-2">
+                        <a href="#overview"
+                            class="sidebar-link px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-[#224fc6] transition-all">Overview</a>
+                        <a href="#setup"
+                            class="sidebar-link px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-[#224fc6] transition-all">Setting
+                            up the Library</a>
+                        <a href="#maven"
+                            class="sidebar-link px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-[#224fc6] transition-all">Maven
+                            Config</a>
+                    </nav>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6">Workflows</h4>
+                    <nav class="flex flex-col gap-2">
+                        <a href="#registration"
+                            class="sidebar-link px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-[#224fc6] transition-all">Device
+                            Registration</a>
+                        <a href="#configuration"
+                            class="sidebar-link px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-[#224fc6] transition-all">Device
+                            Config</a>
+                        <a href="#fiscal-day"
+                            class="sidebar-link px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-[#224fc6] transition-all">Fiscal
+                            Day Status</a>
+                        <a href="#open-day"
+                            class="sidebar-link px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-[#224fc6] transition-all">Opening
+                            a Day</a>
+                        <a href="#invoices"
+                            class="sidebar-link px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-[#224fc6] transition-all">Processing
+                            Invoices</a>
+                        <a href="#close-day"
+                            class="sidebar-link px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-[#224fc6] transition-all">Closing
+                            a Day</a>
+                    </nav>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6">Support</h4>
+                    <nav class="flex flex-col gap-2">
+                        <a href="#support"
+                            class="sidebar-link px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-[#224fc6] transition-all">Contact
+                            & Support</a>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-grow space-y-24">
+
+            <!-- OVERVIEW -->
+            <section id="overview" class="scroll-mt-32">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-4">
+                    <span class="w-10 h-10 bg-[#224fc6]/10 rounded-xl flex items-center justify-center text-[#224fc6]">
+                        <i data-lucide="book-open" class="w-5 h-5"></i>
+                    </span>
+                    Overview
+                </h2>
+                <div class="prose prose-slate max-w-none">
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        This guide provides a comprehensive overview of how to integrate and utilize the Virtual
+                        Fiscalisation Library. It assists developers in registering fiscal devices, managing
+                        fiscal-related operations such as processing invoices and credit/debit notes, and ensuring
+                        compliance with ZIMRA requirements.
+                    </p>
+                    <div class="mt-8 p-8 bg-[#224fc6]/5 rounded-3xl border border-[#224fc6]/10">
+                        <h4 class="font-bold text-[#224fc6] mb-4">Key Benefits:</h4>
+                        <ul class="grid md:grid-cols-2 gap-4">
+                            <li class="flex items-center gap-3 text-sm text-slate-600">
+                                <i data-lucide="check" class="text-[#224fc6] w-4 h-4"></i> Simplified communication with
+                                ZIMRA
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-slate-600">
+                                <i data-lucide="check" class="text-[#224fc6] w-4 h-4"></i> Abstracted complex fiscal
+                                processes
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-slate-600">
+                                <i data-lucide="check" class="text-[#224fc6] w-4 h-4"></i> User-friendly high-level APIs
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-slate-600">
+                                <i data-lucide="check" class="text-[#224fc6] w-4 h-4"></i> Full adherence to ZIMRA
+                                guidelines
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SETUP -->
+            <section id="setup" class="scroll-mt-32">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-4">
+                    <span class="w-10 h-10 bg-[#224fc6]/10 rounded-xl flex items-center justify-center text-[#224fc6]">
+                        <i data-lucide="terminal" class="w-5 h-5"></i>
+                    </span>
+                    Setting up the Library
+                </h2>
+                <div class="space-y-8">
+                    <div class="p-8 glass rounded-3xl border border-white shadow-sm">
+                        <h3 class="text-xl font-bold mb-4">1. Register a Device on ZIMRA Portal</h3>
+                        <p class="text-slate-600 mb-6 italic text-sm">Before using the API, you must register a fiscal
+                            device with ZIMRA to obtain your unique identifiers.</p>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                                <h5 class="font-bold text-xs uppercase tracking-widest text-slate-400 mb-2">Device ID
+                                </h5>
+                                <p class="text-xs text-slate-600">Unique identifier for your device.</p>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                                <h5 class="font-bold text-xs uppercase tracking-widest text-slate-400 mb-2">Serial
+                                    Number</h5>
+                                <p class="text-xs text-slate-600">Physical serial of the device.</p>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                                <h5 class="font-bold text-xs uppercase tracking-widest text-slate-400 mb-2">Activation
+                                    Key</h5>
+                                <p class="text-xs text-slate-600">Key required for activation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-8 border border-[#224fc6]/20 bg-[#224fc6]/[0.02] rounded-3xl">
+                        <h3 class="text-xl font-bold mb-4">2. Acquire API Keys</h3>
+                        <p class="text-slate-600 mb-6">Contact the FRAME sales team to acquire your development API key
+                            and library credentials. You will be provided with a <strong>username</strong> and a
+                            <strong>key</strong>, which you will use as your password for repository access.
+                        </p>
+                        <a href="mailto:sales@frame.co.zw"
+                            class="inline-flex items-center gap-3 text-[#224fc6] font-bold hover:underline">
+                            <i data-lucide="mail" class="w-5 h-5"></i> sales@frame.co.zw
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MAVEN -->
+            <section id="maven" class="scroll-mt-32">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-4">
+                    <span class="w-10 h-10 bg-[#224fc6]/10 rounded-xl flex items-center justify-center text-[#224fc6]">
+                        <i data-lucide="box" class="w-5 h-5"></i>
+                    </span>
+                    Maven Configuration
+                </h2>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 flex items-center gap-3">
+                            <i data-lucide="file-code" class="w-4 h-4 text-slate-400"></i> pom.xml Dependency
+                        </h3>
+                        <div class="code-block">
+                            <pre>&lt;dependency&gt;
+    &lt;groupId&gt;inc.frame&lt;/groupId&gt;
+    &lt;artifactId&gt;Frame-Virtual-Fiscalisation-Library&lt;/artifactId&gt;
+    &lt;version&gt;1.1.4&lt;/version&gt;
+&lt;/dependency&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 flex items-center gap-3">
+                            <i data-lucide="file-cog" class="w-4 h-4 text-slate-400"></i> settings.xml Configuration
+                        </h3>
+                        <p class="text-sm text-slate-500 mb-4">Place this in your maven <code
+                                class="bg-slate-100 px-2 py-0.5 rounded text-[#224fc6]">.m2</code> directory, replacing
+                            the library credentials with those provided by FRAME.</p>
+                        <div class="code-block h-64 overflow-y-auto">
+                            <pre>&lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"&gt;
+    &lt;servers&gt;
+        &lt;server&gt;
+            &lt;id&gt;frame-library-releases&lt;/id&gt;
+            &lt;username&gt;your_library_username&lt;/username&gt;
+            &lt;password&gt;your_api_key&lt;/password&gt;
+        &lt;/server&gt;
+    &lt;/servers&gt;
+    &lt;profiles&gt;
+        &lt;profile&gt;
+            &lt;id&gt;frame-repo&lt;/id&gt;
+            &lt;repositories&gt;
+                &lt;repository&gt;
+                    &lt;id&gt;frame-library-releases&lt;/id&gt;
+                    &lt;url&gt;https://framernd.tech/repository/frame-library-releases/&lt;/url&gt;
+                &lt;/repository&gt;
+            &lt;/repositories&gt;
+        &lt;/profile&gt;
+    &lt;/profiles&gt;
+&lt;/settings&gt;</pre>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <h3 class="text-lg font-bold mb-4">Installation</h3>
+                        <p class="text-slate-600 mb-4">To pull the library from the Nexus repository, run the following
+                            command:</p>
+                        <div class="code-block">
+                            <pre>mvn clean install</pre>
+                        </div>
+                        <div class="mt-6 p-6 bg-slate-900/50 rounded-2xl border border-white/5">
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                <strong class="text-slate-200">Note:</strong> While we are committed to assisting with
+                                library integration, our base support package includes assistance in setting up the
+                                library. Custom solution development is the client's discretion unless a higher-tier
+                                agreement is in place.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- REGISTRATION -->
+            <section id="registration" class="scroll-mt-32">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-4">
+                    <span class="w-10 h-10 bg-[#224fc6]/10 rounded-xl flex items-center justify-center text-[#224fc6]">
+                        <i data-lucide="smartphone" class="w-5 h-5"></i>
+                    </span>
+                    Device Registration
+                </h2>
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">1. Build Registration Request</h3>
+                        <div class="code-block">
+                            <pre><span class="text-blue-400">public void</span> <span class="text-yellow-400">registerDevice</span>() {
+    RegisterDeviceRequest request = RegisterDeviceRequest.builder()
+        .deviceId(DEVICE_ID)
+        .serialNumber(SERIAL_NUMBER)
+        .activationKey(ACTIVATION_KEY)
+        .build();
+
+    RegisterDeviceResponse response = registerDevice(request);
+}</pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">2. Call Registration Service</h3>
+                        <div class="code-block">
+                            <pre><span class="text-blue-400">public</span> RegisterDeviceResponse <span class="text-yellow-400">registerDevice</span>(RegisterDeviceRequest request) {
+    FdmsDeviceRegistration service = <span class="text-blue-400">new</span> FdmsDeviceRegistration(SERVER_URL);
+    <span class="text-blue-400">try</span> {
+        <span class="text-blue-400">return</span> service.registerDevice(request);
+    } <span class="text-blue-400">catch</span> (DeviceRegistrationException e) {
+        <span class="text-blue-400">throw new</span> RuntimeException(<span class="text-green-400">"Registration failed"</span>, e);
+    }
+}</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONFIGURATION -->
+            <section id="configuration" class="scroll-mt-32">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-4">
+                    <span class="w-10 h-10 bg-[#224fc6]/10 rounded-xl flex items-center justify-center text-[#224fc6]">
+                        <i data-lucide="settings" class="w-5 h-5"></i>
+                    </span>
+                    Device Configurations
+                </h2>
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">1. Build Configuration Request</h3>
+                        <div class="code-block">
+                            <pre><span class="text-blue-400">public void</span> <span class="text-yellow-400">getDeviceConfigurations</span>() {
+    DeviceConfigurationRequest request = DeviceConfigurationRequest.builder()
+        .deviceId(DEVICE_ID)
+        .build();
+
+    DeviceConfigurationResponse configResponse = getDeviceConfigurations(request);
+}</pre>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">2. Call Configuration Service</h3>
+                        <div class="code-block">
+                            <pre><span class="text-blue-400">public</span> DeviceConfigurationResponse <span class="text-yellow-400">getDeviceConfigurations</span>(DeviceConfigurationRequest request) {
+    FdmsDeviceConfigurations configService = <span class="text-blue-400">new</span> FdmsDeviceConfigurations(SERVER_URL);
+    <span class="text-blue-400">try</span> {
+        <span class="text-blue-400">return</span> configService.getDeviceConfigurations(request);
+    } <span class="text-blue-400">catch</span> (DeviceConfigurationException e) {
+        <span class="text-blue-400">throw new</span> RuntimeException(<span class="text-green-400">"Failed to get configurations"</span>, e);
+    }
+}</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FISCAL DAY STATUS -->
+            <section id="fiscal-day" class="scroll-mt-32">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-4">
+                    <span class="w-10 h-10 bg-[#224fc6]/10 rounded-xl flex items-center justify-center text-[#224fc6]">
+                        <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                    </span>
+                    Fiscal Day Status
+                </h2>
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">1. Build Status Request</h3>
+                        <div class="code-block">
+                            <pre><span class="text-blue-400">public void</span> <span class="text-yellow-400">getFiscalDayStatus</span>() {
+    FiscalDayStatusRequest request = FiscalDayStatusRequest.builder()
+        .deviceId(DEVICE_ID)
+        .build();
+
+    FiscalDayStatusResponse statusResponse = getFiscalDayStatus(request);
+}</pre>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">2. Call Status Service</h3>
+                        <div class="code-block">
+                            <pre><span class="text-blue-400">public</span> FiscalDayStatusResponse <span class="text-yellow-400">getFiscalDayStatus</span>(FiscalDayStatusRequest request) {
+    FdmsFiscalDayStatus statusService = <span class="text-blue-400">new</span> FdmsFiscalDayStatus(SERVER_URL);
+    <span class="text-blue-400">try</span> {
+        <span class="text-blue-400">return</span> statusService.getFiscalDayStatus(request);
+    } <span class="text-blue-400">catch</span> (FiscalDayStatusException e) {
+        <span class="text-blue-400">throw new</span> RuntimeException(<span class="text-green-400">"Failed to get fiscal day status"</span>, e);
+    }
+}</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OPENING A DAY -->
+            <section id="open-day" class="scroll-mt-32">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-4">
+                    <span class="w-10 h-10 bg-[#224fc6]/10 rounded-xl flex items-center justify-center text-[#224fc6]">
+                        <i data-lucide="sun" class="w-5 h-5"></i>
+                    </span>
+                    Opening a Fiscal Day
+                </h2>
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">1. Build Open Day Request</h3>
+                        <div class="code-block">
+                            <pre><span class="text-blue-400">public void</span> <span class="text-yellow-400">openFiscalDay</span>() {
+    OpenFiscalDayRequest request = OpenFiscalDayRequest.builder()
+        .deviceId(DEVICE_ID)
+        .fiscalDay(LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE))
+        .build();
+
+    OpenFiscalDayResponse response = openFiscalDay(request);
+}</pre>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">2. Call Open Day Service</h3>
+                        <div class="code-block">
+                            <pre><span class="text-blue-400">public</span> OpenFiscalDayResponse <span class="text-yellow-400">openFiscalDay</span>(OpenFiscalDayRequest request) {
+    FdmsOpenFiscalDay openService = <span class="text-blue-400">new</span> FdmsOpenFiscalDay(SERVER_URL);
+    <span class="text-blue-400">try</span> {
+        <span class="text-blue-400">return</span> openService.openFiscalDay(request);
+    } <span class="text-blue-400">catch</span> (OpenFiscalDayException e) {
+        <span class="text-blue-400">throw new</span> RuntimeException(<span class="text-green-400">"Failed to open fiscal day"</span>, e);
+    }
+}</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INVOICES -->
+            <section id="invoices" class="scroll-mt-32">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-4">
+                    <span class="w-10 h-10 bg-[#224fc6]/10 rounded-xl flex items-center justify-center text-[#224fc6]">
+                        <i data-lucide="receipt" class="w-5 h-5"></i>
+                    </span>
+                    Processing Invoices
+                </h2>
+                <div class="prose prose-slate max-w-none mb-8">
+                    <p class="text-slate-600">Once you have an open fiscal day, you can start processing invoices. Each
+                        invoice must include the necessary details such as the invoice number, date, customer
+                        information, and line items.</p>
+                </div>
+                <div class="code-block h-[400px]">
+                    <pre><span class="text-blue-400">public void</span> <span class="text-yellow-400">processInvoice</span>() {
+    <span class="text-slate-500">// Prepare Item List</span>
+    List&lt;InvoiceLine&gt; lines = Arrays.asList(
+        InvoiceLine.builder()
+            .itemCode(<span class="text-green-400">"ITM001"</span>)
+            .description(<span class="text-green-400">"Consultation"</span>)
+            .quantity(1)
+            .unitPrice(BigDecimal.valueOf(100.00))
+            .taxRate(BigDecimal.valueOf(15.00))
+            .build()
+    );
+
+    <span class="text-slate-500">// Build Request</span>
+    ProcessInvoiceRequest request = ProcessInvoiceRequest.builder()
+        .deviceId(DEVICE_ID)
+        .invoiceNumber(<span class="text-green-400">"INV-2024-001"</span>)
+        .customerName(<span class="text-green-400">"Acme Corp"</span>)
+        .lines(lines)
+        .build();
+
+    <span class="text-slate-500">// Send to ZIMRA via FRAME</span>
+    ProcessInvoiceResponse response = sendInvoice(request);
+}</pre>
+                </div>
+            </section>
+
+            <!-- CLOSING A DAY -->
+            <section id="close-day" class="scroll-mt-32">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-4">
+                    <span class="w-10 h-10 bg-[#224fc6]/10 rounded-xl flex items-center justify-center text-[#224fc6]">
+                        <i data-lucide="moon" class="w-5 h-5"></i>
+                    </span>
+                    Closing a Fiscal Day
+                </h2>
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">1. Build Close Day Request</h3>
+                        <div class="code-block">
+                            <pre><span class="text-blue-400">public void</span> <span class="text-yellow-400">closeFiscalDay</span>() {
+    CloseFiscalDayRequest request = CloseFiscalDayRequest.builder()
+        .deviceId(DEVICE_ID)
+        .fiscalDay(LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE))
+        .build();
+
+    CloseFiscalDayResponse response = closeFiscalDay(request);
+}</pre>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">2. Call Close Day Service</h3>
+                        <div class="code-block">
+                            <pre><span class="text-blue-400">public</span> CloseFiscalDayResponse <span class="text-yellow-400">closeFiscalDay</span>(CloseFiscalDayRequest request) {
+    FdmsCloseFiscalDay closeService = <span class="text-blue-400">new</span> FdmsCloseFiscalDay(SERVER_URL);
+    <span class="text-blue-400">try</span> {
+        <span class="text-blue-400">return</span> closeService.closeFiscalDay(request);
+    } <span class="text-blue-400">catch</span> (CloseFiscalDayException e) {
+        <span class="text-blue-400">throw new</span> RuntimeException(<span class="text-green-400">"Failed to close fiscal day"</span>, e);
+    }
+}</pre>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-amber-50 rounded-2xl border border-amber-100 italic text-sm text-amber-900">
+                        <strong class="block mb-2 font-bold not-italic">Important:</strong>
+                        Before closing the fiscal day, ensure that all transactions for the day have been processed, all
+                        invoices have been transmitted to ZIMRA, and you have a backup of all transaction data.
+                    </div>
+                </div>
+            </section>
+
+            <!-- SUPPORT -->
+            <section id="support" class="scroll-mt-32 pb-20">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 flex items-center gap-4">
+                    <span class="w-10 h-10 bg-[#224fc6]/10 rounded-xl flex items-center justify-center text-[#224fc6]">
+                        <i data-lucide="life-buoy" class="w-5 h-5"></i>
+                    </span>
+                    Contact & Support
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div
+                        class="p-10 glass rounded-[2.5rem] border border-white shadow-sm flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-[#224fc6]/10 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="code-2" class="text-[#224fc6] w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Technical Support</h3>
+                        <p class="text-sm text-slate-500 mb-6 font-medium">For integration queries and library
+                            assistance.</p>
+                        <a href="mailto:support@frame.co.zw"
+                            class="text-[#224fc6] font-bold text-lg hover:underline mb-2">support@frame.co.zw</a>
+                        <p class="text-xs text-slate-400">Response within 24 hours</p>
+                    </div>
+
+                    <div
+                        class="p-10 bg-slate-900 rounded-[2.5rem] border border-slate-800 shadow-xl flex flex-col items-center text-center text-white">
+                        <div class="w-16 h-16 bg-red-500/20 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="alert-circle" class="text-red-500 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Emergency Support</h3>
+                        <p class="text-sm text-slate-400 mb-6">Critical production issues only (24/7).</p>
+                        <a href="tel:+263771234567"
+                            class="text-white font-black text-lg hover:text-red-400 transition-colors">+263 77 123
+                            4567</a>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 space-y-8">
+                        <div class="p-8 bg-white rounded-3xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-6 flex items-center gap-3">
+                                <i data-lucide="clock" class="w-4 h-4 text-[#224fc6]"></i> Support Hours (Harare Time)
+                            </h4>
+                            <div class="grid grid-cols-2 gap-4 text-sm text-slate-600">
+                                <span class="font-medium">Monday - Friday</span>
+                                <span class="text-right">8:00 AM - 5:00 PM</span>
+                                <span class="font-medium">Saturday</span>
+                                <span class="text-right">9:00 AM - 1:00 PM</span>
+                                <span class="font-medium">Sunday</span>
+                                <span class="text-right text-red-500">Closed</span>
+                            </div>
+                        </div>
+
+                        <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-6">Troubleshooting Checklist</h4>
+                            <p class="text-sm text-slate-500 mb-6">For faster resolution, please include the following
+                                in your request:</p>
+                            <ul class="grid md:grid-cols-2 gap-3">
+                                <li class="flex items-center gap-3 text-xs text-slate-600">
+                                    <span class="w-1.5 h-1.5 bg-[#224fc6] rounded-full"></span> Library & Java version
+                                </li>
+                                <li class="flex items-center gap-3 text-xs text-slate-600">
+                                    <span class="w-1.5 h-1.5 bg-[#224fc6] rounded-full"></span> Detailed issue
+                                    description
+                                </li>
+                                <li class="flex items-center gap-3 text-xs text-slate-600">
+                                    <span class="w-1.5 h-1.5 bg-[#224fc6] rounded-full"></span> Steps to reproduce
+                                </li>
+                                <li class="flex items-center gap-3 text-xs text-slate-600">
+                                    <span class="w-1.5 h-1.5 bg-[#224fc6] rounded-full"></span> Error messages & logs
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="p-8 glass rounded-3xl border border-white">
+                            <h4 class="font-bold text-slate-900 mb-4">Office Location</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                1 Napier Ave., Hillside,<br>
+                                Bulawayo, Zimbabwe
+                            </p>
+                        </div>
+                        <div class="p-8 glass rounded-3xl border border-white">
+                            <h4 class="font-bold text-slate-900 mb-4">General Inquiries</h4>
+                            <p class="text-sm text-slate-600 mb-4">+263 86 7718 6045</p>
+                            <a href="https://frame.co.zw"
+                                class="text-[#224fc6] font-bold text-sm hover:underline">frame.co.zw</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-20 pt-20 border-t border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-8">Direct Client Integration</h3>
+                    <div class="code-block h-auto">
+                        <pre><span class="text-slate-500">// Initialize FRAME Client</span>
+FrameClient client = <span class="text-blue-400">new</span> FrameClient.Builder()
+    .setApiKey(<span class="text-green-400">"your_api_key"</span>)
+    .setEnvironment(Environment.PRODUCTION)
+    .build();
+
+<span class="text-slate-500">// Execute device registration</span>
+DeviceResponse response = client.registerDevice(<span class="text-blue-400">new</span> DeviceRegistration(
+    <span class="text-green-400">"YOUR_DEVICE_ID"</span>, 
+    <span class="text-green-400">"YOUR_SERIAL_NUMBER"</span>, 
+    <span class="text-green-400">"YOUR_ACTIVATION_KEY"</span>
+));</pre>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer id="contact" class="bg-slate-950 pt-32 pb-16 relative overflow-hidden text-slate-400">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+                <!-- Branding & Slogan -->
+                <div class="lg:col-span-1" data-aos="fade-up">
+                    <img src="assets/frame-logo.png" alt="Sandcircle Logo"
+                        class="h-48 w-auto object-contain mb-8 brightness-0 invert">
+                    <p class="text-slate-500 text-sm leading-relaxed mb-10 italic">
+                        "Where Compliance Meets Innovation"
+                    </p>
+                    <div class="flex gap-5">
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#224fc6] transition-all text-white shadow-lg shadow-[#224fc6]/10">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#224fc6] transition-all text-white shadow-lg shadow-[#224fc6]/10">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#224fc6] transition-all text-white shadow-lg shadow-[#224fc6]/10">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Contact Gateway</h4>
+                    <ul class="space-y-6 text-sm">
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="leading-relaxed text-xs">1 Napier Ave. Hillside, Bulawayo<br>Napier Office
+                                    Park, Unit 4</span>
+                                <a href="contact.html"
+                                    class="block text-[#224fc6] text-[10px] font-bold uppercase tracking-widest hover:underline">View
+                                    Interactive Map</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="phone" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>+263 86 7718 6045</p>
+                                <p class="text-slate-500 text-xs">Mon-Fri: 8AM - 5PM</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="message-square" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>+263 78 394 0835 (WhatsApp)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>sales@frame.co.zw</p>
+                                <a href="contact.html"
+                                    class="block text-[#224fc6] text-[10px] font-bold uppercase tracking-widest hover:underline">Send
+                                    Secure Message</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Navigation</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="partners.html" class="hover:text-white transition-colors">Partners</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="resources.html" class="hover:text-white transition-colors">Resources</a></li>
+                        <li><a href="support.html" class="hover:text-white transition-colors">Support</a></li>
+                        <li><a href="developer-hub.html" class="hover:text-white transition-colors">Developer Hub</a>
+                        </li>
+                    </ul>
+
+                    <div class="mt-10 pt-8 border-t border-white/5">
+                        <h4 class="font-bold text-white mb-4 uppercase tracking-[0.2em] text-[10px]">Platform Status
+                        </h4>
+                        <div class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
+                            <span class="relative flex h-2 w-2">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">All systems
+                                operational</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] uppercase tracking-[0.3em] font-bold text-slate-500">
+                <div>© 2026 FRAME Virtual Fiscalisation. All Rights Reserved.</div>
+                <div class="flex gap-10">
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                        REG: 1033/2001</span>
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#224fc6] rounded-full"></span>
+                        VAT: 10020676</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-out-quad'
+        });
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNavPanel = document.getElementById('mobile-nav-panel');
+        const mobileNavClose = document.getElementById('mobile-nav-close');
+        const mobileNavLinks = document.querySelectorAll('#mobile-nav-panel a');
+
+        if (mobileMenuBtn && mobileNavPanel) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNavPanel.classList.remove('opacity-0', 'pointer-events-none');
+                mobileNavPanel.classList.add('opacity-100', 'pointer-events-auto');
+            });
+
+            mobileNavClose.addEventListener('click', () => {
+                mobileNavPanel.classList.add('opacity-0', 'pointer-events-none');
+                mobileNavPanel.classList.remove('opacity-100', 'pointer-events-auto');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNavPanel.classList.add('opacity-0', 'pointer-events-none');
+                    mobileNavPanel.classList.remove('opacity-100', 'pointer-events-auto');
+                });
+            });
+        }
+
+        // Site Search Functionality
+        const searchBtn = document.getElementById('search-btn');
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchClose = document.getElementById('search-close');
+        const searchInput = document.getElementById('search-input');
+        const resultsContainer = document.getElementById('search-results-container');
+        const resultsList = document.getElementById('search-results-list');
+        const noResults = document.getElementById('search-no-results');
+        const queryDisplay = document.getElementById('search-query-display');
+
+        function openSearch() {
+            searchOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            searchOverlay.classList.add('opacity-100', 'pointer-events-auto');
+            setTimeout(() => searchInput.focus(), 100);
+        }
+
+        function closeSearch() {
+            searchOverlay.classList.add('opacity-0', 'pointer-events-none');
+            searchOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+            searchInput.value = '';
+            resultsContainer.classList.add('hidden');
+            noResults.classList.add('hidden');
+            if (window.getSelection) window.getSelection().removeAllRanges();
+        }
+
+        function performSearch(query) {
+            query = query.toLowerCase().trim();
+            resultsList.innerHTML = '';
+
+            if (query.length < 2) {
+                resultsContainer.classList.add('hidden');
+                noResults.classList.add('hidden');
+                return;
+            }
+
+            // Elements to search in
+            const elements = document.querySelectorAll('h1, h2, h3, h4, p, li, .text-xl, .text-lg');
+            const matches = [];
+
+            elements.forEach((el, index) => {
+                const text = el.textContent.trim();
+                if (text.toLowerCase().includes(query) && !el.closest('#search-overlay') && !el.closest('nav')) {
+                    if (!el.id) el.id = 'search-match-' + index;
+                    matches.push({ id: el.id, text: text, tag: el.tagName.toLowerCase() });
+                }
+            });
+
+            if (matches.length > 0) {
+                noResults.classList.add('hidden');
+                resultsContainer.classList.remove('hidden');
+                matches.forEach(match => {
+                    const btn = document.createElement('button');
+                    btn.className = 'w-full text-left p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all group search-result-item';
+                    let displayText = match.text;
+                    if (displayText.length > 150) displayText = displayText.substring(0, 150) + '...';
+                    const regex = new RegExp(`(${query})`, 'gi');
+                    const highlightedText = displayText.replace(regex, '<span class="text-primary font-bold">$1</span>');
+                    btn.innerHTML = `
+                        <div class="flex items-center gap-3 mb-1">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">${match.tag}</span>
+                            <div class="h-px flex-1 bg-white/5"></div>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed">${highlightedText}</p>
+                    `;
+                    btn.onclick = () => {
+                        const target = document.getElementById(match.id);
+                        if (target) {
+                            closeSearch();
+                            setTimeout(() => {
+                                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                target.classList.add('search-highlight');
+                                setTimeout(() => target.classList.remove('search-highlight'), 2000);
+                            }, 300);
+                        }
+                    };
+                    resultsList.appendChild(btn);
+                });
+            } else {
+                resultsContainer.classList.add('hidden');
+                noResults.classList.remove('hidden');
+                queryDisplay.textContent = query;
+            }
+        }
+
+        if (searchBtn && searchOverlay) {
+            searchBtn.addEventListener('click', openSearch);
+            searchClose.addEventListener('click', closeSearch);
+            searchOverlay.addEventListener('click', (e) => { if (e.target === searchOverlay) closeSearch(); });
+            searchInput.addEventListener('input', (e) => performSearch(e.target.value));
+            searchInput.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSearch(); });
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+            });
+        }
+    </script>
+</body>
+
+</html>

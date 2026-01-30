@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | FRAME Virtual Fiscalisation</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta name="description"
+        content="Access guides, articles, and documentation to help you plan, implement, and scale FRAME Virtual Fiscalisation.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP for advanced animations -->
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- ClickUp Forms Embed Script -->
+    <script async src="https://app-cdn.clickup.com/assets/js/forms-embed/v1.js"></script>
+
+    <style>
+        :root {
+            --primary: #224fc6;
+            --primary-dark: #183bb0;
+            --accent: #224fc6;
+            --bg-blur: rgba(255, 255, 255, 0.7);
+            --bg-blur-dark: rgba(15, 23, 42, 0.8);
+        }
+
+        body {
+            font-family: 'Outfit', 'Inter', sans-serif;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .glass-dark {
+            background: #0f172a;
+            /* Solid slate-900 instead of transparent */
+            /* Removed blur to avoid washed out look on light bg */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Premium Gradients */
+        .bg-mesh {
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(34, 79, 198, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(34, 79, 198, 0.05) 0px, transparent 50%);
+        }
+
+        @keyframes float-blob {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: float-blob 12s infinite alternate ease-in-out;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #224fc6, #183bb0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .resource-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-8px);
+            background: white;
+            box-shadow: 0 20px 40px -20px rgba(34, 79, 198, 0.15);
+        }
+
+        /* Search Results Styling */
+        .search-result-item {
+            transition: all 0.2s ease;
+        }
+
+        .search-result-item:hover {
+            background: rgba(34, 79, 198, 0.1);
+            transform: translateX(4px);
+        }
+
+        .search-highlight {
+            animation: highlight-pulse 2s ease-out;
+        }
+
+        @keyframes highlight-pulse {
+            0% {
+                background-color: rgba(34, 79, 198, 0.4);
+                box-shadow: 0 0 20px rgba(34, 79, 198, 0.4);
+            }
+
+            100% {
+                background-color: transparent;
+                box-shadow: 0 0 0 rgba(34, 79, 198, 0);
+            }
+        }
+
+        /* Accordion Styles */
+        .resources-form__toggle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 2rem;
+            background: #1e293b;
+            /* Solid slate-800 */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            color: #f1f5f9;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .resources-form__toggle:hover {
+            background: rgba(30, 41, 59, 0.9);
+            border-color: rgba(34, 79, 198, 0.3);
+            color: white;
+        }
+
+        .resources-form__toggle[aria-expanded="true"] {
+            background: #224fc6;
+            color: white;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-color: #224fc6;
+        }
+
+        .resources-form__panel {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: none;
+            border-bottom-left-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .resources-form__panel--open {
+            max-height: 2000px;
+            /* Large enough to fit iframe */
+            opacity: 1;
+            padding: 2rem;
+        }
+
+        .clickup-form-wrapper {
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: white;
+        }
+
+        .clickup-form-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 800px;
+            border: 0;
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen relative text-slate-900 selection:bg-blue-100 bg-mesh">
+
+    <!-- BACKGROUND BLOBS & PATTERNS -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <!-- Floating Blobs -->
+        <div
+            class="absolute top-[-5%] left-[-5%] w-[45%] h-[45%] bg-[#224fc6]/5 rounded-full blur-[100px] animate-blob">
+        </div>
+        <div class="absolute bottom-[25%] right-[-10%] w-[35%] h-[45%] bg-[#224fc6]/5 rounded-full blur-[100px] animate-blob"
+            style="animation-delay: -5s;"></div>
+
+        <!-- Left Circuit -->
+        <svg class="absolute top-24 left-0 w-[400px] h-[400px] text-[#224fc6]/[0.1] opacity-80" viewBox="0 0 400 400"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M-10 100 H100 L130 130 H220" />
+            <circle cx="220" cy="130" r="4" fill="currentColor" class="text-[#224fc6]/40" />
+            <path d="M-10 250 H80 L120 210 H180" />
+            <circle cx="180" cy="210" r="3" fill="currentColor" class="text-[#224fc6]/40" />
+        </svg>
+
+        <!-- Right Circuit -->
+        <svg class="absolute top-10 right-0 w-[500px] h-[600px] text-[#224fc6]/[0.1] opacity-80" viewBox="0 0 500 600"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M510 320 H420 L380 360 H300" />
+            <circle cx="300" cy="360" r="3" fill="currentColor" class="text-[#224fc6]/40" />
+            <path d="M510 450 H450 L400 500 H350" />
+            <circle cx="350" cy="500" r="4" fill="currentColor" class="text-[#224fc6]/40" />
+        </svg>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav id="main-nav"
+        class="max-w-7xl mx-auto px-4 lg:px-6 py-3 lg:py-6 flex items-center justify-between sticky top-4 z-[100] glass rounded-[2rem] lg:rounded-[2.5rem] shadow-xl border border-white/20 mx-4"
+        data-aos="fade-down">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <div class="relative w-24 lg:w-32 h-8 lg:h-10 flex items-center">
+                <a href="index.html"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 scale-[5] origin-left z-20 transition-transform hover:scale-[5.1]">
+                    <img src="assets/frame-logo.png" alt="FRAME Logo" class="h-8 lg:h-10 w-auto object-contain">
+                </a>
+            </div>
+        </div>
+
+        <!-- Center Pill Menu (Desktop Only) -->
+        <div
+            class="hidden lg:flex bg-white/40 border border-white/20 rounded-full p-1.5 items-center shadow-sm absolute left-1/2 -translate-x-1/2">
+            <a href="index.html"
+                class="text-slate-500 hover:text-slate-900 px-5 py-2 text-sm font-medium transition-colors">Home</a>
+            <a href="about.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">About</a>
+
+            <a href="pricing.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Pricing</a>
+            <a href="partners.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Partners</a>
+            <a href="resources.html"
+                class="bg-[#224fc6] text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md shadow-[#224fc6]/20">Resources</a>
+            <a href="developer-hub.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Dev Hub</a>
+            <a href="support.html"
+                class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Support</a>
+        </div>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-2 lg:gap-6">
+            <!-- Search Button -->
+            <button id="search-btn"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-slate-600 hover:text-[#224fc6] transition-all hover:shadow-md"
+                title="Search">
+                <i data-lucide="search" class="w-5 h-5"></i>
+            </button>
+            <a href="support.html"
+                class="hidden lg:inline-flex bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#224fc6] transition-all hover:shadow-lg">Get
+                Started Here</a>
+            <a href="support.html"
+                class="lg:hidden bg-[#224fc6] text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-[#183bb0] transition-all">Inquire</a>
+            <button id="mobile-menu-btn"
+                class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-900 text-white">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="mobile-nav-panel"
+        class="fixed inset-0 z-[200] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
+        <button id="mobile-nav-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <a href="index.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Home</a>
+        <a href="about.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">About</a>
+        <a href="pricing.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Pricing</a>
+        <a href="partners.html"
+            class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors mobile-nav-link">Partners</a>
+        <a href="resources.html" class="text-4xl font-bold text-[#224fc6] transition-colors">Resources</a>
+        <a href="developer-hub.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Dev
+            Hub</a>
+        <a href="support.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Support</a>
+        <a href="support.html"
+            class="mt-8 bg-[#224fc6] text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-[#183bb0] transition-all">Get
+            Started Here</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section
+        class="max-w-7xl mx-auto px-6 pt-32 pb-20 text-center relative z-10 rounded-[3.5rem] overflow-hidden min-h-[60vh] flex flex-col items-center justify-center mb-12 mt-8">
+        <!-- Background Video -->
+        <div class="absolute inset-0 -z-10">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-20">
+                <source src="assets/hero-bg-abstract.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#224fc6]/30 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center">
+            <span
+                class="inline-block px-4 py-1.5 rounded-full bg-[#224fc6]/10 text-[#224fc6] text-[10px] font-bold uppercase tracking-[0.2em] mb-6"
+                data-aos="fade-up">RESOURCES</span>
+            <h1 class="text-5xl md:text-7xl font-bold text-slate-900 mb-8 tracking-tight leading-[1.1]"
+                data-aos="fade-up" data-aos-delay="100">
+                Resources to help you <br><span class="text-gradient">plan, implement, and scale.</span>
+            </h1>
+            <p class="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                Guides, articles, and documentation for compliance, finance, implementers, and developers. Everything
+                you need to master FRAME.
+            </p>
+        </div>
+    </section>
+
+    <!-- FEATURED GUIDES -->
+    <section class="py-20 bg-mesh">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between mb-16" data-aos="fade-up">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Featured Guides & Articles</h2>
+                    <p class="text-slate-500 mt-2">Essential reading for a smooth compliance journey.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Guide 1 -->
+                <div class="resource-card glass p-8 rounded-[2.5rem] border border-white" data-aos="fade-up"
+                    data-aos-delay="0">
+                    <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="shield-check" class="text-[#224fc6] w-6 h-6"></i>
+                    </div>
+                    <span
+                        class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-3 block">Compliance</span>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">Understanding ZIMRA's fiscalisation
+                        expectations</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">A deep dive into regulatory requirements and
+                        how FRAME ensures 100% compliance.</p>
+                    <a href="#"
+                        class="inline-flex items-center gap-2 text-xs font-bold text-[#224fc6] hover:gap-4 transition-all">
+                        Read Guide <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Guide 2 -->
+                <div class="resource-card glass p-8 rounded-[2.5rem] border border-white" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="layers" class="text-green-600 w-6 h-6"></i>
+                    </div>
+                    <span
+                        class="text-[10px] font-bold text-green-500 uppercase tracking-widest mb-3 block">Implementation</span>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">Planning your FRAME rollout across
+                        branches</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Strategies for scaling your fiscalisation
+                        layer across multiple physical locations.</p>
+                    <a href="#"
+                        class="inline-flex items-center gap-2 text-xs font-bold text-[#224fc6] hover:gap-4 transition-all">
+                        Read Guide <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Guide 3 -->
+                <div class="resource-card glass p-8 rounded-[2.5rem] border border-white" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="trending-up" class="text-orange-600 w-6 h-6"></i>
+                    </div>
+                    <span class="text-[10px] font-bold text-orange-500 uppercase tracking-widest mb-3 block">SME
+                        Advisor</span>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">5 tax compliance tips for SMEs in
+                        Zimbabwe</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Practical advice for business owners to stay
+                        ahead of fiscal records and audits.</p>
+                    <a href="#"
+                        class="inline-flex items-center gap-2 text-xs font-bold text-[#224fc6] hover:gap-4 transition-all">
+                        Read Guide <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESOURCE LIBRARY -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Finance & Compliance -->
+                <div class="glass p-10 rounded-[3rem] border border-white relative overflow-hidden" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-8">For Finance & Compliance</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-1.5 h-1.5 bg-[#224fc6] rounded-full mt-2 shrink-0"></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Compliance updates</h4>
+                                <p class="text-xs text-slate-500 mt-1">Stay informed on ZIMRA regulatory changes.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-1.5 h-1.5 bg-[#224fc6] rounded-full mt-2 shrink-0"></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Pricing & commercial overview</h4>
+                                <p class="text-xs text-slate-500 mt-1">Detailed plan breakdown and ROI calculators.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Implementers & IT -->
+                <div class="glass p-10 rounded-[3rem] border border-white relative overflow-hidden" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-8">For Implementers & IT</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-1.5 h-1.5 bg-[#224fc6] rounded-full mt-2 shrink-0"></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">How FRAME works</h4>
+                                <p class="text-xs text-slate-500 mt-1">Technical workflow and system architecture.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-1.5 h-1.5 bg-[#224fc6] rounded-full mt-2 shrink-0"></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Partner program details</h4>
+                                <p class="text-xs text-slate-500 mt-1">Reseller benefits and integration support.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Developers -->
+                <div class="glass p-10 rounded-[3rem] border border-white relative overflow-hidden" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-8">For Developers</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-1.5 h-1.5 bg-[#224fc6] rounded-full mt-2 shrink-0"></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Developer Hub</h4>
+                                <p class="text-xs text-slate-500 mt-1">Full API documentation and SDK guides.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-1.5 h-1.5 bg-[#224fc6] rounded-full mt-2 shrink-0"></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Technical support</h4>
+                                <p class="text-xs text-slate-500 mt-1">Priority ticketing and community forums.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMS LIBRARY -->
+    <section class="py-20 relative overflow-hidden" id="forms-library">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Support & Engagement Forms</h2>
+                <p class="text-slate-500">Quick access to essential registration and agreement forms.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Mobile App Form -->
+                <div class="resources-form" id="resources-form-mobile" data-resources-form data-aos="fade-up">
+                    <button type="button" class="resources-form__toggle" aria-expanded="false"
+                        onclick="toggleResourcesForm(this)">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="smartphone" class="w-5 h-5"></i>
+                            <span>FRAME Mobile App form</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="resources-form__panel" hidden>
+                        <div class="clickup-form-wrapper">
+                            <iframe class="clickup-embed clickup-dynamic-height"
+                                data-src="https://forms.clickup.com/7278763/f/6y45b-43772/AQB9UM50RL7TVCOELL"
+                                onmousewheel="" width="100%" height="100%"
+                                style="background: transparent; border: 1px solid #ccc;"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desk-Web App Form -->
+                <div class="resources-form" id="resources-form-desk" data-resources-form data-aos="fade-up"
+                    data-aos-delay="100">
+                    <button type="button" class="resources-form__toggle" aria-expanded="false"
+                        onclick="toggleResourcesForm(this)">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="monitor" class="w-5 h-5"></i>
+                            <span>FRAME Desk-Web App form</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="resources-form__panel" hidden>
+                        <div class="clickup-form-wrapper">
+                            <iframe class="clickup-embed clickup-dynamic-height"
+                                data-src="https://forms.clickup.com/7278763/f/6y45b-42172/E7ZG8VFWXL2BJ63OUP"
+                                onmousewheel="" width="100%" height="100%"
+                                style="background: transparent; border: 1px solid #ccc;"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Library Integration Form -->
+                <div class="resources-form" id="resources-form-library" data-resources-form data-aos="fade-up"
+                    data-aos-delay="200">
+                    <button type="button" class="resources-form__toggle" aria-expanded="false"
+                        onclick="toggleResourcesForm(this)">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="code-2" class="w-5 h-5"></i>
+                            <span>FRAME Library Integration form</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="resources-form__panel" hidden>
+                        <div class="clickup-form-wrapper">
+                            <iframe class="clickup-embed clickup-dynamic-height"
+                                data-src="https://forms.clickup.com/7278763/f/6y45b-43752/C2DL93YFNX5HVUVSUF"
+                                onmousewheel="" width="100%" height="100%"
+                                style="background: transparent; border: 1px solid #ccc;"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partner / Reseller Form -->
+                <div class="resources-form" id="resources-form-partner" data-resources-form data-aos="fade-up"
+                    data-aos-delay="300">
+                    <button type="button" class="resources-form__toggle" aria-expanded="false"
+                        onclick="toggleResourcesForm(this)">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="users" class="w-5 h-5"></i>
+                            <span>Partner / Reseller program form</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="resources-form__panel" hidden>
+                        <div class="clickup-form-wrapper">
+                            <iframe class="clickup-embed clickup-dynamic-height"
+                                data-src="https://forms.clickup.com/7278763/f/6y45b-43752/C2DL93YFNX5HVUVSUF"
+                                onmousewheel="" width="100%" height="100%"
+                                style="background: transparent; border: 1px solid #ccc;"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms & Service Agreement -->
+                <div class="resources-form" id="resources-form-terms" data-resources-form data-aos="fade-up"
+                    data-aos-delay="400">
+                    <button type="button" class="resources-form__toggle" aria-expanded="false"
+                        onclick="toggleResourcesForm(this)">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="file-check" class="w-5 h-5"></i>
+                            <span>Terms & Service Agreement form</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="resources-form__panel" hidden>
+                        <div class="clickup-form-wrapper">
+                            <iframe class="clickup-embed clickup-dynamic-height"
+                                data-src="https://forms.clickup.com/7278763/f/6y45b-49512/7YC23488OGEVDQPL5V"
+                                onmousewheel="" width="100%" height="100%"
+                                style="background: transparent; border: 1px solid #ccc;"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- MISSING SOMETHING -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="glass-dark p-12 md:p-16 rounded-[4rem] text-center border border-white/10" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-white mb-6 tracking-tight">Missing <span
+                        class="text-[#224fc6]">Something?</span></h2>
+                <div class="grid md:grid-cols-2 gap-12 text-left mt-12">
+                    <div>
+                        <h4 class="font-bold text-white mb-3 text-sm flex items-center gap-2 uppercase tracking-widest">
+                            <i data-lucide="send" class="w-4 h-4 text-[#224fc6]"></i> Sales & Partnerships
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">Proposals, pricing models, and enablement
+                            material for enterprise teams.</p>
+                        <a href="mailto:sales@frame.co.zw"
+                            class="text-white font-bold text-sm hover:text-[#224fc6]">sales@frame.co.zw</a>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white mb-3 text-sm flex items-center gap-2 uppercase tracking-widest">
+                            <i data-lucide="help-circle" class="w-4 h-4 text-[#224fc6]"></i> Technical Support
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">Detailed API documentation, system
+                            architecture, and rollout planning.</p>
+                        <a href="contact.html" class="text-white font-bold text-sm hover:text-[#224fc6]">Refer to
+                            Support page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-slate-950 pt-32 pb-16 relative overflow-hidden text-slate-400">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+                <!-- Branding & Slogan -->
+                <div class="lg:col-span-1" data-aos="fade-up">
+                    <img src="assets/frame-logo.png" alt="Sandcircle Logo"
+                        class="h-48 w-auto object-contain mb-8 brightness-0 invert">
+                    <p class="text-slate-500 text-sm leading-relaxed mb-10 italic">
+                        "Where Compliance Meets Innovation"
+                    </p>
+                    <div class="flex gap-5">
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#224fc6] transition-all text-white shadow-lg shadow-[#224fc6]/10">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#224fc6] transition-all text-white shadow-lg shadow-[#224fc6]/10">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 glass-dark rounded-full flex items-center justify-center hover:bg-[#224fc6] transition-all text-white shadow-lg shadow-[#224fc6]/10">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Contact Gateway</h4>
+                    <ul class="space-y-6 text-sm">
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="leading-relaxed text-xs">1 Napier Ave. Hillside, Bulawayo<br>Napier Office
+                                    Park, Unit 4</span>
+                                <a href="contact.html"
+                                    class="block text-[#224fc6] text-[10px] font-bold uppercase tracking-widest hover:underline">View
+                                    Interactive Map</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="phone" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>+263 86 7718 6045</p>
+                                <p class="text-slate-500 text-xs">Mon-Fri: 8AM - 5PM</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="message-square" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>+263 78 394 0835 (WhatsApp)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 glass-dark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:text-[#224fc6] transition-colors">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <p>sales@frame.co.zw</p>
+                                <a href="contact.html"
+                                    class="block text-[#224fc6] text-[10px] font-bold uppercase tracking-widest hover:underline">Send
+                                    Secure Message</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links & Status -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Navigation</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="partners.html" class="hover:text-white transition-colors">Partners</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="resources.html" class="hover:text-white transition-colors">Resources</a></li>
+                        <li><a href="support.html" class="hover:text-white transition-colors">Support</a></li>
+                        <li><a href="developer-hub.html" class="hover:text-white transition-colors">Developer Hub</a>
+                        </li>
+                    </ul>
+
+                    <div class="mt-10 pt-8 border-t border-white/5">
+                        <h4 class="font-bold text-white mb-4 uppercase tracking-[0.2em] text-[10px]">Platform Status
+                        </h4>
+                        <div class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
+                            <span class="relative flex h-2 w-2">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                            </span>
+                            <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">All systems
+                                operational</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] uppercase tracking-[0.3em] font-bold text-slate-500">
+                <div>© 2026 FRAME Virtual Fiscalisation. All Rights Reserved.</div>
+                <div class="flex gap-10">
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                        REG: 1033/2001</span>
+                    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#224fc6] rounded-full"></span>
+                        VAT: 10020676</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+        lucide.createIcons();
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNavPanel = document.getElementById('mobile-nav-panel');
+        const mobileNavClose = document.getElementById('mobile-nav-close');
+        const mobileNavLinks = document.querySelectorAll('#mobile-nav-panel a');
+
+        if (mobileMenuBtn && mobileNavPanel) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNavPanel.classList.remove('opacity-0', 'pointer-events-none');
+                mobileNavPanel.classList.add('opacity-100', 'pointer-events-auto');
+            });
+
+            mobileNavClose.addEventListener('click', () => {
+                mobileNavPanel.classList.add('opacity-0', 'pointer-events-none');
+                mobileNavPanel.classList.remove('opacity-100', 'pointer-events-auto');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNavPanel.classList.add('opacity-0', 'pointer-events-none');
+                    mobileNavPanel.classList.remove('opacity-100', 'pointer-events-auto');
+                });
+            });
+        }
+    </script>
+
+    <!-- SEARCH OVERLAY MODAL -->
+    <div id="search-overlay"
+        class="fixed inset-0 z-[300] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-start pt-32 opacity-0 pointer-events-none transition-all duration-300">
+        <button id="search-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="w-full max-w-2xl px-6">
+            <div class="relative">
+                <i data-lucide="search" class="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-slate-400"></i>
+                <input type="text" id="search-input"
+                    class="w-full bg-white/10 border border-white/20 rounded-full px-16 py-5 text-xl text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#224fc6]/50 backdrop-blur-sm"
+                    placeholder="Search this page..." autocomplete="off">
+            </div>
+            <p id="search-hint" class="text-slate-500 text-sm mt-4 text-center">Press <kbd
+                    class="px-2 py-1 bg-white/10 rounded text-white">Esc</kbd> to close</p>
+
+            <!-- Dynamic Results Container -->
+            <div id="search-results-container" class="mt-8 max-h-[50vh] overflow-y-auto hidden custom-scrollbar">
+                <div id="search-results-list" class="space-y-2 pb-8">
+                    <!-- Results will be injected here -->
+                </div>
+            </div>
+
+            <p id="search-no-results" class="text-slate-500 text-center mt-8 hidden">No matches found for "<span
+                    id="search-query-display" class="text-white"></span>"</p>
+        </div>
+    </div>
+
+    <script>
+
+        // Site Search Functionality
+        const searchBtn = document.getElementById('search-btn');
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchClose = document.getElementById('search-close');
+        const searchInput = document.getElementById('search-input');
+        const resultsContainer = document.getElementById('search-results-container');
+        const resultsList = document.getElementById('search-results-list');
+        const noResults = document.getElementById('search-no-results');
+        const queryDisplay = document.getElementById('search-query-display');
+
+        function openSearch() {
+            searchOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            searchOverlay.classList.add('opacity-100', 'pointer-events-auto');
+            setTimeout(() => searchInput.focus(), 100);
+        }
+
+        function closeSearch() {
+            searchOverlay.classList.add('opacity-0', 'pointer-events-none');
+            searchOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+            searchInput.value = '';
+            resultsContainer.classList.add('hidden');
+            noResults.classList.add('hidden');
+            if (window.getSelection) window.getSelection().removeAllRanges();
+        }
+
+        function performSearch(query) {
+            query = query.toLowerCase().trim();
+            resultsList.innerHTML = '';
+
+            if (query.length < 2) {
+                resultsContainer.classList.add('hidden');
+                noResults.classList.add('hidden');
+                return;
+            }
+
+            // Elements to search in
+            const elements = document.querySelectorAll('h1, h2, h3, h4, p, li, .text-xl, .text-lg');
+            const matches = [];
+
+            elements.forEach((el, index) => {
+                const text = el.textContent.trim();
+                if (text.toLowerCase().includes(query) && !el.closest('#search-overlay') && !el.closest('nav')) {
+                    if (!el.id) el.id = 'search-match-' + index;
+                    matches.push({ id: el.id, text: text, tag: el.tagName.toLowerCase() });
+                }
+            });
+
+            if (matches.length > 0) {
+                noResults.classList.add('hidden');
+                resultsContainer.classList.remove('hidden');
+                matches.forEach(match => {
+                    const btn = document.createElement('button');
+                    btn.className = 'w-full text-left p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all group search-result-item';
+                    let displayText = match.text;
+                    if (displayText.length > 150) displayText = displayText.substring(0, 150) + '...';
+                    const regex = new RegExp(`(${query})`, 'gi');
+                    const highlightedText = displayText.replace(regex, '<span class="text-primary font-bold">$1</span>');
+                    btn.innerHTML = `
+                        <div class="flex items-center gap-3 mb-1">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">${match.tag}</span>
+                            <div class="h-px flex-1 bg-white/5"></div>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed">${highlightedText}</p>
+                    `;
+                    btn.onclick = () => {
+                        const target = document.getElementById(match.id);
+                        if (target) {
+                            closeSearch();
+                            setTimeout(() => {
+                                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                target.classList.add('search-highlight');
+                                setTimeout(() => target.classList.remove('search-highlight'), 2000);
+                            }, 300);
+                        }
+                    };
+                    resultsList.appendChild(btn);
+                });
+            } else {
+                resultsContainer.classList.add('hidden');
+                noResults.classList.remove('hidden');
+                queryDisplay.textContent = query;
+            }
+        }
+
+        if (searchBtn && searchOverlay) {
+            searchBtn.addEventListener('click', openSearch);
+            searchClose.addEventListener('click', closeSearch);
+            searchOverlay.addEventListener('click', (e) => { if (e.target === searchOverlay) closeSearch(); });
+            searchInput.addEventListener('input', (e) => performSearch(e.target.value));
+            searchInput.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSearch(); });
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+            });
+        }
+    </script>
+    <script>
+        // Resources Page Logic
+        function toggleResourcesForm(button) {
+            const panel = button.nextElementSibling;
+            // Lucide replaces <i> with <svg>, so we target the class or the generic attribute if preserved, 
+            // or simply the last element relative to the button structure.
+            // Using '.lucide-chevron-down' is reliable after Lucide hydration.
+            const icon = button.querySelector('.lucide-chevron-down') || button.querySelector('[data-lucide="chevron-down"]');
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+            // Close all other panels
+            document.querySelectorAll('.resources-form__panel').forEach(p => {
+                if (p !== panel) {
+                    p.classList.remove('resources-form__panel--open');
+                    p.hidden = true;
+                    p.previousElementSibling.setAttribute('aria-expanded', 'false');
+                    const otherIcon = p.previousElementSibling.querySelector('.lucide-chevron-down') || p.previousElementSibling.querySelector('[data-lucide="chevron-down"]');
+                    if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Toggle current panel
+            if (isExpanded) {
+                panel.classList.remove('resources-form__panel--open');
+                setTimeout(() => panel.hidden = true, 500); // Wait for transition
+                button.setAttribute('aria-expanded', 'false');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            } else {
+                panel.hidden = false;
+                // specific check for data-resources-form to prevent arbitrary ID targeting
+                setTimeout(() => panel.classList.add('resources-form__panel--open'), 10);
+                button.setAttribute('aria-expanded', 'true');
+                if (icon) icon.style.transform = 'rotate(180deg)';
+
+                // Lazy load iframe
+                const iframe = panel.querySelector('iframe[data-src]');
+                if (iframe) {
+                    iframe.src = iframe.getAttribute('data-src');
+                    iframe.removeAttribute('data-src');
+                }
+            }
+        }
+
+        function initResourcesForms() {
+            const hash = window.location.hash;
+            if (hash && hash.startsWith("#resources-form-")) {
+                const targetId = hash.slice(1);
+                const targetContainer = document.getElementById(targetId);
+
+                if (targetContainer && targetContainer.hasAttribute("data-resources-form")) {
+                    const toggleBtn = targetContainer.querySelector('.resources-form__toggle');
+                    if (toggleBtn) {
+                        // Open the form
+                        toggleResourcesForm(toggleBtn);
+                        // Scroll into view
+                        setTimeout(() => {
+                            targetContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 500);
+                    }
+                }
+            }
+        }
+
+        // Initialize on load
+        window.addEventListener('load', initResourcesForms);
+    </script>
+</body>
+
+</html>

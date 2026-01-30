@@ -1,0 +1,183 @@
+<!-- 
+    FRAME VIRTUAL FISCALISATION - STANDARD HEADER TEMPLATE
+    Use this code for all new pages to ensure brand consistency.
+    
+    DEPENDENCIES:
+    - Tailwind CSS
+    - Lucide Icons
+    - AOS (Animate On Scroll)
+    - Source Assets: assets/frame-logo.png
+-->
+
+<!-- NAVIGATION -->
+<nav id="main-nav"
+    class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-6 flex items-center justify-between sticky top-4 z-[100] glass rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-white/20 mx-4"
+    data-aos="fade-down">
+    <!-- Logo -->
+    <div class="flex items-center">
+        <div class="relative w-24 md:w-32 h-8 md:h-10 flex items-center">
+            <a href="index.html"
+                class="absolute left-0 top-1/2 -translate-y-1/2 scale-[5] origin-left z-20 transition-transform hover:scale-[5.1]">
+                <img src="assets/frame-logo.png" alt="FRAME Logo" class="h-8 md:h-10 w-auto object-contain">
+            </a>
+        </div>
+    </div>
+
+    <!-- Center Pill Menu (Desktop Only) -->
+    <div
+        class="hidden md:flex bg-white/40 border border-white/20 rounded-full p-1.5 items-center shadow-sm absolute left-1/2 -translate-x-1/2">
+        <a href="index.html"
+            class="text-slate-500 hover:text-slate-900 px-5 py-2 text-sm font-medium transition-colors">Home</a>
+
+        <a href="about.html"
+            class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">About</a>
+
+        <a href="pricing.html"
+            class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Pricing</a>
+        <a href="partners.html"
+            class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Partners</a>
+        <a href="blog.html"
+            class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Blog</a>
+        <a href="resources.html"
+            class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Resources</a>
+        <a href="developer-hub.html"
+            class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Dev Hub</a>
+        <a href="support.html"
+            class="text-slate-500 hover:text-slate-900 px-4 py-2 text-sm font-medium transition-colors">Support</a>
+    </div>
+
+    <!-- Right Actions -->
+    <div class="flex items-center gap-2 md:gap-6">
+        <!-- Search Button -->
+        <button id="search-btn"
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-slate-600 hover:text-[#224fc6] transition-all hover:shadow-md"
+            title="Search">
+            <i data-lucide="search" class="w-5 h-5"></i>
+        </button>
+        <!-- Desktop CTA -->
+        <a href="support.html"
+            class="hidden md:inline-flex bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#224fc6] transition-all hover:shadow-lg">Get
+            Started Here</a>
+        <!-- Mobile CTA -->
+        <a href="support.html"
+            class="md:hidden bg-[#224fc6] text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-[#183bb0] transition-all">Inquire</a>
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-btn"
+            class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-900 text-white">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Navigation Panel -->
+<div id="mobile-nav-panel"
+    class="fixed inset-0 z-[200] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
+    <button id="mobile-nav-close"
+        class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white">
+        <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <a href="index.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Home</a>
+
+    <a href="about.html"
+        class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors mobile-nav-link">About</a>
+    <a href="pricing.html"
+        class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors mobile-nav-link">Pricing</a>
+    <a href="partners.html"
+        class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors mobile-nav-link">Partners</a>
+    <a href="blog.html"
+        class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors mobile-nav-link">Blog</a>
+    <a href="resources.html"
+        class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors mobile-nav-link">Resources</a>
+    <a href="developer-hub.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Dev
+        Hub</a>
+    <a href="support.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Support</a>
+    <a href="support.html"
+        class="mt-8 bg-[#224fc6] text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-[#183bb0] transition-all">Get
+        Started Here</a>
+</div>
+
+<!-- SEARCH OVERLAY MODAL -->
+<div id="search-overlay"
+    class="fixed inset-0 z-[300] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-start pt-32 opacity-0 pointer-events-none transition-all duration-300">
+    <button id="search-close"
+        class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all">
+        <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <div class="w-full max-w-2xl px-6">
+        <div class="relative">
+            <i data-lucide="search" class="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-slate-400"></i>
+            <input type="text" id="search-input"
+                class="w-full bg-white/10 border border-white/20 rounded-full px-16 py-5 text-xl text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#224fc6]/50 backdrop-blur-sm"
+                placeholder="Search this page..." autocomplete="off">
+        </div>
+        <p class="text-slate-500 text-sm mt-4 text-center">Press <kbd
+                class="px-2 py-1 bg-white/10 rounded text-white">Enter</kbd> to find, <kbd
+                class="px-2 py-1 bg-white/10 rounded text-white">Esc</kbd> to close</p>
+    </div>
+</div>
+
+<!-- 
+    ADD SEARCH JAVASCRIPT BEFORE CLOSING </script> TAG:
+    
+    // Site Search Functionality
+    const searchBtn = document.getElementById('search-btn');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchClose = document.getElementById('search-close');
+    const searchInput = document.getElementById('search-input');
+
+    function openSearch() {
+        searchOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        searchOverlay.classList.add('opacity-100', 'pointer-events-auto');
+        setTimeout(() => searchInput.focus(), 100);
+    }
+
+    function closeSearch() {
+        searchOverlay.classList.add('opacity-0', 'pointer-events-none');
+        searchOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+        searchInput.value = '';
+        if (window.getSelection) window.getSelection().removeAllRanges();
+    }
+
+    if (searchBtn && searchOverlay) {
+        searchBtn.addEventListener('click', openSearch);
+        searchClose.addEventListener('click', closeSearch);
+        searchOverlay.addEventListener('click', (e) => {
+            if (e.target === searchOverlay) closeSearch();
+        });
+
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeSearch();
+            } else if (e.key === 'Enter') {
+                const query = searchInput.value.trim();
+                if (query) {
+                    closeSearch();
+                    setTimeout(() => {
+                        const found = window.find(query, false, false, true, false, true, false);
+                        if (!found) {
+                            alert('No matches found for "' + query + '"');
+                        }
+                    }, 300);
+                }
+            }
+        });
+
+        // Keyboard shortcut: Ctrl/Cmd + K to open search
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                openSearch();
+            }
+        });
+    }
+-->
+
+<!-- 
+    NOTE ON ACTIVE STATE:
+    To highlight the current page in the pill menu:
+    1. Remove 'text-slate-500 hover:text-slate-900' from the <a> tag.
+    2. Add 'bg-[#224fc6] text-white px-5 py-2 rounded-full shadow-md shadow-[#224fc6]/20'.
+    
+    Example for services.html:
+    <a href="services.html" class="bg-[#224fc6] text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md shadow-[#224fc6]/20">Services</a>
+-->
