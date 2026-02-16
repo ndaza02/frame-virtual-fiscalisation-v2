@@ -45,6 +45,9 @@
     <!-- GSAP for advanced animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
+    <!-- ClickUp Forms Embed Script -->
+    <script async src="https://app-cdn.clickup.com/assets/js/forms-embed/v1.js"></script>
+
     <style>
         :root {
             --primary: #224fc6;
@@ -175,6 +178,17 @@
                 background-color: transparent;
                 box-shadow: 0 0 0 rgba(34, 79, 198, 0);
             }
+        }
+
+        .clickup-form-wrapper {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .clickup-form-wrapper iframe {
+            border-radius: 1.5rem;
         }
     </style>
 </head>
@@ -673,15 +687,21 @@
             <div class="mt-20 glass p-12 rounded-[4rem] text-center bg-[#224fc6] text-white shadow-2xl shadow-[#224fc6]/30"
                 data-aos="zoom-in">
                 <h3 class="text-3xl font-bold mb-6">Ready to join the network?</h3>
-                <p class="text-blue-100 mb-10 max-w-xl mx-auto">Take the next step and apply to become a FRAME Partner
-                    today. Our team will reach out to schedule an introduction.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="support.html"
-                        class="bg-white text-[#224fc6] px-10 py-4 rounded-full font-bold hover:bg-slate-50 transition-all">Submit
-                        Application</a>
+                <p class="text-blue-100 mb-10 max-w-xl mx-auto">Fill out the form below to apply to the FRAME Partner
+                    Program. Our team will review your application and reach out to schedule an introduction.</p>
+
+                <!-- ClickUp Partner Form Embed -->
+                <div class="clickup-form-wrapper">
+                    <iframe class="clickup-embed clickup-dynamic-height"
+                        data-src="https://forms.clickup.com/7278763/f/6y45b-43752/C2DL93YFNX5HVUVSUF" onmousewheel=""
+                        width="100%" height="700"
+                        style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 1.5rem;"></iframe>
+                </div>
+
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="mailto:info@frame.co.zw"
-                        class="bg-transparent border border-white/30 text-white px-10 py-4 rounded-full font-bold hover:bg-white/10 transition-all">Email
-                        info@frame.co.zw</a>
+                        class="bg-transparent border border-white/30 text-white px-10 py-4 rounded-full font-bold hover:bg-white/10 transition-all">Or
+                        email info@frame.co.zw</a>
                 </div>
             </div>
         </div>
