@@ -3,51 +3,55 @@
   <!-- Core Pages -->
   <url>
     <loc>https://frame.co.zw/</loc>
-    <priority>1.0</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://frame.co.zw/index.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://frame.co.zw/about.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://frame.co.zw/how-it-works.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://frame.co.zw/pricing.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://frame.co.zw/partners.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://frame.co.zw/resources.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://frame.co.zw/support.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://frame.co.zw/contact.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://frame.co.zw/developer-hub.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -55,26 +59,31 @@
   <!-- Blog -->
   <url>
     <loc>https://frame.co.zw/blog.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://frame.co.zw/blog-tax-compliance-tips.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://frame.co.zw/blog-zimra-compliance.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://frame.co.zw/blog-one-year-anniversary.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://frame.co.zw/blog-digital-transformation.html</loc>
+    <lastmod>2026-02-16</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
