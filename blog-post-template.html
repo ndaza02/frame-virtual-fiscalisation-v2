@@ -6,7 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="[SEO_DESCRIPTION]">
     <title>[TITLE] | FRAME Blog</title>
+    <link rel="canonical" href="https://frame.co.zw/[FILENAME].html">
     <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://frame.co.zw/[FILENAME].html">
+    <meta property="og:title" content="[TITLE] | FRAME Blog">
+    <meta property="og:description" content="[SEO_DESCRIPTION]">
+    <meta property="og:image" content="https://frame.co.zw/assets/frame-logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://frame.co.zw/[FILENAME].html">
+    <meta name="twitter:title" content="[TITLE] | FRAME Blog">
+    <meta name="twitter:description" content="[SEO_DESCRIPTION]">
+    <meta name="twitter:image" content="https://frame.co.zw/assets/frame-logo.png">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "[TITLE]",
+          "description": "[SEO_DESCRIPTION]",
+          "author": { "@type": "Organization", "name": "FRAME Virtual Fiscalisation" },
+          "publisher": {
+            "@type": "Organization",
+            "name": "FRAME Virtual Fiscalisation",
+            "logo": { "@type": "ImageObject", "url": "https://frame.co.zw/assets/frame-logo.png" }
+          },
+          "datePublished": "[DATE]",
+          "image": "https://frame.co.zw/assets/frame-logo.png"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://frame.co.zw/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://frame.co.zw/blog.html" },
+            { "@type": "ListItem", "position": 3, "name": "[TITLE]", "item": "https://frame.co.zw/[FILENAME].html" }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- Dependencies -->
     <script src="https://cdn.tailwindcss.com"></script>

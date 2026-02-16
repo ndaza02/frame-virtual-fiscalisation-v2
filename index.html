@@ -7,6 +7,7 @@
     <meta name="description"
         content="FRAME is a ZIMRA-approved virtual fiscalisation platform built for Zimbabwean businesses. Simplify compliance with our cloud-based, hardware-free solution.">
     <title>FRAME Virtual Fiscalisation - Where Compliance Meets Innovation</title>
+    <link rel="canonical" href="https://frame.co.zw/index.html">
     <link rel="icon" type="image/png" href="assets/favicon.png">
 
     <!-- Open Graph / Facebook -->
@@ -178,6 +179,54 @@
             }
         }
     </style>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://frame.co.zw/#organization",
+          "name": "FRAME Virtual Fiscalisation",
+          "url": "https://frame.co.zw/",
+          "logo": "https://frame.co.zw/assets/frame-logo.png",
+          "sameAs": [
+            "https://www.facebook.com/framefiscal",
+            "https://twitter.com/framefiscal",
+            "https://www.linkedin.com/company/framefiscal"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+263-8677004041",
+            "contactType": "customer service",
+            "areaServed": "ZW",
+            "availableLanguage": "en"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://frame.co.zw/#website",
+          "url": "https://frame.co.zw/",
+          "name": "FRAME Virtual Fiscalisation",
+          "description": "Hardware Free. Worry Free. Virtual Fiscalisation for Zimbabwean businesses.",
+          "publisher": {
+            "@id": "https://frame.co.zw/#organization"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "FRAME",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web, iOS, Android, Desktop",
+          "offers": {
+            "@type": "Offer",
+            "price": "69.99",
+            "priceCurrency": "USD"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body class="min-h-screen relative text-slate-900 selection:bg-blue-100 bg-mesh">
