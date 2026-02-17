@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - FRAME Virtual Fiscalisation | Bulawayo, Zimbabwe</title>
     <link rel="canonical" href="https://frame.co.zw/contact.html">
+
+    <!-- Preconnect for ClickUp -->
+    <link rel="preconnect" href="https://forms.clickup.com">
+    <link rel="preconnect" href="https://app-cdn.clickup.com">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <meta name="description"
         content="Contact FRAME Virtual Fiscalisation in Bulawayo, Zimbabwe. Get in touch for ZIMRA-approved fiscalisation solutions, support, and partnership enquiries.">
@@ -45,6 +49,9 @@
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ClickUp Forms Embed Script -->
+    <script async src="https://app-cdn.clickup.com/assets/js/forms-embed/v1.js"></script>
 
     <style>
         :root {
@@ -132,6 +139,17 @@
                 background-color: transparent;
                 box-shadow: 0 0 0 rgba(34, 79, 198, 0);
             }
+        }
+
+        /* ClickUp Form Wrapper */
+        .clickup-form-wrapper {
+            width: 100%;
+            height: 100%;
+            min-height: 600px;
+        }
+
+        .clickup-form-wrapper iframe {
+            border-radius: 2rem;
         }
     </style>
 </head>
@@ -247,62 +265,15 @@
         <div class="grid lg:grid-cols-2 gap-12 items-start">
 
             <!-- LEFT: CONTACT FORM -->
-            <div id="inquiry-form" class="glass p-12 rounded-[3.5rem] border border-white shadow-2xl"
+            <div id="inquiry-form" class="glass p-2 rounded-[3.5rem] border border-white shadow-2xl"
                 data-aos="fade-right">
-                <h2 class="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-                    <i data-lucide="send" class="text-[#224fc6] w-8 h-8"></i>
-                    Send a Message
-                </h2>
-                <form class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Full
-                                Name</label>
-                            <input type="text" placeholder="John Doe" required
-                                class="w-full bg-white/40 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#224fc6]/10 focus:border-[#224fc6] transition-all outline-none">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Company
-                                Name</label>
-                            <input type="text" placeholder="Your Business Ltd" required
-                                class="w-full bg-white/40 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#224fc6]/10 focus:border-[#224fc6] transition-all outline-none">
-                        </div>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Email
-                                Address</label>
-                            <input type="email" placeholder="john@company.com" required
-                                class="w-full bg-white/40 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#224fc6]/10 focus:border-[#224fc6] transition-all outline-none">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Inquiry
-                                Type</label>
-                            <select required
-                                class="w-full bg-white/40 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#224fc6]/10 focus:border-[#224fc6] transition-all outline-none appearance-none">
-                                <option value="" disabled selected>Select an option</option>
-                                <option>Virtual Fiscalisation Setup</option>
-                                <option>Partner Program Inquiry</option>
-                                <option>API Integration & Dev Hub</option>
-                                <option>Sales & Pricing</option>
-                                <option>Technical Support</option>
-                                <option>Other Inquiry</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Your
-                            Message</label>
-                        <textarea rows="4" placeholder="How can we help your business?" required
-                            class="w-full bg-white/40 border border-slate-200 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-[#224fc6]/10 focus:border-[#224fc6] transition-all outline-none resize-none"></textarea>
-                    </div>
-                    <button type="submit"
-                        class="w-full bg-[#224fc6] text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-[#183bb0] transition-all shadow-xl shadow-[#224fc6]/20 group">
-                        Send Inquiry
-                        <i data-lucide="send"
-                            class="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
-                    </button>
-                </form>
+                <div class="clickup-form-wrapper">
+                    <iframe class="clickup-embed clickup-dynamic-height"
+                        src="https://forms.clickup.com/7278763/f/6y45b-56552/W2RQPV7P7C19SKWIJS"
+                        data-src="https://forms.clickup.com/7278763/f/6y45b-56552/W2RQPV7P7C19SKWIJS" onmousewheel=""
+                        width="100%" height="100%" loading="lazy"
+                        style="background: transparent; border: none;"></iframe>
+                </div>
             </div>
 
             <!-- RIGHT: CONTACT INFO & MAP -->
