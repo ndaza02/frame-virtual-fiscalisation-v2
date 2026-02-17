@@ -463,8 +463,8 @@
 
     </main>
 
-    <!-- INTEGRATION FLOW DIAGRAM (ANIMATED) -->
-    <section class="py-32 bg-slate-950 relative overflow-hidden">
+    <!-- INTEGRATION FLOW DIAGRAM (ANIMATED - LIGHT MODE) -->
+    <section class="py-32 bg-slate-50 relative overflow-hidden">
         <style>
             @keyframes flowLine {
                 0% {
@@ -499,37 +499,40 @@
                 animation: float 9s ease-in-out infinite 0.5s;
             }
 
-            @keyframes pulse-glow {
+            @keyframes pulse-glow-light {
 
                 0%,
                 100% {
-                    box-shadow: 0 0 30px #224fc6;
+                    box-shadow: 0 0 30px rgba(34, 79, 198, 0.1);
                 }
 
                 50% {
-                    box-shadow: 0 0 60px #224fc6, 0 0 20px white;
+                    box-shadow: 0 0 60px rgba(34, 79, 198, 0.2), 0 0 20px rgba(255, 255, 255, 0.8);
                 }
             }
 
             .hub-glow {
-                animation: pulse-glow 3s infinite;
+                animation: pulse-glow-light 3s infinite;
             }
         </style>
 
+        <!-- Background Pattern -->
         <div
-            class="absolute inset-0 bg-[#224fc6]/5 bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] opacity-20">
+            class="absolute inset-0 bg-[#224fc6]/5 bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] opacity-30">
         </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center mb-24">
-                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Seamless <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-[#224fc6] to-cyan-400">Integration</span>
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full bg-[#224fc6]/10 text-[#224fc6] text-[10px] font-bold uppercase tracking-[0.2em] mb-6">COMPATIBILITY</span>
+                <h2 class="text-4xl md:text-6xl font-bold text-slate-900 mb-6 tracking-tight">Seamless <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-[#224fc6] to-cyan-500">Integration</span>
                 </h2>
             </div>
 
             <div class="relative w-full max-w-5xl mx-auto h-[500px] flex items-center justify-center">
                 <!-- SVG Lines -->
-                <svg class="absolute inset-0 w-full h-full pointer-events-none stroke-[#224fc6]/50" style="z-index: 0;">
+                <svg class="absolute inset-0 w-full h-full pointer-events-none stroke-[#224fc6]/30" style="z-index: 0;">
                     <!-- Paths based on approx positions -->
                     <!-- QB (Top Left) to Center -->
                     <path d="M 20% 25% C 35% 25%, 35% 50%, 50% 50%" fill="none" class="flow-path" stroke-width="2" />
@@ -542,56 +545,53 @@
                         style="animation-duration: 1s;" />
                 </svg>
 
-                <!-- SOURCES (Floating Orbs) -->
+                <!-- SOURCES (Floating Orbs - Light Mode) -->
                 <!-- QB -->
                 <div
-                    class="absolute left-[15%] top-[20%] w-24 h-24 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 float-1 shadow-[0_0_30px_rgba(34,211,238,0.1)] hover:scale-110 transition-transform cursor-pointer group">
-                    <img src="assets/quickbooks-logo-removebg-preview.png"
-                        class="h-10 object-contain brightness-0 invert drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">
+                    class="absolute left-[15%] top-[20%] w-24 h-24 bg-white rounded-full flex items-center justify-center border border-slate-100 float-1 shadow-lg hover:shadow-xl hover:scale-110 transition-all cursor-pointer group">
+                    <img src="assets/quickbooks-logo-removebg-preview.png" class="h-10 object-contain">
                     <div
-                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-xs opacity-0 group-hover:opacity-100 transition-opacity font-bold">
                         QuickBooks</div>
                 </div>
                 <!-- Excel -->
                 <div
-                    class="absolute left-[10%] top-[45%] w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 float-2 shadow-[0_0_30px_rgba(34,211,238,0.1)] hover:scale-110 transition-transform cursor-pointer group">
-                    <img src="assets/microsoft-excel-logo-removebg-preview.png"
-                        class="h-8 object-contain brightness-0 invert">
+                    class="absolute left-[10%] top-[45%] w-20 h-20 bg-white rounded-full flex items-center justify-center border border-slate-100 float-2 shadow-lg hover:shadow-xl hover:scale-110 transition-all cursor-pointer group">
+                    <img src="assets/microsoft-excel-logo-removebg-preview.png" class="h-8 object-contain">
                     <div
-                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-xs opacity-0 group-hover:opacity-100 transition-opacity font-bold">
                         Excel</div>
                 </div>
                 <!-- Sage -->
                 <div
-                    class="absolute left-[15%] bottom-[20%] w-24 h-24 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 float-3 shadow-[0_0_30px_rgba(34,211,238,0.1)] hover:scale-110 transition-transform cursor-pointer group">
-                    <img src="assets/sage-evolution-1.png" class="h-10 object-contain brightness-0 invert">
+                    class="absolute left-[15%] bottom-[20%] w-24 h-24 bg-white rounded-full flex items-center justify-center border border-slate-100 float-3 shadow-lg hover:shadow-xl hover:scale-110 transition-all cursor-pointer group">
+                    <img src="assets/sage-evolution-1.png" class="h-10 object-contain">
                     <div
-                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-xs opacity-0 group-hover:opacity-100 transition-opacity font-bold">
                         Sage</div>
                 </div>
-                <!-- Odoo (Small Satellite) -->
+                <!-- Odoo -->
                 <div
-                    class="absolute left-[25%] top-[10%] w-16 h-16 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center border border-white/10 float-4 shadow-lg hover:scale-110 transition-transform cursor-pointer group">
-                    <img src="assets/odoo-logo-removebg-preview.png"
-                        class="h-6 object-contain brightness-0 invert opacity-70">
+                    class="absolute left-[25%] top-[10%] w-16 h-16 bg-white rounded-full flex items-center justify-center border border-slate-100 float-4 shadow-md hover:shadow-lg hover:scale-110 transition-all cursor-pointer group">
+                    <img src="assets/odoo-logo-removebg-preview.png" class="h-6 object-contain opacity-80">
                     <div
-                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-xs opacity-0 group-hover:opacity-100 transition-opacity font-bold">
                         Odoo</div>
                 </div>
 
 
-                <!-- CENTER HUB (Pulsing) -->
+                <!-- CENTER HUB (Light) -->
                 <div
-                    class="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-slate-950 rounded-full border border-[#224fc6] hub-glow flex flex-col items-center justify-center z-20">
-                    <div class="absolute inset-0 bg-[#224fc6]/20 blur-3xl rounded-full"></div>
-                    <img src="assets/frame-logo.png" class="h-14 object-contain brightness-0 invert relative z-10 w-24">
+                    class="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white rounded-full border border-[#224fc6]/20 hub-glow flex flex-col items-center justify-center z-20">
+                    <div class="absolute inset-0 bg-[#224fc6]/5 blur-3xl rounded-full"></div>
+                    <img src="assets/frame-logo.png" class="h-14 object-contain relative z-10 w-32">
                 </div>
 
-                <!-- RIGHT ZIMRA (Solid) -->
+                <!-- RIGHT ZIMRA -->
                 <div
-                    class="absolute right-[15%] top-[50%] -translate-y-1/2 w-32 h-32 bg-white rounded-3xl flex flex-col items-center justify-center shadow-[0_0_50px_rgba(34,255,100,0.2)] z-10 hover:rotate-3 transition-transform">
-                    <i data-lucide="server" class="text-green-600 w-12 h-12 mb-2"></i>
-                    <span class="font-black text-slate-900 tracking-tighter text-xl">ZIMRA</span>
+                    class="absolute right-[15%] top-[50%] -translate-y-1/2 w-32 h-32 bg-slate-900 rounded-3xl flex flex-col items-center justify-center shadow-xl shadow-slate-900/20 z-10 hover:rotate-3 transition-transform">
+                    <i data-lucide="server" class="text-green-500 w-12 h-12 mb-2"></i>
+                    <span class="font-black text-white tracking-tighter text-xl">ZIMRA</span>
                 </div>
             </div>
         </div>
