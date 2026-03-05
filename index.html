@@ -414,16 +414,14 @@
         </div>
     </div>
 
-    <!-- MAIN HERO SECTION -->
+    <!-- MAIN HERO SECTION (SHELVED)
     <main
         class="max-w-7xl mx-auto px-4 mt-8 md:mt-12 pb-12 flex flex-col items-center text-center z-10 relative rounded-[3.5rem] overflow-hidden min-h-[70vh] flex items-center justify-center">
-        <!-- Background Video -->
         <div class="absolute inset-0 -z-10">
             <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-20">
                 <source src="assets/hero-bg-abstract.mp4" type="video/mp4">
             </video>
         </div>
-        <!-- Headline -->
         <h1 id="hero-title"
             class="text-6xl md:text-7xl lg:text-[7rem] font-bold tracking-tight leading-[1] max-w-6xl text-slate-900">
             <span data-phrase="1">Hardware Free.</span> <span data-phrase="2" class="text-[#224fc6]">Worry Free.</span>
@@ -431,7 +429,6 @@
             <span data-phrase="3">Virtual</span> <span data-phrase="4" class="text-[#224fc6]">Fiscalisation.</span>
         </h1>
 
-        <!-- Subheadline -->
         <p class="mt-8 text-slate-500 text-lg md:text-xl font-medium max-w-2xl leading-relaxed" data-aos="fade-up"
             data-aos-delay="100">
             FRAME provides comprehensive virtual fiscalisation and Fiscal Data Management (FDM) compliance solutions in
@@ -439,7 +436,6 @@
             ZIMRA regulations.
         </p>
 
-        <!-- CTA Buttons -->
         <div class="mt-8 flex flex-col sm:flex-row gap-6 w-full sm:w-auto" data-aos="fade-up" data-aos-delay="200">
             <a href="contact.html"
                 class="group bg-[#224fc6] hover:bg-[#183bb0] text-white px-10 py-5 rounded-full font-semibold flex items-center justify-center gap-3 transition-all shadow-2xl shadow-[#224fc6]/30 hover:scale-105 active:scale-95">
@@ -458,9 +454,21 @@
                 <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
             </a>
         </div>
+    </main>
+    -->
 
-
-
+    <!-- NEW HERO BANNER SECTION -->
+    <main class="max-w-[95vw] mx-auto mt-8 md:mt-12 mb-12 relative z-10">
+        <a href="https://forms.clickup.com/7278763/f/6y45b-58332/E6A0L7AL822JBES3GZ"
+            class="block group relative overflow-hidden rounded-[2.5rem] lg:rounded-[3.5rem] shadow-2xl transition-all hover:scale-[1.01] active:scale-[0.99]"
+            target="_blank">
+            <div class="absolute inset-0 bg-blue-600/5 group-hover:bg-transparent transition-colors z-10"></div>
+            <img src="assets/hero-banner.png" alt="FRAME Virtual Fiscalisation Banner"
+                class="w-full h-auto object-cover min-h-[40vh] md:min-h-0" data-aos="zoom-out">
+            <div
+                class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-[2.5rem] lg:rounded-[3.5rem] pointer-events-none">
+            </div>
+        </a>
     </main>
 
     <!-- PRICING SECTION -->
@@ -737,9 +745,10 @@
                 </h2>
             </div>
 
-            <div class="relative w-full max-w-6xl mx-auto h-[500px] flex items-center justify-center">
-                <!-- SVG Lines -->
-                <svg class="absolute inset-0 w-full h-full pointer-events-none" style="z-index: 0;"
+            <div
+                class="relative w-full max-w-6xl mx-auto h-[800px] md:h-[500px] flex items-center justify-center translate-y-[-100px] md:translate-y-0">
+                <!-- SVG Lines - DESKTOP -->
+                <svg class="hidden md:block absolute inset-0 w-full h-full pointer-events-none" style="z-index: 0;"
                     viewBox="0 0 1200 500" preserveAspectRatio="none">
                     <defs>
                         <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
@@ -770,68 +779,94 @@
                         marker-end="url(#arrowhead)" style="animation-duration: 1s;" />
                 </svg>
 
-                <!-- SOURCES (Floating Orbs - Enlarged & Spaced) -->
-                <!-- QB (Moved left) -->
+                <!-- SVG Lines - MOBILE -->
+                <svg class="block md:hidden absolute inset-0 w-full h-full pointer-events-none" style="z-index: 0;"
+                    viewBox="0 0 400 800" preserveAspectRatio="none">
+                    <defs>
+                        <marker id="arrowhead-mobile" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+                            <polygon points="0 0, 6 2, 0 4" fill="#224fc6" />
+                        </marker>
+                    </defs>
+                    <!-- Sources to Hub -->
+                    <path d="M 100 150 Q 200 150, 200 400" fill="none" class="flow-path" stroke="#224fc6"
+                        stroke-width="2" marker-end="url(#arrowhead-mobile)" />
+                    <path d="M 300 150 Q 200 150, 200 400" fill="none" class="flow-path" stroke="#224fc6"
+                        stroke-width="2" marker-end="url(#arrowhead-mobile)" />
+                    <path d="M 120 250 Q 200 250, 200 400" fill="none" class="flow-path" stroke="#224fc6"
+                        stroke-width="2" marker-end="url(#arrowhead-mobile)" />
+                    <path d="M 280 250 Q 200 250, 200 400" fill="none" class="flow-path" stroke="#224fc6"
+                        stroke-width="2" marker-end="url(#arrowhead-mobile)" />
+                    <path d="M 150 320 Q 200 320, 200 400" fill="none" class="flow-path" stroke="#224fc6"
+                        stroke-width="2" marker-end="url(#arrowhead-mobile)" />
+                    <path d="M 250 320 Q 200 320, 200 400" fill="none" class="flow-path" stroke="#224fc6"
+                        stroke-width="2" marker-end="url(#arrowhead-mobile)" />
+                    <!-- Hub to FDMS -->
+                    <path d="M 200 480 L 200 700" fill="none" class="flow-path" stroke="#224fc6" stroke-width="4"
+                        marker-end="url(#arrowhead-mobile)" />
+                </svg>
+
+                <!-- SOURCES (Floating Orbs) -->
+                <!-- QB -->
                 <div
-                    class="absolute left-[5%] top-[20%] w-36 h-36 bg-white rounded-full flex items-center justify-center border border-slate-100 float-1 shadow-lg hover:shadow-xl hover:scale-110 transition-all cursor-pointer group">
-                    <img src="assets/quickbooks-logo-removebg-preview.png" class="h-16 object-contain">
+                    class="absolute left-[8%] top-[15%] md:left-[5%] md:top-[20%] w-24 h-24 md:w-36 md:h-36 bg-white rounded-full flex items-center justify-center border border-slate-100 float-1 shadow-lg hover:shadow-xl hover:scale-110 transition-all cursor-pointer group z-10">
+                    <img src="assets/quickbooks-logo-removebg-preview.png" class="h-10 md:h-16 object-contain">
                     <div
-                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
+                        class="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-[10px] md:text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold whitespace-nowrap">
                         QuickBooks</div>
                 </div>
-                <!-- Excel (Moved left) -->
+                <!-- Excel -->
                 <div
-                    class="absolute left-[0%] top-[40%] w-28 h-28 bg-white rounded-full flex items-center justify-center border border-slate-100 float-2 shadow-lg hover:shadow-xl hover:scale-110 transition-all cursor-pointer group">
-                    <img src="assets/microsoft-excel-logo-removebg-preview.png" class="h-12 object-contain">
+                    class="absolute left-1/2 -translate-x-1/2 top-[5%] md:left-[0%] md:top-[40%] md:translate-x-0 w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center border border-slate-100 float-2 shadow-lg hover:shadow-xl hover:scale-110 transition-all cursor-pointer group z-10">
+                    <img src="assets/microsoft-excel-logo-removebg-preview.png" class="h-8 md:h-12 object-contain">
                     <div
-                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
+                        class="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-[10px] md:text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
                         Excel</div>
                 </div>
-                <!-- Sage (Moved left) -->
+                <!-- Sage -->
                 <div
-                    class="absolute left-[5%] bottom-[20%] w-36 h-36 bg-white rounded-full flex items-center justify-center border border-slate-100 float-3 shadow-lg hover:shadow-xl hover:scale-110 transition-all cursor-pointer group">
-                    <img src="assets/sage-evolution-1.png" class="h-16 object-contain">
+                    class="absolute right-[8%] top-[15%] md:left-[5%] md:bottom-[20%] md:top-auto w-24 h-24 md:w-36 md:h-36 bg-white rounded-full flex items-center justify-center border border-slate-100 float-3 shadow-lg hover:shadow-xl hover:scale-110 transition-all cursor-pointer group z-10">
+                    <img src="assets/sage-evolution-1.png" class="h-10 md:h-16 object-contain">
                     <div
-                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
+                        class="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-[10px] md:text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
                         Sage</div>
                 </div>
-                <!-- Odoo (Moved left/up coordinates) -->
+                <!-- Odoo -->
                 <div
-                    class="absolute left-[18%] top-[5%] w-24 h-24 bg-white rounded-full flex items-center justify-center border border-slate-100 float-4 shadow-md hover:shadow-lg hover:scale-110 transition-all cursor-pointer group">
-                    <img src="assets/odoo-logo-removebg-preview.png" class="h-10 object-contain opacity-80">
+                    class="absolute left-[15%] top-[28%] md:left-[18%] md:top-[5%] w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center border border-slate-100 float-4 shadow-md hover:shadow-lg hover:scale-110 transition-all cursor-pointer group z-10">
+                    <img src="assets/odoo-logo-removebg-preview.png" class="h-8 md:h-10 object-contain opacity-80">
                     <div
-                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
+                        class="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-[10px] md:text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
                         Odoo</div>
                 </div>
-                <!-- Palladium (Bottom Center-Left) -->
+                <!-- Palladium -->
                 <div
-                    class="absolute left-[18%] bottom-[5%] w-24 h-24 bg-white rounded-full flex items-center justify-center border border-slate-100 float-2 shadow-md hover:shadow-lg hover:scale-110 transition-all cursor-pointer group">
-                    <img src="assets/palladium-logo-removebg-preview.png" class="h-10 object-contain">
+                    class="absolute right-[15%] top-[28%] md:left-[18%] md:bottom-[5%] md:top-auto w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center border border-slate-100 float-2 shadow-md hover:shadow-lg hover:scale-110 transition-all cursor-pointer group z-10">
+                    <img src="assets/palladium-logo-removebg-preview.png" class="h-8 md:h-10 object-contain">
                     <div
-                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
+                        class="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-[10px] md:text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
                         Palladium</div>
                 </div>
-                <!-- IQ Retail (Far Top Left) -->
+                <!-- IQ Retail -->
                 <div
-                    class="absolute left-[5%] top-[5%] w-20 h-20 bg-white rounded-full flex items-center justify-center border border-slate-100 float-3 shadow-md hover:shadow-lg hover:scale-110 transition-all cursor-pointer group">
-                    <img src="assets/iqretail-logo-.png" class="h-8 object-contain">
+                    class="absolute left-1/2 -translate-x-1/2 top-[35%] md:left-[5%] md:top-[5%] md:translate-x-0 w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center border border-slate-100 float-3 shadow-md hover:shadow-lg hover:scale-110 transition-all cursor-pointer group z-10">
+                    <img src="assets/iqretail-logo-.png" class="h-6 md:h-8 object-contain">
                     <div
-                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
+                        class="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-[10px] md:text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold text-center">
                         IQ Retail</div>
                 </div>
 
 
-                <!-- CENTER HUB (Centered) -->
+                <!-- CENTER HUB -->
                 <div
-                    class="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-white rounded-full border border-[#224fc6]/20 hub-glow flex flex-col items-center justify-center z-20">
+                    class="absolute left-[50%] top-[55%] md:top-[50%] -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-72 md:h-72 bg-white rounded-full border border-[#224fc6]/20 hub-glow flex flex-col items-center justify-center z-20 transition-all duration-700">
                     <div class="absolute inset-0 bg-[#224fc6]/5 blur-3xl rounded-full"></div>
-                    <img src="assets/frame-logo.png" class="object-contain relative z-10 w-64">
+                    <img src="assets/frame-logo.png" class="object-contain relative z-10 w-40 md:w-64">
                 </div>
 
                 <!-- RIGHT ZIMRA (FDMS Image) -->
                 <div
-                    class="absolute right-[5%] top-[50%] -translate-y-1/2 w-48 h-48 bg-white rounded-[2rem] flex items-center justify-center shadow-xl shadow-slate-900/10 z-10 hover:rotate-3 transition-transform overflow-hidden border border-slate-100">
-                    <img src="assets/fdms.jpeg" class="w-full h-full object-contain p-4">
+                    class="absolute left-1/2 -translate-x-1/2 bottom-[2%] md:left-auto md:right-[5%] md:top-[50%] md:-translate-y-1/2 md:bottom-auto w-32 h-32 md:w-48 md:h-48 bg-white rounded-[1.5rem] md:rounded-[2.5rem] flex items-center justify-center shadow-xl shadow-slate-900/10 z-10 hover:rotate-3 transition-transform overflow-hidden border border-slate-100">
+                    <img src="assets/fdms.jpeg" class="w-full h-full object-contain p-2 md:p-4">
                 </div>
             </div>
         </div>
