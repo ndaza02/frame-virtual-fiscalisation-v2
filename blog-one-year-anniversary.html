@@ -106,12 +106,14 @@
     <style>
         .glass {
             background: rgba(255, 255, 255, 0.8);
+            -webkit-backdrop-filter: blur(12px);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         .glass-dark {
             background: rgba(15, 23, 42, 0.6);
+            -webkit-backdrop-filter: blur(12px);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -246,9 +248,9 @@
                 </div>
                 <div class="flex items-center gap-4">
                     <!-- Search Button -->
-                    <button id="search-btn"
+                    <button type="button" id="search-btn"
                         class="w-10 h-10 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-slate-600 hover:text-primary transition-all hover:shadow-md"
-                        title="Search">
+                        title="Search" aria-label="Search">
                         <i data-lucide="search" class="w-5 h-5"></i>
                     </button>
                     <a href="contact.html"
@@ -308,13 +310,13 @@
                         <p
                             class="text-[10px] font-bold uppercase tracking-widest text-slate-800 writing-vertical-rl pb-4 border-b border-slate-200">
                             Share Article</p>
-                        <button
+                        <button type="button"
                             class="w-10 h-10 rounded-full bg-white text-slate-600 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-all shadow-md hover:shadow-lg hover:scale-110 tooltip"
                             title="Share on LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></button>
-                        <button
+                        <button type="button"
                             class="w-10 h-10 rounded-full bg-white text-slate-600 flex items-center justify-center hover:bg-[#1da1f2] hover:text-white transition-all shadow-md hover:shadow-lg hover:scale-110 tooltip"
                             title="Share on Twitter"><i data-lucide="twitter" class="w-4 h-4"></i></button>
-                        <button
+                        <button type="button"
                             class="w-10 h-10 rounded-full bg-white text-slate-600 flex items-center justify-center hover:bg-[#1877f2] hover:text-white transition-all shadow-md hover:shadow-lg hover:scale-110 tooltip"
                             title="Share on Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></button>
                     </div>
@@ -409,7 +411,7 @@
                 <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
                     <input type="email" placeholder="Enter your email address"
                         class="flex-1 bg-white/10 border border-white/20 rounded-full px-8 py-4 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50 backdrop-blur-sm">
-                    <button
+                    <button type="button"
                         class="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-primary/25 transition-all hover:scale-105">Subscribe</button>
                 </form>
             </div>
@@ -489,8 +491,8 @@
     <!-- SEARCH OVERLAY MODAL -->
     <div id="search-overlay"
         class="fixed inset-0 z-[300] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-start pt-32 opacity-0 pointer-events-none transition-all duration-300">
-        <button id="search-close"
-            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all">
+        <button type="button" id="search-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all" aria-label="Close search">
             <i data-lucide="x" class="w-6 h-6"></i>
         </button>
         <div class="w-full max-w-2xl px-6">

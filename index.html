@@ -69,15 +69,17 @@
         /* Glassmorphism Utilities */
         .glass {
             background: var(--bg-blur);
-            backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .glass-dark {
             background: var(--bg-blur-dark);
-            backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -340,9 +342,9 @@
         <!-- Right Actions -->
         <div class="flex items-center gap-2 lg:gap-6">
             <!-- Search Button -->
-            <button id="search-btn"
+            <button type="button" id="search-btn"
                 class="w-10 h-10 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-slate-600 hover:text-[#224fc6] transition-all hover:shadow-md"
-                title="Search">
+                title="Search" aria-label="Search">
                 <i data-lucide="search" class="w-5 h-5"></i>
             </button>
             <!-- Desktop CTA -->
@@ -353,8 +355,8 @@
             <a href="contact.html"
                 class="lg:hidden bg-[#224fc6] text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-[#183bb0] transition-all">Inquire</a>
             <!-- Mobile Hamburger -->
-            <button id="mobile-menu-btn"
-                class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-900 text-white">
+            <button type="button" id="mobile-menu-btn"
+                class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-900 text-white" aria-label="Open mobile menu">
                 <i data-lucide="menu" class="w-5 h-5"></i>
             </button>
         </div>
@@ -363,8 +365,8 @@
     <!-- Mobile Navigation Panel -->
     <div id="mobile-nav-panel"
         class="fixed inset-0 z-[200] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
-        <button id="mobile-nav-close"
-            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white">
+        <button type="button" id="mobile-nav-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white" aria-label="Close mobile menu">
             <i data-lucide="x" class="w-6 h-6"></i>
         </button>
         <a href="index.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Home</a>
@@ -388,8 +390,8 @@
     <!-- SEARCH OVERLAY MODAL -->
     <div id="search-overlay"
         class="fixed inset-0 z-[300] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-start pt-32 opacity-0 pointer-events-none transition-all duration-300">
-        <button id="search-close"
-            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all">
+        <button type="button" id="search-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all" aria-label="Close search">
             <i data-lucide="x" class="w-6 h-6"></i>
         </button>
         <div class="w-full max-w-2xl px-6">
@@ -461,7 +463,7 @@
     <main class="max-w-[95vw] mx-auto mt-8 md:mt-12 mb-12 relative z-10">
         <a href="https://forms.clickup.com/7278763/f/6y45b-58332/E6A0L7AL822JBES3GZ"
             class="block group relative overflow-hidden rounded-[2.5rem] lg:rounded-[3.5rem] shadow-2xl transition-all hover:scale-[1.01] active:scale-[0.99]"
-            target="_blank">
+            target="_blank" rel="noopener">
             <div class="absolute inset-0 bg-blue-600/5 group-hover:bg-transparent transition-colors z-10"></div>
             <img src="assets/hero-banner.png" alt="FRAME Virtual Fiscalisation Banner" class="w-full h-auto"
                 data-aos="zoom-out">
@@ -831,7 +833,7 @@
                 <!-- QB -->
                 <div
                     class="absolute left-[8%] top-[15%] md:left-[5%] md:top-[20%] w-24 h-24 md:w-36 md:h-36 bg-white rounded-full flex items-center justify-center border border-slate-100 float-1 shadow-lg hover:shadow-xl hover:scale-110 transition-all cursor-pointer group z-10">
-                    <img src="assets/quickbooks-logo-removebg-preview.png" class="h-10 md:h-16 object-contain">
+                    <img alt="QuickBooks logo" src="assets/quickbooks-logo-removebg-preview.png" class="h-10 md:h-16 object-contain">
                     <div
                         class="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-[10px] md:text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold whitespace-nowrap">
                         QuickBooks</div>
@@ -839,7 +841,7 @@
                 <!-- Excel -->
                 <div
                     class="absolute left-1/2 -translate-x-1/2 top-[5%] md:left-[0%] md:top-[40%] md:translate-x-0 w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center border border-slate-100 float-2 shadow-lg hover:shadow-xl hover:scale-110 transition-all cursor-pointer group z-10">
-                    <img src="assets/microsoft-excel-logo-removebg-preview.png" class="h-8 md:h-12 object-contain">
+                    <img alt="Microsoft Excel logo" src="assets/microsoft-excel-logo-removebg-preview.png" class="h-8 md:h-12 object-contain">
                     <div
                         class="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-[10px] md:text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
                         Excel</div>
@@ -847,7 +849,7 @@
                 <!-- Sage -->
                 <div
                     class="absolute right-[8%] top-[15%] md:left-[5%] md:bottom-[20%] md:top-auto w-24 h-24 md:w-36 md:h-36 bg-white rounded-full flex items-center justify-center border border-slate-100 float-3 shadow-lg hover:shadow-xl hover:scale-110 transition-all cursor-pointer group z-10">
-                    <img src="assets/sage-evolution-1.png" class="h-10 md:h-16 object-contain">
+                    <img alt="Sage Evolution logo" src="assets/sage-evolution-1.png" class="h-10 md:h-16 object-contain">
                     <div
                         class="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-[10px] md:text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
                         Sage</div>
@@ -855,7 +857,7 @@
                 <!-- Odoo -->
                 <div
                     class="absolute left-[15%] top-[28%] md:left-[18%] md:top-[5%] w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center border border-slate-100 float-4 shadow-md hover:shadow-lg hover:scale-110 transition-all cursor-pointer group z-10">
-                    <img src="assets/odoo-logo-removebg-preview.png" class="h-8 md:h-10 object-contain opacity-80">
+                    <img alt="Odoo logo" src="assets/odoo-logo-removebg-preview.png" class="h-8 md:h-10 object-contain opacity-80">
                     <div
                         class="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-[10px] md:text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
                         Odoo</div>
@@ -863,7 +865,7 @@
                 <!-- Palladium -->
                 <div
                     class="absolute right-[15%] top-[28%] md:left-[18%] md:bottom-[5%] md:top-auto w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center border border-slate-100 float-2 shadow-md hover:shadow-lg hover:scale-110 transition-all cursor-pointer group z-10">
-                    <img src="assets/palladium-logo-removebg-preview.png" class="h-8 md:h-10 object-contain">
+                    <img alt="Palladium logo" src="assets/palladium-logo-removebg-preview.png" class="h-8 md:h-10 object-contain">
                     <div
                         class="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-[10px] md:text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold">
                         Palladium</div>
@@ -871,7 +873,7 @@
                 <!-- IQ Retail -->
                 <div
                     class="absolute left-1/2 -translate-x-1/2 top-[35%] md:left-[5%] md:top-[5%] md:translate-x-0 w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center border border-slate-100 float-3 shadow-md hover:shadow-lg hover:scale-110 transition-all cursor-pointer group z-10">
-                    <img src="assets/iqretail-logo-.png" class="h-6 md:h-8 object-contain">
+                    <img alt="IQ Retail logo" src="assets/iqretail-logo-.png" class="h-6 md:h-8 object-contain">
                     <div
                         class="absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2 text-slate-500 text-[10px] md:text-sm opacity-0 group-hover:opacity-100 transition-opacity font-bold text-center">
                         IQ Retail</div>
@@ -882,13 +884,13 @@
                 <div
                     class="absolute left-[50%] top-[55%] md:top-[50%] -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-72 md:h-72 bg-white rounded-full border border-[#224fc6]/20 hub-glow flex flex-col items-center justify-center z-20 transition-all duration-700">
                     <div class="absolute inset-0 bg-[#224fc6]/5 blur-3xl rounded-full"></div>
-                    <img src="assets/frame-logo.png" class="object-contain relative z-10 w-40 md:w-64">
+                    <img alt="FRAME logo" src="assets/frame-logo.png" class="object-contain relative z-10 w-40 md:w-64">
                 </div>
 
                 <!-- RIGHT ZIMRA (FDMS Image) -->
                 <div
                     class="absolute left-1/2 -translate-x-1/2 bottom-[2%] md:left-auto md:right-[5%] md:top-[50%] md:-translate-y-1/2 md:bottom-auto w-32 h-32 md:w-48 md:h-48 bg-white rounded-[1.5rem] md:rounded-[2.5rem] flex items-center justify-center shadow-xl shadow-slate-900/10 z-10 hover:rotate-3 transition-transform overflow-hidden border border-slate-100">
-                    <img src="assets/fdms.jpeg" class="w-full h-full object-contain p-2 md:p-4">
+                    <img alt="FDMS system logo" src="assets/fdms.jpeg" class="w-full h-full object-contain p-2 md:p-4">
                 </div>
             </div>
         </div>

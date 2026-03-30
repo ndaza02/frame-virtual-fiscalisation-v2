@@ -64,15 +64,17 @@
         /* Glassmorphism Utilities */
         .glass {
             background: var(--bg-blur);
-            backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .glass-dark {
             background: var(--bg-blur-dark);
-            backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -205,14 +207,14 @@
 
         <!-- Right Actions -->
         <div class="flex items-center gap-2 lg:gap-6">
-            <button id="search-btn"
+            <button type="button" id="search-btn"
                 class="w-10 h-10 flex items-center justify-center rounded-full bg-white/50 hover:bg-white text-slate-600 hover:text-[#224fc6] transition-all hover:shadow-md"
-                title="Search"><i data-lucide="search" class="w-5 h-5"></i></button>
+                title="Search" aria-label="Search"><i data-lucide="search" class="w-5 h-5"></i></button>
             <a href="support.html"
                 class="hidden lg:inline-flex bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#224fc6] transition-all hover:shadow-lg">Get
                 Started Here</a>
-            <button id="mobile-menu-btn"
-                class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-900 text-white">
+            <button type="button" id="mobile-menu-btn"
+                class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-900 text-white" aria-label="Open mobile menu">
                 <i data-lucide="menu" class="w-5 h-5"></i>
             </button>
         </div>
@@ -221,8 +223,8 @@
     <!-- SEARCH OVERLAY MODAL -->
     <div id="search-overlay"
         class="fixed inset-0 z-[300] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-start pt-32 opacity-0 pointer-events-none transition-all duration-300">
-        <button id="search-close"
-            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all">
+        <button type="button" id="search-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all" aria-label="Close search">
             <i data-lucide="x" class="w-6 h-6"></i>
         </button>
         <div class="w-full max-w-2xl px-6">
@@ -250,8 +252,8 @@
     <!-- Mobile Navigation Panel -->
     <div id="mobile-nav-panel"
         class="fixed inset-0 z-[200] bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
-        <button id="mobile-nav-close"
-            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white">
+        <button type="button" id="mobile-nav-close"
+            class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white" aria-label="Close mobile menu">
             <i data-lucide="x" class="w-6 h-6"></i>
         </button>
         <a href="index.html" class="text-4xl font-bold text-white hover:text-[#224fc6] transition-colors">Home</a>
