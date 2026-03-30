@@ -61,6 +61,6 @@ The guide provides Java code snippets for:
 - **Technical Support:** support@frame.co.zw
 - **Sales Enquiries:** sales@frame.co.zw
 - **Phone:** +263 86 7718 6045
-- **Emergency Support:** +263 77 123 4567 (Outside business hours)
+- **Emergency Support:** +263 86 7718 6045 (Outside business hours)
 - **Support Hours:** Mon-Fri 8-5, Sat 9-1 (Harare Time).
 - **Location:** 1 Napier Ave., Hillside, Bulawayo, Zimbabwe.

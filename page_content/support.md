@@ -14,7 +14,7 @@
 - **WhatsApp:** +263 78 394 0835 (Quick check-ins)
 - **Email (Sales):** sales@frame.co.zw (Demos, pricing)
 - **Technical Support:** support@frame.co.zw (Implementation, APIs)
-- **Emergency Support:** +263 77 123 4567 (Outside business hours)
+- **Emergency Support:** +263 86 7718 6045 (Outside business hours)
 
 ---
 
