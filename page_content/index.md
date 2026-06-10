@@ -83,7 +83,7 @@ Sage Pastel, QuickBooks, Palladium, Odoo, Microsoft Excel, Sage Evolution, Expre
 
 ## Contact Information
 - **Phone:** +263 86 7718 6045
-- **WhatsApp:** +263 78 394 0835
+- **WhatsApp:** +263 78 792 5558
 - **Email:** sales@frame.co.zw
 - **Website:** www.frame.co.zw
 - **Location:** Napier Office Park, Unit 4, 1 Napier Ave. Hillside, Bulawayo.

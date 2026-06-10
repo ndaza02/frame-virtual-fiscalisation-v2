@@ -11,7 +11,7 @@
 **Title:** Talk to the FRAME team.
 
 - **Phone:** +263 86 7718 6045 (Urgent issues)
-- **WhatsApp:** +263 78 394 0835 (Quick check-ins)
+- **WhatsApp:** +263 78 792 5558 (Quick check-ins)
 - **Email (Sales):** sales@frame.co.zw (Demos, pricing)
 - **Technical Support:** support@frame.co.zw (Implementation, APIs)
 - **Emergency Support:** +263 86 7718 6045 (Outside business hours)
